@@ -1,0 +1,1959 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLUS33 Café Français - Store Design & Fit-Out Blueprint Guide</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@500;700&display=swap">
+    <style>
+        /* Global & Reset Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #E6DFD5;
+            color: #0D2235;
+            padding: 40px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .print-btn-container {
+            width: 297mm;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .print-btn {
+            background-color: #B88A4A;
+            color: #FFF;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(184, 138, 74, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .print-btn:hover {
+            background-color: #9C7137;
+            transform: translateY(-2px);
+        }
+
+        /* Landscape A4 Pages (297mm x 210mm) */
+        .page {
+            width: 297mm;
+            height: 210mm;
+            background-color: #FAF8F5;
+            /* Premium Soft Ivory */
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
+            margin-bottom: 40px;
+            padding: 18mm;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid #D6CEBE;
+        }
+
+        /* Blueprint grid background lines representing drafting sheet */
+        .page::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(184, 138, 74, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(184, 138, 74, 0.03) 1px, transparent 1px);
+            background-size: 10mm 10mm;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Page Frame Border */
+        .page-frame {
+            position: absolute;
+            inset: 8mm;
+            border: 1px solid rgba(184, 138, 74, 0.2);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        /* Header & Footer */
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(184, 138, 74, 0.15);
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+            z-index: 3;
+            position: relative;
+        }
+
+        .header-brand {
+            font-family: 'Cinzel', serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #0D2235;
+        }
+
+        .header-section {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: #B88A4A;
+            text-transform: uppercase;
+        }
+
+        .page-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(184, 138, 74, 0.15);
+            padding-top: 8px;
+            margin-top: 12px;
+            z-index: 3;
+            position: relative;
+        }
+
+        .footer-left {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.55rem;
+            letter-spacing: 1px;
+            color: rgba(13, 34, 53, 0.5);
+            text-transform: uppercase;
+        }
+
+        .footer-page-num {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.6rem;
+            font-weight: 600;
+            color: #0D2235;
+        }
+
+        /* Core Content Layouts */
+        .page-body {
+            flex-grow: 1;
+            display: flex;
+            gap: 24px;
+            z-index: 3;
+            position: relative;
+            height: calc(100% - 60px);
+        }
+
+        .body-full {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .body-left-col {
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-right: 15px;
+        }
+
+        .body-right-col {
+            width: 60%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Typography */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #0D2235;
+        }
+
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 12px;
+        }
+
+        .page-subtitle {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            color: #B88A4A;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .gold-divider-line {
+            width: 50px;
+            height: 1.5px;
+            background-color: #B88A4A;
+            margin-bottom: 16px;
+        }
+
+        .page-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            color: #5B6470;
+            line-height: 1.6;
+            margin-bottom: 14px;
+        }
+
+        /* Table Layouts */
+        .standards-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.72rem;
+            margin-top: 10px;
+        }
+
+        .standards-table th {
+            background-color: #0D2235;
+            color: #FAF8F5;
+            text-align: left;
+            padding: 8px 10px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border: 1px solid #0D2235;
+        }
+
+        .standards-table td {
+            padding: 8px 10px;
+            border: 1px solid rgba(13, 34, 53, 0.12);
+            color: #4A515A;
+        }
+
+        .standards-table tr:nth-child(even) td {
+            background-color: rgba(184, 138, 74, 0.03);
+        }
+
+        /* SVG Blueprint styling */
+        .blueprint-svg {
+            width: 100%;
+            height: 100%;
+            border: 1px dashed rgba(184, 138, 74, 0.3);
+            background-color: rgba(13, 34, 53, 0.02);
+            border-radius: 4px;
+        }
+
+        /* Timeline & Process graphics */
+        .timeline-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .timeline-row {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .timeline-step-num {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: #0D2235;
+            color: #FFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            font-weight: 700;
+        }
+
+        .timeline-step-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #0D2235;
+            width: 180px;
+        }
+
+        .timeline-step-bar-wrap {
+            flex-grow: 1;
+            height: 6px;
+            background-color: rgba(13, 34, 53, 0.05);
+            border-radius: 3px;
+            position: relative;
+        }
+
+        .timeline-step-bar {
+            height: 100%;
+            background-color: #B88A4A;
+            border-radius: 3px;
+        }
+
+        /* Material Board styles */
+        .material-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            width: 100%;
+            height: 100%;
+            align-content: center;
+        }
+
+        .material-card {
+            border: 1px solid rgba(13, 34, 53, 0.1);
+            background: #FFF;
+            border-radius: 6px;
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+        }
+
+        .material-swatch {
+            width: 100%;
+            height: 70px;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .material-name {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: #0D2235;
+            text-transform: uppercase;
+        }
+
+        .material-desc {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.55rem;
+            color: #5B6470;
+            line-height: 1.3;
+        }
+
+        /* Cover Page Styling */
+        .cover-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            text-align: center;
+            border: 1px solid rgba(184, 138, 74, 0.3);
+            margin: 15px;
+            padding: 40px;
+            background-color: rgba(250, 248, 245, 0.8);
+            border-radius: 8px;
+            box-shadow: inset 0 0 40px rgba(184, 138, 74, 0.05);
+        }
+
+        .cover-logo-icon {
+            font-size: 2.8rem;
+            color: #B88A4A;
+            margin-bottom: 25px;
+        }
+
+        .cover-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #0D2235;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .cover-divider {
+            width: 120px;
+            height: 2px;
+            background-color: #B88A4A;
+            margin: 20px 0;
+        }
+
+        .cover-subtitle {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: 4px;
+            color: #4A5B6D;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .cover-meta {
+            margin-top: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            font-size: 0.65rem;
+            letter-spacing: 1px;
+            color: #5B6470;
+            text-transform: uppercase;
+        }
+
+        .meta-item strong {
+            display: block;
+            color: #0D2235;
+            margin-bottom: 4px;
+        }
+
+
+
+        /* Mobile-only responsive layout: desktop + print layout untouched */
+        @media screen and (max-width: 768px) {
+
+            html,
+            body {
+                width: 100%;
+                max-width: 100%;
+                overflow-x: hidden;
+            }
+
+            body {
+                padding: 14px 10px;
+                align-items: stretch;
+                background: linear-gradient(180deg, #E6DFD5 0%, #F4EFE7 100%);
+            }
+
+            .print-btn-container {
+                width: 100%;
+                margin: 0 0 14px;
+                justify-content: center;
+                position: sticky;
+                top: 8px;
+                z-index: 50;
+            }
+
+            .print-btn {
+                width: 100%;
+                max-width: 360px;
+                justify-content: center;
+                padding: 12px 16px;
+                border-radius: 999px;
+                font-size: 0.82rem;
+            }
+
+            .page {
+                width: 100%;
+                height: auto;
+                min-height: auto;
+                margin: 0 0 18px;
+                padding: 18px 14px;
+                border-radius: 18px;
+                overflow: hidden;
+                box-shadow: 0 10px 28px rgba(13, 34, 53, 0.10);
+                justify-content: flex-start;
+            }
+
+            .page::after {
+                background-size: 32px 32px;
+            }
+
+            .page-frame {
+                inset: 8px;
+                border-radius: 14px;
+            }
+
+            .page-header,
+            .page-footer {
+                gap: 8px;
+                align-items: flex-start;
+            }
+
+            .page-header {
+                flex-direction: column;
+                padding-bottom: 10px;
+                margin-bottom: 16px;
+            }
+
+            .page-footer {
+                flex-direction: row;
+                align-items: center;
+                padding-top: 10px;
+                margin-top: 18px;
+            }
+
+            .header-brand {
+                font-size: 0.68rem;
+                letter-spacing: 1.4px;
+                line-height: 1.3;
+            }
+
+            .header-section {
+                font-size: 0.56rem;
+                letter-spacing: 1px;
+                line-height: 1.35;
+            }
+
+            .footer-left {
+                max-width: 72%;
+                font-size: 0.48rem;
+                line-height: 1.35;
+                letter-spacing: 0.7px;
+            }
+
+            .footer-page-num {
+                font-size: 0.55rem;
+                white-space: nowrap;
+            }
+
+            .page-body,
+            .page-body[style] {
+                height: auto !important;
+                min-height: auto !important;
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 16px !important;
+                align-items: stretch !important;
+                justify-content: flex-start !important;
+                text-align: left !important;
+            }
+
+            .body-full,
+            .body-left-col,
+            .body-right-col {
+                width: 100% !important;
+                padding-right: 0;
+                justify-content: flex-start;
+            }
+
+            .body-right-col {
+                min-height: 210px;
+            }
+
+            .page-title {
+                font-size: clamp(1.45rem, 8vw, 2rem);
+                line-height: 1.12;
+                margin-bottom: 10px;
+                word-break: normal;
+            }
+
+            .page-subtitle {
+                font-size: 0.68rem;
+                line-height: 1.35;
+                letter-spacing: 1.2px;
+                margin-bottom: 10px;
+            }
+
+            .gold-divider-line {
+                width: 44px;
+                margin-bottom: 12px;
+            }
+
+            .page-text,
+            .page-text[style] {
+                font-size: 0.78rem !important;
+                line-height: 1.55 !important;
+                max-width: 100% !important;
+            }
+
+            .blueprint-svg {
+                width: 100%;
+                height: auto;
+                min-height: 210px;
+                aspect-ratio: 5 / 3;
+                border-radius: 12px;
+                display: block;
+            }
+
+            .standards-table {
+                display: block;
+                width: 100%;
+                overflow-x: auto;
+                white-space: nowrap;
+                font-size: 0.66rem;
+                border-radius: 10px;
+                -webkit-overflow-scrolling: touch;
+                box-shadow: inset 0 -1px 0 rgba(13, 34, 53, 0.08);
+            }
+
+            .standards-table th,
+            .standards-table td {
+                padding: 8px 9px;
+                vertical-align: top;
+            }
+
+            .material-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 10px;
+                height: auto;
+            }
+
+            .material-card {
+                border-radius: 12px;
+                padding: 9px;
+            }
+
+            .material-swatch {
+                height: 64px;
+                border-radius: 9px;
+            }
+
+            .material-name {
+                font-size: 0.6rem;
+            }
+
+            .material-desc {
+                font-size: 0.52rem;
+            }
+
+            .timeline-container {
+                gap: 10px;
+            }
+
+            .timeline-row {
+                display: grid;
+                grid-template-columns: 30px 1fr;
+                gap: 8px 10px;
+                align-items: center;
+                padding: 10px;
+                background: rgba(255, 255, 255, 0.55);
+                border: 1px solid rgba(184, 138, 74, 0.14);
+                border-radius: 12px;
+            }
+
+            .timeline-step-num {
+                width: 26px;
+                height: 26px;
+                font-size: 0.62rem;
+            }
+
+            .timeline-step-title,
+            .timeline-step-title[style] {
+                width: auto !important;
+                font-size: 0.66rem !important;
+                line-height: 1.3;
+                text-align: left !important;
+            }
+
+            .timeline-step-bar-wrap {
+                grid-column: 1 / -1;
+                width: 100%;
+                height: 7px;
+            }
+
+            .cover-content {
+                min-height: auto;
+                margin: 0;
+                padding: 34px 16px;
+                border-radius: 16px;
+            }
+
+            .cover-logo-icon {
+                font-size: 2.2rem;
+                margin-bottom: 18px;
+            }
+
+            .cover-title {
+                font-size: clamp(1.65rem, 9vw, 2.35rem);
+                line-height: 1.1;
+            }
+
+            .cover-subtitle {
+                font-size: 0.8rem;
+                letter-spacing: 2px;
+                line-height: 1.5;
+                margin-bottom: 20px;
+            }
+
+            .cover-divider {
+                width: 86px;
+                margin: 16px 0;
+            }
+
+            .cover-content p[style] {
+                font-size: 0.76rem !important;
+                max-width: 100% !important;
+                margin-bottom: 26px !important;
+            }
+
+            .cover-meta {
+                width: 100%;
+                grid-template-columns: 1fr;
+                gap: 12px;
+                margin-top: 18px;
+                text-align: center;
+            }
+
+            .meta-item {
+                padding: 10px;
+                border: 1px solid rgba(184, 138, 74, 0.15);
+                border-radius: 12px;
+                background: rgba(255, 255, 255, 0.45);
+            }
+
+            #page-20 .page-body>div[style*="grid-template-columns"] {
+                grid-template-columns: 1fr !important;
+                gap: 28px !important;
+                max-width: 100% !important;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            body {
+                padding: 10px 8px;
+            }
+
+            .page {
+                padding: 16px 12px;
+                border-radius: 16px;
+                margin-bottom: 14px;
+            }
+
+            .body-right-col {
+                min-height: 180px;
+            }
+
+            .blueprint-svg {
+                min-height: 180px;
+            }
+
+            .material-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .standards-table {
+                font-size: 0.62rem;
+            }
+        }
+
+
+        /* Print Media Queries for A4 Landscape */
+        @media print {
+            body {
+                background-color: #FFF;
+                padding: 0;
+            }
+
+            .print-btn-container {
+                display: none;
+            }
+
+            .page {
+                margin: 0;
+                border: none;
+                box-shadow: none;
+                border-radius: 0;
+                page-break-after: always;
+                break-after: page;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="print-btn-container">
+        <button class="print-btn" onclick="window.print()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            Export to PDF Blueprint
+        </button>
+    </div>
+
+    <!-- PAGE 1: COVER PAGE -->
+    <div class="page" id="page-01">
+        <div class="page-frame"></div>
+        <div class="cover-content">
+            <div class="cover-logo-icon">⚜</div>
+            <div class="cover-title">PLUS33 CAFÉ FRANÇAIS</div>
+            <div class="cover-subtitle">Store Design & Fit-Out Blueprint Guide</div>
+            <div class="cover-divider"></div>
+            <p
+                style="font-size: 0.85rem; color: #5C6370; font-family: 'Outfit'; max-width: 600px; line-height: 1.6; margin-bottom: 40px;">
+                Comprehensive Franchise Architecture & Construction Standards Manual. An exhaustive blueprint system
+                defining spatial dimensions, materials, MEP requirements, and handover workflows for premium cafe
+                formats.
+            </p>
+            <div class="cover-meta">
+                <div class="meta-item">
+                    <strong>Version</strong>
+                    2.0 Confidential
+                </div>
+                <div class="meta-item">
+                    <strong>Document ID</strong>
+                    PLUS33-FRAN-ARCH-2026
+                </div>
+                <div class="meta-item">
+                    <strong>Released</strong>
+                    June 2026
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <div class="footer-left">CONFIDENTIAL FRANCHISE SPECIFICATION — ARCHITECTURE v2.0</div>
+            <div class="footer-page-num">01 / 20</div>
+        </div>
+    </div>
+
+    <!-- PAGE 2: BRAND DESIGN PHILOSOPHY -->
+    <div class="page" id="page-02">
+        <div class="page-frame"></div>
+        <div class="page-header">
+            <div class="header-brand">PLUS33 CAFÉ FRANÇAIS</div>
+            <div class="header-section">SECTION 01 — BRAND DESIGN PHILOSOPHY</div>
+        </div>
+        <div class="page-body">
+            <div class="body-left-col">
+                <div class="page-subtitle">French Heritage & Spatial Luxury</div>
+                <h3 class="page-title">Sartorial Space Planning</h3>
+                <div class="gold-divider-line"></div>
+                <p class="page-text">
+                    PLUS33 is designed as a sanctuary. Drawing inspiration from modern Parisian retail boutiques and
+                    classical French brasseries, our architecture combines clean geometric lines with highly detailed
+                    materials like brushed gold brass, textured warm ivory walls, and natural oak.
+                </p>
+                <p class="page-text">
+                    Our layout maximizes operational speed while providing an atmosphere of slow luxury. Every physical
+                    contact point—from the custom marble countertops to the soft lighting and acoustics—is curated to
+                    deliver an unforgettable premium customer journey.
+                </p>
+            </div>
+            <div class="body-right-col">
+                <!-- Facade Architectural Vector Sketch -->
+                <svg class="blueprint-svg" viewBox="0 0 500 300">
+                    <rect x="0" y="0" width="500" height="300" fill="#0C1E30" />
+                    <!-- Grid lines for blueprint feel -->
+                    <path d="M0,50 L500,50 M0,100 L500,100 M0,150 L500,150 M0,200 L500,200 M0,250 L500,250"
+                        stroke="#1E3A54" stroke-width="0.5" />
+                    <path
+                        d="M50,0 L50,300 M100,0 L100,300 M150,0 L150,300 M200,0 L200,300 M250,0 L250,300 M300,0 L300,300 M350,0 L350,300 M400,0 L400,300 M450,0 L450,300"
+                        stroke="#1E3A54" stroke-width="0.5" />
+                    <!-- Store Front facade lines -->
+                    <rect x="50" y="60" width="400" height="190" fill="none" stroke="#FAF8F5" stroke-width="2" />
+                    <!-- Large Glass windows -->
+                    <rect x="65" y="80" width="130" height="150" fill="none" stroke="#B88A4A" stroke-width="1.5" />
+                    <rect x="305" y="80" width="130" height="150" fill="none" stroke="#B88A4A" stroke-width="1.5" />
+                    <!-- Door Frame -->
+                    <rect x="210" y="80" width="80" height="170" fill="none" stroke="#B88A4A" stroke-width="2" />
+                    <line x1="250" y1="80" x2="250" y2="250" stroke="#B88A4A" stroke-width="1" />
+                    <!-- Logo Signage board -->
+                    <rect x="130" y="30" width="240" height="30" fill="#0C1E30" stroke="#B88A4A" stroke-width="1" />
+                    <text x="250" y="50" font-family="'Cinzel'" font-size="11" fill="#FAF8F5" text-anchor="middle"
+                        letter-spacing="3">PLUS33 CAFÉ FRANÇAIS</text>
+                    <!-- Dimensions annotation -->
+                    <line x1="50" y1="265" x2="450" y2="265" stroke="#B88A4A" stroke-width="0.75"
+                        stroke-dasharray="2 2" />
+                    <text x="250" y="278" font-family="'Outfit'" font-size="8" fill="#B88A4A"
+                        text-anchor="middle">FACADE WIDTH: 10,000 mm (10m)</text>
+                    <!-- Human scale -->
+                    <circle cx="230" cy="180" r="8" fill="none" stroke="#FAF8F5" stroke-width="0.5" />
+                    <line x1="230" y1="188" x2="230" y2="215" stroke="#FAF8F5" stroke-width="0.5" />
+                    <line x1="230" y1="195" x2="220" y2="205" stroke="#FAF8F5" stroke-width="0.5" />
+                    <line x1="230" y1="195" x2="240" y2="205" stroke="#FAF8F5" stroke-width="0.5" />
+                    <line x1="230" y1="215" x2="222" y2="235" stroke="#FAF8F5" stroke-width="0.5" />
+                    <line x1="230" y1="215" x2="238" y2="235" stroke="#FAF8F5" stroke-width="0.5" />
+                </svg>
+            </div>
+        </div>
+        <div class="page-footer">
+            <div class="footer-left">SECTION 01 — BRAND DESIGN PHILOSOPHY</div>
+            <div class="footer-page-num">02 / 20</div>
+        </div>
+    </div>
+
+    <!-- PAGE 3: STORE FORMATS -->
+    <div class="page" id="page-03">
+        <div class="page-frame"></div>
+        <div class="page-header">
+            <div class="header-brand">PLUS33 CAFÉ FRANÇAIS</div>
+            <div class="header-section">SECTION 02 — STORE FORMAT SPECIFICATIONS</div>
+        </div>
+        <div class="page-body">
+            <div class="body-full">
+                <div class="page-subtitle">Scalable Footprints</div>
+                <h3 class="page-title">Franchise Formats Comparative Specifications</h3>
+                <div class="gold-divider-line"></div>
+                <table class="standards-table">
+                    <thead>
+                        <tr>
+                            <th>SPECIFICATION CATEGORY</th>
+                            <th>EXPRESS CAFÉ (KIOSK)</th>
+                            <th>PREMIUM CAFÉ (STANDARD)</th>
+                            <th>SIGNATURE CAFÉ (FLAGSHIP)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Target Floor Area</strong></td>
+                            <td>300 – 500 sq. ft. (28 – 46 sq. m.)</td>
+                            <td>600 – 1,000 sq. ft. (55 – 93 sq. m.)</td>
+                            <td>1,200 – 1,800 sq. ft. (111 – 167 sq. m.)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Optimal Locations</strong></td>
+                            <td>Airport terminals, corporate lobbies, metro stations</td>
+                            <td>Premium retail malls, commercial high streets</td>
+                            <td>Elite lifestyle complexes, standalone flagship plots</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Seating Capacity</strong></td>
+                            <td>4 to 8 soft stool lounge settings</td>
+                            <td>16 to 30 mixed dining & lounge seats</td>
+                            <td>40 to 70 full table dining & booth zones</td>
+
+                        </tr>
+                        <tr>
+                            <td><strong>Minimum Staffing</strong></td>
+                            <td>2 to 3 Baristas / Shift</td>
+                            <td>4 to 6 Baristas & Hosts / Shift</td>
+                            <td>8 to 12 Kitchen, Service & Admin / Shift</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Daily Customer Capacity</strong></td>
+                            <td>250 – 400 Transactions</td>
+                            <td>500 – 800 Transactions</td>
+                            <td>1,000 – 1,500 Transactions</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Electrical Requirement</strong></td>
+                            <td>18 kW - 3 Phase</td>
+                            <td>35 kW - 3 Phase</td>
+                            <td>55 kW - 3 Phase</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Estimated Service Time</strong></td>
+                            <td>45 – 90 seconds per customer</td>
+                            <td>2 – 3 minutes (dining menu options)</td>
+                            <td>3 – 5 minutes (signature dining menu)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Investment Category</strong></td>
+                            <td>Express Format Option</td>
+                            <td>Premium Standard Format</td>
+                            <td>Signature Flagship Tier</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="page-footer">
+            <div class="footer-left">SECTION 02 — STORE FORMAT SPECIFICATIONS</div>
+            <div class="footer-page-num">03 / 20</div>
+        </div>
+    </div>
+
+    <!-- PAGE 4: MASTER ARCHITECTURAL FLOOR PLAN -->
+    <div class="page" id="page-04">
+        <div class="page-frame"></div>
+        <div class="page-header">
+            <div class="header-brand">PLUS33 CAFÉ FRANÇAIS</div>
+            <div class="header-section">SECTION 03 — MASTER ARCHITECTURAL FLOOR PLAN</div>
+        </div>
+        <div class="page-body">
+            <div class="body-left-col">
+                <div class="page-subtitle">Layout & Circulation</div>
+                <h3 class="page-title">Compact & Premium Café Floor Plan Blueprint</h3>
+                <div class="gold-divider-line"></div>
+                <p class="page-text">
+                    This technical floor plan optimizes operational efficiency by separating the customer queue from the
+                    workspace. The coffee prep area (Zone C) runs linearly behind the front counter to minimize barista
+                    footsteps.
+                </p>
+                <p class="page-text">
+                    The floor plan specifies clear widths, partition layouts, door swings, and utility hookups. Fire
+                    safety routes are kept clear with direct paths to emergency exit zones.
+                </p>
+            </div>
+            <div class="body-right-col">
+                <svg class="blueprint-svg" viewBox="0 0 500 300">
+                    <rect x="0" y="0" width="500" height="300" fill="#0F1E36" />
+                    <!-- Outer walls -->
+                    <rect x="20" y="20" width="460" height="240" fill="none" stroke="#FAF8F5" stroke-width="2.5" />
+                    <!-- Interior spaces blueprint lines -->
+                    <!-- Customer Lounge seating area (left) -->
+                    <rect x="40" y="40" width="140" height="200" fill="none" stroke="#169B9D" stroke-width="1"
+                        stroke-dasharray="2 2" />
+                    <text x="110" y="140" font-family="'Outfit'" font-size="9" fill="#169B9D"
+                        text-anchor="middle">Lounge & Seating Area</text>
+                    <!-- Tables representation -->
+                    <circle cx="70" cy="70" r="14" fill="none" stroke="#FAF8F5" stroke-width="1" />
+                    <circle cx="70" cy="210" r="14" fill="none" stroke="#FAF8F5" stroke-width="1" />
+                    <circle cx="140" cy="140" r="16" fill="none" stroke="#FAF8F5" stroke-width="1" />
+                    <!-- Bar Counter (Middle) -->
+                    <rect x="220" y="40" width="40" height="200" fill="none" stroke="#B88A4A" stroke-width="1.5" />
+                    <text x="240" y="140" font-family="'Outfit'" font-size="8" fill="#B88A4A" text-anchor="middle"
+                        transform="rotate(-90 240 140)">Customer Bar Counter</text>
+                    <!-- Kitchen and Prep Zone (Right) -->
+                    <rect x="280" y="40" width="180" height="200" fill="none" stroke="#FAF8F5" stroke-width="1" />
+                    <!-- Preparation counter -->
+                    <rect x="280" y="40" width="30" height="200" fill="none" stroke="#FAF8F5" stroke-width="1" />
+                    <text x="295" y="140" font-family="'Outfit'" font-size="8" fill="#FAF8F5" text-anchor="middle"
+                        transform="rotate(-90 295 140)">Barista Prep Counter</text>
+                    <!-- Espresso Machine Block -->
+                    <rect x="285" y="60" width="20" height="40" fill="none" stroke="#FAF8F5" stroke-width="1" />
+                    <text x="295" y="80" font-family="'Outfit'" font-size="6" fill="#FAF8F5" text-anchor="middle"
+                        transform="rotate(-90 295 80)">Espresso</text>
+                    <!-- Entrance door swing -->
+                    <path d="M 220,240 A 40,40 0 0,0 180,200" fill="none" stroke="#B88A4A" stroke-width="1.5" />
+                    <line x1="220" y1="240" x2="220" y2="200" stroke="#B88A4A" stroke-width="1.5" />
+                    <text x="200" y="225" font-family="'Outfit'" font-size="7" fill="#B88A4A">ENTRANCE</text>
+                    <!-- Storage & Utility block (Far right top) -->
+                    <rect x="380" y="40" width="80" height="70" fill="none" stroke="#FAF8F5" stroke-width="1" />
+                    <text x="420" y="75" font-family="'Outfit'" font-size="8" fill="#FAF8F5" text-anchor="middle">Dry
+                        Storage</text>
+                </svg>
+            </div>
+        </div>
+        <div class="page-footer">
+            <div class="footer-left">SECTION 03 — MASTER ARCHITECTURAL FLOOR PLAN</div>
+            <div class="footer-page-num">04 / 20</div>
+        </div>
+    </div>
+
+    <!-- PAGE 5: 3D ISOMETRIC STORE BLUEPRINT -->
+    <div class="page" id="page-05">
+        <div class="page-frame"></div>
+        <div class="page-header">
+            <div class="header-brand">PLUS33 CAFÉ FRANÇAIS</div>
+            <div class="header-section">SECTION 04 — 3D ISOMETRIC BLUEPRINT</div>
+        </div>
+        <div class="page-body">
+            <div class="body-left-col">
+                <div class="page-subtitle">Exploded Spatial Visual</div>
+                <h3 class="page-title">Isometric Store Layout Architecture</h3>
+                <div class="gold-divider-line"></div>
+                <p class="page-text">
+                    This isometric projection illustrates the vertical and spatial hierarchy of our standard Premium
+                    Café design.
+                </p>
+                <p class="page-text" style="font-size:0.75rem;">
+                    <strong>Blueprint Callouts:</strong><br>
+                    [1] Facade Portals<br>
+                    [2] Warm Oak Accent Pillars<br>
+                    [3] Premium Counter Top (Carrara)<br>
+                    [4] Dining Booth Units<br>
+                    [5] Service Entry Gate<br>
+                    [6] Back-Counter Dry Storage
+                </p>
+            </div>
+            <div class="body-right-col">
+                <svg class="blueprint-svg" viewBox="0 0 500 300">
+                    <rect x="0" y="0" width="500" height="300" fill="#0C1E30" />
+                    <!-- Isometric isometric grid projection block -->
+                    <g transform="translate(250, 160) scale(1, 0.58) rotate(45)">
+                        <!-- Grid ground lines -->
+                        <path d="M-150,-150 L-150,150 L150,150 L150,-150 Z" fill="none" stroke="#1E3A54"
+                            stroke-width="1.5" />
+                        <line x1="-150" y1="-50" x2="150" y2="-50" stroke="#1E3A54" stroke-width="0.5" />
+                        <line x1="-150" y1="50" x2="150" y2="50" stroke="#1E3A54" stroke-width="0.5" />
+                        <line x1="-50" y1="-150" x2="-50" y2="150" stroke="#1E3A54" stroke-width="0.5" />
+                        <line x1="50" y1="-150" x2="50" y2="150" stroke="#1E3A54" stroke-width="0.5" />
+
+                        <!-- Front Counter Block (3D) -->
+                        <rect x="-80" y="20" width="120" height="30" fill="none" stroke="#B88A4A" stroke-width="1.5" />
+                        <!-- Extrude vertically -->
+                    </g>
+                    <!-- Overlay architectural wire lines for visual depth -->
+                    <path d="M 120,180 L 120,120 L 250,50 L 380,120 L 380,180" fill="none" stroke="#FAF8F5"
+                        stroke-width="1.5" opacity="0.85" />
+                    <!-- Isometric callout text overlays -->
+                    <circle cx="160" cy="110" r="8" fill="#B88A4A" />
+                    <text x="160" y="113" font-family="'Outfit'" font-size="7" font-weight="700" fill="#FAF8F5"
+                        text-anchor="middle">1</text>
+                    <line x1="168" y1="110" x2="200" y2="110" stroke="#B88A4A" stroke-width="0.75" />
+                    <text x="205" y="112" font-family="'Outfit'" font-size="8" fill="#FAF8F5">Facade Frame</text>
+
+                    <circle cx="280" cy="180" r="8" fill="#B88A4A" />
+                    <text x="280" y="183" font-family="'Outfit'" font-size="7" font-weight="700" fill="#FAF8F5"
+                        text-anchor="middle">3</text>
+                    <line x1="280" y1="188" x2="280" y2="210" stroke="#B88A4A" stroke-width="0.75" />
+                    <text x="280" y="222" font-family="'Outfit'" font-size="8" fill="#FAF8F5"
+                        text-anchor="middle">Marble Counter</text>
+                </svg>
+            </div>
+        </div>
+        <div class="page-footer">
+            <div class="footer-left">SECTION 04 — 3D ISOMETRIC BLUEPRINT</div>
+            <div class="footer-page-num">05 / 20</div>
+        </div>
+    </div>
+
+    <!-- PAGE 6: CUSTOMER EXPERIENCE FLOW -->
+    <div class="page" id="page-06">
+        <div class="page-frame"></div>
+        <div class="page-header">
+            <div class="header-brand">PLUS33 CAFÉ FRANÇAIS</div>
+            <div class="header-section">SECTION 05 — CUSTOMER EXPERIENCE FLOW</div>
+        </div>
+        <div class="page-body">
+            <div class="body-full">
+                <div class="page-subtitle">Frictionless Journey Mapping</div>
+                <h3 class="page-title">Arrival to Exit Experience Blueprint</h3>
+                <div class="gold-divider-line"></div>
+                <div class="timeline-container" style="margin-top: 15px;">
+                    <div class="timeline-row">
+                        <div class="timeline-step-num">01</div>
+                        <div class="timeline-step-title">ARRIVAL & AUDITORY CAPTURE</div>
+                        <div class="timeline-step-bar-wrap">
+                            <div class="timeline-step-bar" style="width: 100%;"></div>
+                        </div>
+                        <div class="timeline-step-title"
+                            style="text-align: right; font-weight: normal; font-size: 0.7rem; color: #5B6470;">Soft
+                            background jazz, warm scent notes</div>
+                    </div>
+                    <div class="timeline-row">
+                        <div class="timeline-step-num">02</div>
+                        <div class="timeline-step-title">QUEUE & MENU DISPLAY</div>
+                        <div class="timeline-step-bar-wrap">
+                            <div class="timeline-step-bar" style="width: 90%;"></div>
+                        </div>
+                        <div class="timeline-step-title"
+                            style="text-align: right; font-weight: normal; font-size: 0.7rem; color: #5B6470;">Minimal
+                            digital board browsing</div>
+                    </div>
+                    <div class="timeline-row">
+                        <div class="timeline-step-num">03</div>
+                        <div class="timeline-step-title">ORDER & LOYALTY PIN</div>
+                        <div class="timeline-step-bar-wrap">
+                            <div class="timeline-step-bar" style="width: 75%;"></div>
+                        </div>
+                        <div class="timeline-step-title"
+                            style="text-align: right; font-weight: normal; font-size: 0.7rem; color: #5B6470;">Expedited
+                            tap payment checkout</div>
+                    </div>
+                    <div class="timeline-row">
+                        <div class="timeline-step-num">04</div>
+                        <div class="timeline-step-title">PREPARATION COFFEE GLOW</div>
+                        <div class="timeline-step-bar-wrap">
+                            <div class="timeline-step-bar" style="width: 60%;"></div>
+                        </div>
+                        <div class="timeline-step-title"
+                            style="text-align: right; font-weight: normal; font-size: 0.7rem; color: #5B6470;">Visual
+                            extraction view (barista stage)</div>
+                    </div>
+                    <div class="timeline-row">
+                        <div class="timeline-step-num">05</div>
+                        <div class="timeline-step-title">COLLECTION & SERVICE</div>
+                        <div class="timeline-step-bar-wrap">
+                            <div class="timeline-step-bar" style="width: 50%;"></div>
+                        </div>
+                        <div class="timeline-step-title"
+                            style="text-align: right; font-weight: normal; font-size: 0.7rem; color: #5B6470;">Handover
+                            in luxury embossed cups</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <div class="footer-left">SECTION 05 — CUSTOMER EXPERIENCE FLOW</div>
+            <div class="footer-page-num">06 / 20</div>
+        </div>
+    </div>
+
+    <!-- PAGE 7: OPERATIONAL ZONING -->
+    <div class="page" id="page-07">
+        <div class="page-frame"></div>
+        <div class="page-header">
+            <div class="header-brand">PLUS33 CAFÉ FRANÇAIS</div>
+            <div class="header-section">SECTION 06 — OPERATIONAL ZONING</div>
+        </div>
+        <div class="page-body">
+            <div class="body-left-col">
+                <div class="page-subtitle">Functional Area Division</div>
+                <h3 class="page-title">Operational Zoning & Flow Optimization</h3>
+                <div class="gold-divider-line"></div>
+                <p class="page-text">
+                    Operational zoning divides the café into distinct areas for customer interactions, storage,
+                    clean-up, and beverage extraction.
+                </p>
+                <p class="page-text">
+                    By color-coding workspaces, staff circulation cross-overs are eliminated, protecting team ergonomics
+                    and speed of service.
+                </p>
+            </div>
+            <div class="body-right-col">
+                <svg class="blueprint-svg" viewBox="0 0 500 300">
+                    <rect x="0" y="0" width="500" height="300" fill="#0C1E30" />
+                    <!-- Zone blocks representation -->
+                    <!-- Customer Zone (Green color tone) -->
+                    <rect x="30" y="30" width="160" height="240" fill="none" stroke="#2EC4B6" stroke-width="1.5" />
+                    <text x="110" y="60" font-family="'Outfit'" font-size="10" fill="#2EC4B6" text-anchor="middle"
+                        font-weight="700">ZONE A / F</text>
+                    <text x="110" y="80" font-family="'Outfit'" font-size="8" fill="#2EC4B6"
+                        text-anchor="middle">Customer Arrival & Dining</text>
+                    <!-- Prep Zone (Gold tone) -->
+                    <rect x="210" y="30" width="130" height="240" fill="none" stroke="#B88A4A" stroke-width="1.5" />
+                    <text x="275" y="60" font-family="'Outfit'" font-size="10" fill="#B88A4A" text-anchor="middle"
+                        font-weight="700">ZONE B / C / E</text>
+                    <text x="275" y="80" font-family="'Outfit'" font-size="8" fill="#B88A4A"
+                        text-anchor="middle">Ordering & Coffee extraction</text>
+                    <!-- Wet Work / Kitchen Zone (Orange tone) -->
+                    <rect x="360" y="30" width="110" height="240" fill="none" stroke="#E86A2A" stroke-width="1.5" />
+                    <text x="415" y="60" font-family="'Outfit'" font-size="10" fill="#E86A2A" text-anchor="middle"
+                        font-weight="700">ZONE D / G / H</text>
+                    <text x="415" y="80" font-family="'Outfit'" font-size="8" fill="#E86A2A"
+                        text-anchor="middle">Kitchen & Cleaning</text>
+                    <!-- Direction arrows -->
+                    <path d="M 190,150 L 210,150" stroke="#FAF8F5" stroke-width="1.5" marker-end="url(#arrow)" />
+                </svg>
+            </div>
+        </div>
+        <div class="page-footer">
+            <div class="footer-left">SECTION 06 — OPERATIONAL ZONING</div>
+            <div class="footer-page-num">07 / 20</div>
+        </div>
+    </div>
+
+    <!-- PAGE 8: ARCHITECTURAL ELEVATIONS -->
+    <div class="page" id="page-08">
+        <div class="page-frame"></div>
+        <div class="page-header">
+            <div class="header-brand">PLUS33 CAFÉ FRANÇAIS</div>
+            <div class="header-section">SECTION 07 — ARCHITECTURAL ELEVATIONS</div>
+        </div>
+        <div class="page-body">
+            <div class="body-left-col">
+                <div class="page-subtitle">Exterior Dimensions</div>
+                <h3 class="page-title">Storefront Elevation Detail & Heights</h3>
+                <div class="gold-divider-line"></div>
+                <p class="page-text">
+                    This elevation blueprint specifies the mandatory structural heights for external storefront
+                    elements. Facade glass panels must use low-iron tempered units to prevent green tinting.
+                </p>
+                <p class="page-text">
+                    Logo placement must strictly be centered above the main entrance, maintaining a clean 600mm margin
+                    from the ceiling slab boundary.
+                </p>
+            </div>
+            <div class="body-right-col">
+                <svg class="blueprint-svg" viewBox="0 0 500 300">
+                    <rect x="0" y="0" width="500" height="300" fill="#0F1E36" />
+                    <!-- Front facade outline -->
+                    <rect x="40" y="60" width="420" height="180" fill="none" stroke="#FAF8F5" stroke-width="2" />
+                    <!-- Glass framing layout -->
+                    <line x1="180" y1="60" x2="180" y2="240" stroke="#B88A4A" stroke-width="1" />
+                    <line x1="320" y1="60" x2="320" y2="240" stroke="#B88A4A" stroke-width="1" />
+                    <!-- Door opening -->
+                    <rect x="200" y="100" width="100" height="140" fill="none" stroke="#FAF8F5" stroke-width="1.5" />
+                    <!-- Dimensions annotation -->
+                    <line x1="25" y1="60" x2="25" y2="240" stroke="#B88A4A" stroke-width="0.75" />
+                    <text x="15" y="150" font-family="'Outfit'" font-size="8" fill="#B88A4A" text-anchor="middle"
+                        transform="rotate(-90 15 150)">HEIGHT: 3,200 mm</text>
+                </svg>
+            </div>
+        </div>
+        <div class="page-footer">
+            <div class="footer-left">SECTION 07 — ARCHITECTURAL ELEVATIONS</div>
+            <div class="footer-page-num">08 / 20</div>
+        </div>
+    </div>
+
+    <!-- PAGE 9: MATERIAL & FINISH PALETTE -->
+    <div class="page" id="page-09">
+        <div class="page-frame"></div>
+        <div class="page-header">
+            <div class="header-brand">PLUS33 CAFÉ FRANÇAIS</div>
+            <div class="header-section">SECTION 08 — MATERIAL & FINISH PALETTE</div>
+        </div>
+        <div class="page-body">
+            <div class="body-full">
+                <div class="page-subtitle">Sartorial Spec Sheet</div>
+                <h3 class="page-title">Mandatory Architectural Finishes Board</h3>
+                <div class="gold-divider-line"></div>
+                <div class="material-grid">
+                    <div class="material-card">
+                        <div class="material-swatch" style="background-color: #D3CAB8;"></div>
+                        <div class="material-name">Italian Stone</div>
+                        <div class="material-desc">Honed Travertine or premium beige stone tiling for main high-traffic
+                            café floors.</div>
+                    </div>
+                    <div class="material-card">
+                        <div class="material-swatch" style="background-color: #FAF8F5; border: 1px solid #D6CEBE;">
+                        </div>
+                        <div class="material-name">Warm Ivory</div>
+                        <div class="material-desc">Low-VOC matte stucco wall paint, yielding a soft plaster texture.
+                        </div>
+                    </div>
+                    <div class="material-card">
+                        <div class="material-swatch" style="background-color: #5C4033;"></div>
+                        <div class="material-name">Natural Oak</div>
+                        <div class="material-desc">Solid natural oak wood cladding for the front counter face and
+                            ceiling slats.</div>
+                    </div>
+                    <div class="material-card">
+                        <div class="material-swatch"
+                            style="background-color: #FFFFFF; background-image: radial-gradient(rgba(0,0,0,0.15) 1px, transparent 0); background-size: 8px 8px;">
+                        </div>
+                        <div class="material-name">Carrara Marble</div>
+                        <div class="material-desc">Polished white Carrara marble slab for customer ordering and prep
+                            counter.</div>
+                    </div>
+                    <div class="material-card">
+                        <div class="material-swatch" style="background-color: #8C7A5B;"></div>
+                        <div class="material-name">Solid Ash Wood</div>
+                        <div class="material-desc">Custom tinted dark ash wood for client dining chairs and lounge
+                            tables.</div>
+                    </div>
+                    <div class="material-card">
+                        <div class="material-swatch" style="background-color: #D1A654;"></div>
+                        <div class="material-name">Brushed Gold</div>
+                        <div class="material-desc">Brushed PVD brass elements for door frames, menus, and hardware.
+                        </div>
+                    </div>
+                    <div class="material-card">
+                        <div class="material-swatch" style="background-color: #071D3A;"></div>
+                        <div class="material-name">Tempered Glass</div>
+                        <div class="material-desc">Low-iron tempered acoustic glass panels for partitions and screens.
+                        </div>
+                    </div>
+                    <div class="material-card">
+                        <div class="material-swatch" style="background-color: #E2DDD5;"></div>
+                        <div class="material-name">Gypsum Board</div>
+                        <div class="material-desc">Matte white moisture-resistant gypsum plasterboard for clean
+                            ceilings.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <div class="footer-left">SECTION 08 — MATERIAL & FINISH PALETTE</div>
+            <div class="footer-page-num">09 / 20</div>
+        </div>
+    </div>
+
+    <!-- PAGE 10: COLOUR & BRAND PALETTE -->
+    <div class="page" id="page-10">
+        <div class="page-frame"></div>
+        <div class="page-header">
+            <div class="header-brand">PLUS33 CAFÉ FRANÇAIS</div>
+            <div class="header-section">SECTION 09 — COLOUR & BRAND PALETTE</div>
+        </div>
+        <div class="page-body">
+            <div class="body-full">
+                <div class="page-subtitle">Color Identity System</div>
+                <h3 class="page-title">Brand Color Palette Values & Contrast Regulations</h3>
+                <div class="gold-divider-line"></div>
+                <table class="standards-table" style="margin-top: 15px;">
+                    <thead>
+                        <tr>
+                            <th>COLOR IDENTITY</th>
+                            <th>HEX CODE</th>
+                            <th>RGB VALUE</th>
+                            <th>CMYK TIER</th>
+                            <th>PRIMARY SPATIAL APPLICATION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong style="color: #071D3A;">Deep Navy (Royal Accent)</strong></td>
+                            <td>#071D3A</td>
+                            <td>RGB (7, 29, 58)</td>
+                            <td>C: 98, M: 84, Y: 46, K: 51</td>
+                            <td>Primary exterior signage, structural pillars, menu boards</td>
+                        </tr>
+                        <tr>
+                            <td><strong style="color: #9C855C;">Premium Gold (Accent)</strong></td>
+                            <td>#B88A4A</td>
+                            <td>RGB (184, 138, 74)</td>
+                            <td>C: 28, M: 43, Y: 80, K: 15</td>
+                            <td>Metal moldings, menu frames, pendant lights, custom hardware</td>
+                        </tr>
+                        <tr>
+                            <td><strong style="color: #E86A2A;">Burnt Orange (Warm Highlight)</strong></td>
+                            <td>#E86A2A</td>
+                            <td>RGB (232, 106, 42)</td>
+                            <td>C: 0, M: 69, Y: 90, K: 0</td>
+                            <td>Secondary brand packaging accents, callout lighting details</td>
+                        </tr>
+                        <tr>
+                            <td><strong style="color: #6E685E;">Natural Oak</strong></td>
+                            <td>#FAF8F5 (Ivory)</td>
+                            <td>RGB (250, 248, 245)</td>
+                            <td>C: 1, M: 1, Y: 2, K: 0</td>
+                            <td>Main wall plaster panels, soft textured backgrounds</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="page-footer">
+            <div class="footer-left">SECTION 09 — COLOUR & BRAND PALETTE</div>
+            <div class="footer-page-num">10 / 20</div>
+        </div>
+    </div>
+
+    <!-- PAGE 11: LIGHTING MASTERPLAN -->
+    <div class="page" id="page-11">
+        <div class="page-frame"></div>
+        <div class="page-header">
+            <div class="header-brand">PLUS33 CAFÉ FRANÇAIS</div>
+            <div class="header-section">SECTION 10 — LIGHTING MASTERPLAN</div>
+        </div>
+        <div class="page-body">
+            <div class="body-left-col">
+                <div class="page-subtitle">Lux Level Mapping</div>
+                <h3 class="page-title">Lighting Hierarchy & Lux Standards</h3>
+                <div class="gold-divider-line"></div>
+                <p class="page-text">
+                    Lighting is critical to defining our premium, luxury atmosphere. We mandate warm-temperature LED
+                    lighting (3000K) to enhance the wood and gold materials.
+                </p>
+                <p class="page-text" style="font-size:0.75rem;">
+                    <strong>Mandatory Light Levels:</strong><br>
+                    - Bar Ordering Counter: 350 - 400 Lux<br>
+                    - Dining Lounge Area: 150 - 200 Lux (Intimate)<br>
+                    - Preparation Station: 500 Lux (Operational)
+                </p>
+            </div>
+            <div class="body-right-col">
+                <svg class="blueprint-svg" viewBox="0 0 500 300">
+                    <rect x="0" y="0" width="500" height="300" fill="#0C1E30" />
+                    <!-- Ceilings blueprint -->
+                    <rect x="30" y="40" width="440" height="220" fill="none" stroke="#FAF8F5" stroke-width="1.5" />
+                    <!-- Spotlights array layout -->
+                    <circle cx="80" cy="80" r="4" fill="#FAF8F5" />
+                    <circle cx="180" cy="80" r="4" fill="#FAF8F5" />
+                    <circle cx="280" cy="80" r="4" fill="#FAF8F5" />
+                    <circle cx="380" cy="80" r="4" fill="#FAF8F5" />
+                    <circle cx="80" cy="180" r="4" fill="#FAF8F5" />
+                    <circle cx="180" cy="180" r="4" fill="#FAF8F5" />
+                    <circle cx="280" cy="180" r="4" fill="#FAF8F5" />
+                    <circle cx="380" cy="180" r="4" fill="#FAF8F5" />
+                    <!-- Pendant fixtures -->
+                    <circle cx="230" cy="130" r="8" fill="none" stroke="#B88A4A" stroke-width="2" />
+                    <circle cx="270" cy="130" r="8" fill="none" stroke="#B88A4A" stroke-width="2" />
+                    <!-- Glow effects schematic -->
+                    <circle cx="230" cy="130" r="16" fill="none" stroke="#B88A4A" stroke-width="0.5"
+                        stroke-dasharray="1 3" />
+                    <text x="250" y="160" font-family="'Outfit'" font-size="8" fill="#B88A4A"
+                        text-anchor="middle">Brushed Brass Pendant Zone</text>
+                </svg>
+            </div>
+        </div>
+        <div class="page-footer">
+            <div class="footer-left">SECTION 10 — LIGHTING MASTERPLAN</div>
+            <div class="footer-page-num">11 / 20</div>
+        </div>
+    </div>
+
+    <!-- PAGE 12: MEP SERVICES -->
+    <div class="page" id="page-12">
+        <div class="page-frame"></div>
+        <div class="page-header">
+            <div class="header-brand">PLUS33 CAFÉ FRANÇAIS</div>
+            <div class="header-section">SECTION 11 — MEP SERVICES SPECIFICATIONS</div>
+        </div>
+        <div class="page-body">
+            <div class="body-full">
+                <div class="page-subtitle">Mechanical, Electrical & Plumbing</div>
+                <h3 class="page-title">Franchise Infrastructure Load & MEP Schedules</h3>
+                <div class="gold-divider-line"></div>
+                <table class="standards-table">
+                    <thead>
+                        <tr>
+                            <th>SERVICE CATEGORY</th>
+                            <th>INFRASTRUCTURE SPECIFICATION REQUIREMENT</th>
+                            <th>MANDATORY MEP SAFETY EQUIPMENT / ATTACHMENT</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Electrical Load</strong></td>
+                            <td>35 kW to 55 kW - 3 Phase, 415V, 50Hz dedicated line</td>
+                            <td>Standard distribution board, RCCB, dedicated line for espresso</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Water Supply</strong></td>
+                            <td>Minimum 1 inch dedicated inlet line, constant 3.0 Bar pressure</td>
+                            <td>Pentair Everpure filtration, inline sediment filter</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Drainage & Waste</strong></td>
+                            <td>Minimum 2.5 inch gravity drain, correct slope orientation (1:50)</td>
+                            <td>Mandatory stainless steel grease-trap interceptor box</td>
+                        </tr>
+                        <tr>
+                            <td><strong>HVAC Fresh Air</strong></td>
+                            <td>Dedicated air duct system producing 4 fresh air changes/hour</td>
+                            <td>Concealed duct split units with custom diffusers</td>
+                        </tr>
+                        <tr>
+                            <td><strong>POS & Data wiring</strong></td>
+                            <td>Minimum CAT-6 shielded ethernet wiring running back to router</td>
+                            <td>Isolated network switch rack cabinet with UPS supply</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="page-footer">
+            <div class="footer-left">SECTION 11 — MEP SERVICES SPECIFICATIONS</div>
+            <div class="footer-page-num">12 / 20</div>
+        </div>
+    </div>
+
+    <!-- PAGE 13: EQUIPMENT LAYOUT -->
+    <div class="page" id="page-13">
+        <div class="page-frame"></div>
+        <div class="page-header">
+            <div class="header-brand">PLUS33 CAFÉ FRANÇAIS</div>
+            <div class="header-section">SECTION 12 — EQUIPMENT SPECIFICATION LAYOUT</div>
+        </div>
+        <div class="page-body">
+            <div class="body-left-col">
+                <div class="page-subtitle">Bar Machinery Positioning</div>
+                <h3 class="page-title">Espresso Machine & Barista Layout Standards</h3>
+                <div class="gold-divider-line"></div>
+                <p class="page-text">
+                    Bar equipment must be set to allow smooth operations. The espresso machine must sit centered on the
+                    front counter in clear view of the customer ordering line.
+                </p>
+                <p class="page-text">
+                    Grinders are positioned directly adjacent to the machine to allow the barista to work with minimal
+                    wrist stress and no body rotation.
+                </p>
+            </div>
+            <div class="body-right-col">
+                <svg class="blueprint-svg" viewBox="0 0 500 300">
+                    <rect x="0" y="0" width="500" height="300" fill="#0C1E30" />
+                    <!-- Bar counter elevation blueprint detail -->
+                    <rect x="40" y="100" width="420" height="140" fill="none" stroke="#FAF8F5" stroke-width="1.5" />
+                    <!-- Counter top slab -->
+                    <rect x="40" y="100" width="420" height="15" fill="none" stroke="#B88A4A" stroke-width="1" />
+                    <text x="250" y="110" font-family="'Outfit'" font-size="7" fill="#B88A4A"
+                        text-anchor="middle">Carrara Marble Counter Slab (40mm thickness)</text>
+                    <!-- Espresso machine (front view) -->
+                    <rect x="180" y="45" width="80" height="55" fill="none" stroke="#FAF8F5" stroke-width="1.5" />
+                    <circle cx="205" cy="85" r="5" fill="none" stroke="#FAF8F5" stroke-width="1" />
+                    <circle cx="235" cy="85" r="5" fill="none" stroke="#FAF8F5" stroke-width="1" />
+                    <text x="220" y="75" font-family="'Outfit'" font-size="8" fill="#FAF8F5" text-anchor="middle">La
+                        Marzocco</text>
+                    <!-- Grinder (front view) -->
+                    <rect x="275" y="35" width="30" height="65" fill="none" stroke="#FAF8F5" stroke-width="1" />
+                    <text x="290" y="70" font-family="'Outfit'" font-size="6" fill="#FAF8F5"
+                        text-anchor="middle">Mahlkonig</text>
+                </svg>
+            </div>
+        </div>
+        <div class="page-footer">
+            <div class="footer-left">SECTION 12 — EQUIPMENT SPECIFICATION LAYOUT</div>
+            <div class="footer-page-num">13 / 20</div>
+        </div>
+    </div>
+
+    <!-- PAGE 14: FURNITURE STANDARDS -->
+    <div class="page" id="page-14">
+        <div class="page-frame"></div>
+        <div class="page-header">
+            <div class="header-brand">PLUS33 CAFÉ FRANÇAIS</div>
+            <div class="header-section">SECTION 13 — FURNITURE STANDARDS</div>
+        </div>
+        <div class="page-body">
+            <div class="body-left-col">
+                <div class="page-subtitle">Premium Ergonomics</div>
+                <h3 class="page-title">Café Chairs & Seating Dimensions</h3>
+                <div class="gold-divider-line"></div>
+                <p class="page-text">
+                    All seating furniture must use natural solid wood frame structures. Cushion fabrics must be
+                    fire-retardant and pass high Martindale rub tests (min 50,000 cycles).
+                </p>
+                <p class="page-text" style="font-size:0.75rem;">
+                    <strong>Mandatory Chair Heights:</strong><br>
+                    - Seat Heights: 450 mm from floor level.<br>
+                    - Dining Table Height: 750 mm from floor level.<br>
+                    - Bar Stool Seat Height: 750 mm (Counter at 1050 mm).
+                </p>
+            </div>
+            <div class="body-right-col">
+                <svg class="blueprint-svg" viewBox="0 0 500 300">
+                    <rect x="0" y="0" width="500" height="300" fill="#0F1E36" />
+                    <!-- Chair front and side layout line drawings -->
+                    <!-- Table side view -->
+                    <line x1="80" y1="220" x2="220" y2="220" stroke="#FAF8F5" stroke-width="3" />
+                    <line x1="150" y1="220" x2="150" y2="280" stroke="#FAF8F5" stroke-width="2" />
+                    <line x1="100" y1="280" x2="200" y2="280" stroke="#FAF8F5" stroke-width="2" />
+                    <text x="150" y="240" font-family="'Outfit'" font-size="8" fill="#FAF8F5"
+                        text-anchor="middle">Dining Table (750mm H)</text>
+                    <!-- Chair side view -->
+                    <rect x="250" y="160" width="45" height="45" fill="none" stroke="#B88A4A" stroke-width="1.5" />
+                    <line x1="250" y1="160" x2="250" y2="280" stroke="#B88A4A" stroke-width="1.5" />
+                    <line x1="295" y1="205" x2="295" y2="280" stroke="#B88A4A" stroke-width="1.5" />
+                    <line x1="250" y1="205" x2="295" y2="205" stroke="#B88A4A" stroke-width="2" />
+                    <text x="272" y="225" font-family="'Outfit'" font-size="8" fill="#B88A4A" text-anchor="middle">Café
+                        Chair</text>
+                </svg>
+            </div>
+        </div>
+        <div class="page-footer">
+            <div class="footer-left">SECTION 13 — FURNITURE STANDARDS</div>
+            <div class="footer-page-num">14 / 20</div>
+        </div>
+    </div>
+
+    <!-- PAGE 15: BRANDING GUIDELINES -->
+    <div class="page" id="page-15">
+        <div class="page-frame"></div>
+        <div class="page-header">
+            <div class="header-brand">PLUS33 CAFÉ FRANÇAIS</div>
+            <div class="header-section">SECTION 14 — BRANDING & SIGNAGE</div>
+        </div>
+        <div class="page-body">
+            <div class="body-left-col">
+                <div class="page-subtitle">Visual Brand Identity</div>
+                <h3 class="page-title">Signage Scale & Installation Parameters</h3>
+                <div class="gold-divider-line"></div>
+                <p class="page-text">
+                    External logo signage must use 3D PVD brass lettering with halo LED backlighting. The signature logo
+                    crest must match the color code #B88A4A.
+                </p>
+                <p class="page-text">
+                    Digital menu boards must be mounted vertically, framed in matching matte black casings, with cables
+                    completely hidden from view.
+                </p>
+            </div>
+            <div class="body-right-col">
+                <svg class="blueprint-svg" viewBox="0 0 500 300">
+                    <rect x="0" y="0" width="500" height="300" fill="#0C1E30" />
+                    <!-- Lettering spacing details -->
+                    <rect x="40" y="80" width="420" height="140" fill="none" stroke="#FAF8F5" stroke-width="0.5"
+                        stroke-dasharray="2 2" />
+                    <!-- Branding logo wire outline -->
+                    <text x="250" y="150" font-family="'Cinzel'" font-weight="700" font-size="34" fill="#B88A4A"
+                        text-anchor="middle" letter-spacing="4">PLUS33</text>
+                    <text x="250" y="180" font-family="'Outfit'" font-size="10" fill="#FAF8F5" text-anchor="middle"
+                        letter-spacing="8">CAFÉ FRANÇAIS</text>
+                    <!-- Safe zone margins -->
+                    <line x1="40" y1="80" x2="40" y2="220" stroke="#FAF8F5" stroke-width="0.75" />
+                    <line x1="460" y1="80" x2="460" y2="220" stroke="#FAF8F5" stroke-width="0.75" />
+                    <text x="250" y="210" font-family="'Outfit'" font-size="8" fill="#B88A4A"
+                        text-anchor="middle">MANDATORY SAFE MARGIN AREA LIMIT</text>
+                </svg>
+            </div>
+        </div>
+        <div class="page-footer">
+            <div class="footer-left">SECTION 14 — BRANDING & SIGNAGE</div>
+            <div class="footer-page-num">15 / 20</div>
+        </div>
+    </div>
+
+    <!-- PAGE 16: FIT-OUT EXECUTION PROCESS -->
+    <div class="page" id="page-16">
+        <div class="page-frame"></div>
+        <div class="page-header">
+            <div class="header-brand">PLUS33 CAFÉ FRANÇAIS</div>
+            <div class="header-section">SECTION 15 — FIT-OUT EXECUTION TIMELINE</div>
+        </div>
+        <div class="page-body">
+            <div class="body-full">
+                <div class="page-subtitle">Project Management Lifecycle</div>
+                <h3 class="page-title">Franchise Fit-Out Construction Stages</h3>
+                <div class="gold-divider-line"></div>
+                <div class="timeline-container" style="margin-top: 15px;">
+                    <div class="timeline-row">
+                        <div class="timeline-step-num">01</div>
+                        <div class="timeline-step-title">Site Handover & MEP Survey</div>
+                        <div class="timeline-step-bar-wrap">
+                            <div class="timeline-step-bar" style="width: 15%;"></div>
+                        </div>
+                        <div class="timeline-step-title"
+                            style="text-align: right; font-weight: normal; font-size: 0.7rem; color: #5B6470;">Day 1 -
+                            Day 3</div>
+                    </div>
+                    <div class="timeline-row">
+                        <div class="timeline-step-num">02</div>
+                        <div class="timeline-step-title">Civil, Partition & Slabs Work</div>
+                        <div class="timeline-step-bar-wrap">
+                            <div class="timeline-step-bar" style="width: 35%;"></div>
+                        </div>
+                        <div class="timeline-step-title"
+                            style="text-align: right; font-weight: normal; font-size: 0.7rem; color: #5B6470;">Day 4 -
+                            Day 12</div>
+                    </div>
+                    <div class="timeline-row">
+                        <div class="timeline-step-num">03</div>
+                        <div class="timeline-step-title">MEP First Fix & Cabling</div>
+                        <div class="timeline-step-bar-wrap">
+                            <div class="timeline-step-bar" style="width: 55%;"></div>
+                        </div>
+                        <div class="timeline-step-title"
+                            style="text-align: right; font-weight: normal; font-size: 0.7rem; color: #5B6470;">Day 13 -
+                            Day 22</div>
+                    </div>
+                    <div class="timeline-row">
+                        <div class="timeline-step-num">04</div>
+                        <div class="timeline-step-title">Slats, Plaster & Joinery fit-out</div>
+                        <div class="timeline-step-bar-wrap">
+                            <div class="timeline-step-bar" style="width: 75%;"></div>
+                        </div>
+                        <div class="timeline-step-title"
+                            style="text-align: right; font-weight: normal; font-size: 0.7rem; color: #5B6470;">Day 23 -
+                            Day 35</div>
+                    </div>
+                    <div class="timeline-row">
+                        <div class="timeline-step-num">05</div>
+                        <div class="timeline-step-title">Equipment Setup & QC Audit</div>
+                        <div class="timeline-step-bar-wrap">
+                            <div class="timeline-step-bar" style="width: 100%;"></div>
+                        </div>
+                        <div class="timeline-step-title"
+                            style="text-align: right; font-weight: normal; font-size: 0.7rem; color: #5B6470;">Day 36 -
+                            Day 45</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <div class="footer-left">SECTION 15 — FIT-OUT EXECUTION TIMELINE</div>
+            <div class="footer-page-num">16 / 20</div>
+        </div>
+    </div>
+
+    <!-- PAGE 17: QUALITY CONTROL CHECKLIST -->
+    <div class="page" id="page-17">
+        <div class="page-frame"></div>
+        <div class="page-header">
+            <div class="header-brand">PLUS33 CAFÉ FRANÇAIS</div>
+            <div class="header-section">SECTION 16 — QUALITY CONTROL AUDIT</div>
+        </div>
+        <div class="page-body">
+            <div class="body-full">
+                <div class="page-subtitle">Contractor Inspection Sheet</div>
+                <h3 class="page-title">Technical Handover Quality Control Form</h3>
+                <div class="gold-divider-line"></div>
+                <table class="standards-table" style="margin-top: 15px;">
+                    <thead>
+                        <tr>
+                            <th>AUDIT CATEGORY</th>
+                            <th>MANDATORY STANDARDS CHECKLIST ITEMS</th>
+                            <th>TOLERANCE SPEC</th>
+                            <th>QC PASS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Civil & Wall Finishes</strong></td>
+                            <td>Stucco plaster texture must be uniform with zero hairline cracks.</td>
+                            <td>+/- 2 mm flatness</td>
+                            <td>[ ] Verified</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Counter Marble Slab</strong></td>
+                            <td>Joints must be completely filled with matching epoxy and polished smooth.</td>
+                            <td>Hairline joint only</td>
+                            <td>[ ] Verified</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Electrical Safety</strong></td>
+                            <td>Earthing test done, dedicated RCCB trip checked for espresso machine.</td>
+                            <td>0 mA earth leakage</td>
+                            <td>[ ] Verified</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Water Flow Drainage</strong></td>
+                            <td>Sink drain slope must show zero standing water after 15 min continuous flow.</td>
+                            <td>1:50 minimum slope</td>
+                            <td>[ ] Verified</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Lighting Levels</strong></td>
+                            <td>Lux levels measured at customer counter under full ambient illumination.</td>
+                            <td>350 Lux minimum</td>
+                            <td>[ ] Verified</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="page-footer">
+            <div class="footer-left">SECTION 16 — QUALITY CONTROL AUDIT</div>
+            <div class="footer-page-num">17 / 20</div>
+        </div>
+    </div>
+
+    <!-- PAGE 18: STORE OPENING READINESS -->
+    <div class="page" id="page-18">
+        <div class="page-frame"></div>
+        <div class="page-header">
+            <div class="header-brand">PLUS33 CAFÉ FRANÇAIS</div>
+            <div class="header-section">SECTION 17 — STORE OPENING READINESS</div>
+        </div>
+        <div class="page-body">
+            <div class="body-full">
+                <div class="page-subtitle">Pre-Opening Checklist</div>
+                <h3 class="page-title">Operations & Safety Launch Sheet</h3>
+                <div class="gold-divider-line"></div>
+                <table class="standards-table" style="margin-top: 15px;">
+                    <thead>
+                        <tr>
+                            <th>LAUNCH CHECKLIST CATEGORY</th>
+                            <th>REQUIRED COMPLETION STANDARD ACTION</th>
+                            <th>ASSIGNED ROLE</th>
+                            <th>READY</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>POS & Payment gateway</strong></td>
+                            <td>Active transaction test done with local credit cards, receipts printed.</td>
+                            <td>Store Manager</td>
+                            <td>[ ] Ready</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Water filtration</strong></td>
+                            <td>Water TDS level test done and verified between 75ppm to 150ppm.</td>
+                            <td>Head Barista</td>
+                            <td>[ ] Ready</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Emergency safety</strong></td>
+                            <td>Fire extinguishers mounted, exits clear, first-aid box stocked.</td>
+                            <td>QC Inspector</td>
+                            <td>[ ] Ready</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Staff uniform</strong></td>
+                            <td>Barista caps and luxury aprons issued to all scheduled team members.</td>
+                            <td>Operations Head</td>
+                            <td>[ ] Ready</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Opening stock</strong></td>
+                            <td>French coffee beans, milk, bakery dough, cups, and dry items loaded.</td>
+                            <td>Inventory Lead</td>
+                            <td>[ ] Ready</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="page-footer">
+            <div class="footer-left">SECTION 17 — STORE OPENING READINESS</div>
+            <div class="footer-page-num">18 / 20</div>
+        </div>
+    </div>
+
+    <!-- PAGE 19: TECHNICAL SCHEDULES -->
+    <div class="page" id="page-19">
+        <div class="page-frame"></div>
+        <div class="page-header">
+            <div class="header-brand">PLUS33 CAFÉ FRANÇAIS</div>
+            <div class="header-section">SECTION 18 — TECHNICAL SCHEDULES</div>
+        </div>
+        <div class="page-body">
+            <div class="body-full">
+                <div class="page-subtitle">Equipment & MEP Schedules</div>
+                <h3 class="page-title">Infrastructure Load & Sizing Details</h3>
+                <div class="gold-divider-line"></div>
+                <table class="standards-table" style="margin-top: 15px;">
+                    <thead>
+                        <tr>
+                            <th>EQUIPMENT SPECIFICATION</th>
+                            <th>DIMENSIONS (W x D x H)</th>
+                            <th>POWER RATING</th>
+                            <th>PLUMBING REQUIREMENT</th>
+                            <th>MIN SERVICE CLEARANCE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>La Marzocco KB90 (3 Group)</strong></td>
+                            <td>1050 x 620 x 450 mm</td>
+                            <td>8.5 kW - 3 Phase</td>
+                            <td>3/8 in inlet cold, 3/4 in drain</td>
+                            <td>150 mm rear, 100 mm top</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mahlkonig E80 Supreme</strong></td>
+                            <td>240 x 340 x 630 mm</td>
+                            <td>0.6 kW - Single Phase</td>
+                            <td>No utility supply required</td>
+                            <td>50 mm sides, 100 mm top</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Foster Under-counter Fridge</strong></td>
+                            <td>1200 x 700 x 850 mm</td>
+                            <td>0.8 kW - Single Phase</td>
+                            <td>No utility supply required</td>
+                            <td>100 mm rear (ventilation)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Commercial Dishwasher</strong></td>
+                            <td>600 x 600 x 820 mm</td>
+                            <td>6.5 kW - Single Phase</td>
+                            <td>3/4 in hot inlet, 1.5 in drain</td>
+                            <td>50 mm rear, 50 mm sides</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="page-footer">
+            <div class="footer-left">SECTION 18 — TECHNICAL SCHEDULES</div>
+            <div class="footer-page-num">19 / 20</div>
+        </div>
+    </div>
+
+    <!-- PAGE 20: APPROVAL & HANDOVER -->
+    <div class="page" id="page-20">
+        <div class="page-frame"></div>
+        <div class="page-header">
+            <div class="header-brand">PLUS33 CAFÉ FRANÇAIS</div>
+            <div class="header-section">SECTION 20 — APPROVAL & HANDOVER</div>
+        </div>
+        <div class="page-body"
+            style="flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+            <div class="page-subtitle">Official Sign-Off</div>
+            <h3 class="page-title">Franchise Handover Certificate</h3>
+            <div class="gold-divider-line" style="margin: 15px auto;"></div>
+            <p class="page-text" style="max-width: 600px; margin-bottom: 30px;">
+                This document certifies that the store layout, MEP hookups, color specifications, and equipment
+                positions conform to the official standards of PLUS33 Café Français.
+            </p>
+            <div
+                style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; width: 100%; max-width: 700px; margin-top: 20px;">
+                <div style="border-top: 1px solid #0D2235; padding-top: 8px;">
+                    <div style="font-size: 0.65rem; font-weight: 700; text-transform: uppercase;">Lead Architect</div>
+                    <div style="font-size: 0.55rem; color: #5B6470; margin-top: 2px;">PLUS33 Franchise Design Team</div>
+                </div>
+                <div style="border-top: 1px solid #0D2235; padding-top: 8px;">
+                    <div style="font-size: 0.65rem; font-weight: 700; text-transform: uppercase;">MEP Consultant</div>
+                    <div style="font-size: 0.55rem; color: #5B6470; margin-top: 2px;">Licensed Engineering Inspector
+                    </div>
+                </div>
+                <div style="border-top: 1px solid #0D2235; padding-top: 8px;">
+                    <div style="font-size: 0.65rem; font-weight: 700; text-transform: uppercase;">Franchise Partner
+                    </div>
+                    <div style="font-size: 0.55rem; color: #5B6470; margin-top: 2px;">Authorized Representative Sign-off
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <div class="footer-left">SECTION 20 — APPROVAL & HANDOVER CERTIFICATE</div>
+            <div class="footer-page-num">20 / 20</div>
+        </div>
+    </div>
+
+</body>
+
+</html>

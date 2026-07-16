@@ -1,0 +1,2629 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Franchise Application | PLUS33 Café Français</title>
+    <meta name="description"
+        content="Take the first step toward luxury cafe ownership. Submit your franchise interest application for PLUS33 Café Français.">
+
+    <!-- Google Fonts Imports -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700&family=Montserrat:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* ==========================================================================
+           PLUS33 FRANCHISE APPLICATION STYLE SYSTEM
+           Aesthetics: Ultra-premium luxury (Louis Vuitton, Porsche, Rolls Royce level)
+           ========================================================================== */
+
+        :root {
+            /* Color Palette */
+            --bg-primary: #071421;
+            --bg-secondary: #0B1D2C;
+            --gold-premium: #D4AF37;
+            --gold-light: #E7C86A;
+            --warm-white: #F9F7F2;
+            --soft-cream: #F5F0E6;
+            --border-gold: rgba(212, 175, 55, 0.35);
+            --card-border: rgba(231, 200, 106, 0.18);
+
+            /* Fonts */
+            --font-serif: 'Cormorant Garamond', serif;
+            --font-handwritten: 'Allura', cursive;
+            --font-sans: 'Inter', sans-serif;
+            --font-label: 'Manrope', sans-serif;
+            --font-btn: 'Montserrat', sans-serif;
+        }
+
+        /* Basic Resets */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #030a10;
+            font-family: var(--font-sans);
+            color: var(--warm-white);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            overflow-x: hidden;
+        }
+
+        /* --------------------------------------------------------------------------
+           Phase 01 — Overall Page Structure (Desktop Only / Scaled)
+           -------------------------------------------------------------------------- */
+        .page-container {
+            width: 100%;
+            max-width: 1600px;
+            min-height: 100vh;
+            background-color: var(--bg-primary);
+            border-radius: 30px;
+            overflow: hidden;
+            position: relative;
+            padding: 48px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8),
+                inset 0 1px 0 rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            z-index: 1;
+        }
+
+        /* --------------------------------------------------------------------------
+           Phase 03 — Background Design (Layered, Cinematic & Ambient)
+           -------------------------------------------------------------------------- */
+        .page-container::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            /* Layered dark navy gradient, radial gold glow, and vignette */
+            background:
+                radial-gradient(circle at 10% 10%, rgba(212, 175, 55, 0.07) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(231, 200, 106, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, transparent 30%, rgba(3, 10, 16, 0.6) 100%),
+                linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            z-index: -3;
+        }
+
+        /* Coffee-colored ambient lighting top-left & bottom-right */
+        .ambient-glow-left {
+            position: absolute;
+            top: -10%;
+            left: -10%;
+            width: 50%;
+            height: 50%;
+            background: radial-gradient(circle, rgba(184, 138, 74, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: -2;
+            filter: blur(40px);
+        }
+
+        .ambient-glow-right {
+            position: absolute;
+            bottom: 0%;
+            right: 10%;
+            width: 40%;
+            height: 40%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 75%);
+            pointer-events: none;
+            z-index: -2;
+            filter: blur(50px);
+        }
+
+        /* Grain Texture Overlay */
+        .grain-overlay {
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
+            opacity: 0.85;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Botanical Leaf Watermark Overlays */
+        .leaf-watermark-1 {
+            position: absolute;
+            top: 2%;
+            right: 18%;
+            width: 320px;
+            height: 320px;
+            opacity: 0.035;
+            transform: rotate(-15deg);
+            pointer-events: none;
+            z-index: -2;
+        }
+
+        .leaf-watermark-2 {
+            position: absolute;
+            bottom: 5%;
+            left: 2%;
+            width: 400px;
+            height: 400px;
+            opacity: 0.025;
+            transform: rotate(45deg) scaleX(-1);
+            pointer-events: none;
+            z-index: -2;
+        }
+
+        /* --------------------------------------------------------------------------
+           Phase 05 — Hero Decorative Curved Stroke
+           -------------------------------------------------------------------------- */
+        .hero-curved-stroke {
+            position: absolute;
+            top: -20px;
+            left: 5%;
+            width: 90%;
+            height: 250px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* --------------------------------------------------------------------------
+           Phase 04 — Top Hero Section
+           -------------------------------------------------------------------------- */
+        .hero-section {
+            display: grid;
+            grid-template-columns: 35% 45% 20%;
+            align-items: center;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Hero Left: Product Image */
+        .hero-left {
+            position: relative;
+            padding-right: 20px;
+        }
+
+        .product-image-card {
+            width: 100%;
+            height: 230px;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            /* Overlaps the form slightly */
+            margin-bottom: -32px;
+            z-index: 10;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6),
+                inset 0 1px 1px rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            background-color: #0b141c;
+            animation: floatHeroImage 6s ease-in-out infinite;
+        }
+
+        .product-image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: contrast(1.05) brightness(0.9);
+            transition: transform 1.2s ease;
+        }
+
+        .product-image-card:hover img {
+            transform: scale(1.04);
+        }
+
+        /* Soft warm lighting on the coffee card */
+        .product-image-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 20% 20%, rgba(231, 200, 106, 0.15) 0%, transparent 60%),
+                linear-gradient(to top, rgba(7, 20, 33, 0.4) 0%, transparent 100%);
+            pointer-events: none;
+        }
+
+        /* Hero Center: Headings & Typography */
+        .hero-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0 30px;
+            position: relative;
+        }
+
+        .eyebrow-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 8px;
+        }
+
+        .eyebrow-line {
+            width: 40px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-gold));
+        }
+
+        .eyebrow-line.right {
+            background: linear-gradient(-90deg, transparent, var(--border-gold));
+        }
+
+        .hero-eyebrow {
+            font-family: var(--font-sans);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            color: var(--gold-premium);
+            text-transform: uppercase;
+        }
+
+        .hero-star {
+            color: var(--gold-premium);
+            font-size: 0.65rem;
+            margin-bottom: 12px;
+            text-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+        }
+
+        .hero-title-main {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            font-weight: 400;
+            line-height: 1.15;
+            color: var(--warm-white);
+            margin-bottom: 4px;
+            letter-spacing: -0.01em;
+        }
+
+        .hero-title-script {
+            font-family: var(--font-handwritten);
+            font-size: 2.2rem;
+            color: var(--gold-light);
+            margin-bottom: 14px;
+            text-shadow: 0 0 15px rgba(231, 200, 106, 0.15);
+        }
+
+        .hero-desc {
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: rgba(249, 247, 242, 0.7);
+            max-width: 550px;
+        }
+
+        /* Hero Right: Corporate Brand Floating Logo */
+        .hero-right {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .brand-logo-glow {
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, transparent 60%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1;
+            animation: pulseGlow 4s ease-in-out infinite;
+        }
+
+        .brand-logo-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .brand-logo-img {
+            height: 60px;
+            width: auto;
+            margin-bottom: 4px;
+            filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4));
+        }
+
+        .brand-typo-img {
+            height: 18px;
+            width: auto;
+            margin-bottom: 4px;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+
+        .brand-logo-tagline {
+            font-family: var(--font-sans);
+            font-size: 0.58rem;
+            font-weight: 700;
+            letter-spacing: 0.3em;
+            color: rgba(249, 247, 242, 0.45);
+            text-transform: uppercase;
+        }
+
+        /* --------------------------------------------------------------------------
+           Phase 06 — Main Form Layout (2-Column Grid)
+           -------------------------------------------------------------------------- */
+        .form-container-grid {
+            display: grid;
+            grid-template-columns: 72% 28%;
+            gap: 30px;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* --------------------------------------------------------------------------
+           Phase 07 — Main Form Card (Floating Glass Card)
+           -------------------------------------------------------------------------- */
+        .form-left-card {
+            background: rgba(8, 20, 32, 0.92);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border-radius: 24px;
+            border: 1px solid var(--border-gold);
+            padding: 40px;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.08);
+            position: relative;
+        }
+
+        /* --------------------------------------------------------------------------
+           Phase 08 — Form Sections (Inner Columns & Headings)
+           -------------------------------------------------------------------------- */
+        .form-three-col-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-bottom: 40px;
+        }
+
+        .form-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Premium Section Heading with Circular Icon */
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+            padding-bottom: 12px;
+            margin-bottom: 8px;
+        }
+
+        .section-icon-wrapper {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1px solid var(--gold-premium);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(212, 175, 55, 0.06);
+            color: var(--gold-light);
+            flex-shrink: 0;
+            box-shadow: 0 0 8px rgba(212, 175, 55, 0.2);
+        }
+
+        .section-icon-wrapper svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .section-heading-text {
+            font-family: var(--font-label);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            color: var(--warm-white);
+            text-transform: uppercase;
+        }
+
+        .section-heading-text span {
+            color: var(--gold-light);
+            margin-right: 6px;
+        }
+
+        /* --------------------------------------------------------------------------
+           Phase 09 — Form Fields & Controls
+           -------------------------------------------------------------------------- */
+        .field-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .field-row-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .field-label {
+            font-family: var(--font-label);
+            font-size: 0.74rem;
+            font-weight: 600;
+            color: rgba(249, 247, 242, 0.8);
+            letter-spacing: 0.02em;
+        }
+
+        /* Phone Input Wrapper for Country Dropdown Alignment */
+        .phone-input-wrapper {
+            display: grid;
+            grid-template-columns: 85px 1fr;
+            gap: 8px;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            height: 56px;
+            border-radius: 12px;
+            background-color: rgba(255, 255, 255, 0.035);
+            border: 1px solid rgba(212, 175, 55, 0.16);
+            padding: 0 16px;
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            color: var(--warm-white);
+            outline: none;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            width: 100%;
+        }
+
+        .form-textarea {
+            height: 110px;
+            padding: 14px 16px;
+            resize: none;
+        }
+
+        /* Hover state */
+        .form-input:hover,
+        .form-select:hover,
+        .form-textarea:hover {
+            border-color: rgba(212, 175, 55, 0.45);
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Focus state */
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            border-color: var(--gold-premium);
+            background-color: rgba(255, 255, 255, 0.06);
+            box-shadow: 0 0 12px rgba(212, 175, 55, 0.25);
+        }
+
+        /* Select custom arrows */
+        .form-select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E7C86A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            background-size: 16px;
+            padding-right: 40px;
+        }
+
+        .form-select option {
+            background-color: var(--bg-secondary);
+            color: var(--warm-white);
+        }
+
+        /* Radio Toggle Styles */
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            height: 56px;
+            align-items: center;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            color: var(--warm-white);
+        }
+
+        .radio-option input[type="radio"] {
+            display: none;
+        }
+
+        .radio-circle {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 1px solid var(--border-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .radio-circle::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--gold-premium);
+            opacity: 0;
+            transform: scale(0.6);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .radio-option input[type="radio"]:checked+.radio-circle {
+            border-color: var(--gold-premium);
+            box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+        }
+
+        .radio-option input[type="radio"]:checked+.radio-circle::after {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Bottom Row: Investment Overview (Full Width) */
+        .form-bottom-row {
+            border-top: 1px solid rgba(212, 175, 55, 0.12);
+            padding-top: 32px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        /* --------------------------------------------------------------------------
+           Phase 10 — Right Information Card
+           -------------------------------------------------------------------------- */
+        .form-right-card {
+            background-color: var(--bg-secondary);
+            border-radius: 24px;
+            border: 1px solid var(--card-border);
+            padding: 32px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        /* Information Section Styles */
+        .info-section {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .info-section:not(:last-child) {
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+            padding-bottom: 30px;
+        }
+
+        .info-section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .info-icon-wrapper {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(212, 175, 55, 0.06);
+            color: var(--gold-light);
+            flex-shrink: 0;
+        }
+
+        .info-icon-wrapper svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .info-section-title {
+            font-family: var(--font-label);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            color: var(--warm-white);
+            text-transform: uppercase;
+        }
+
+        /* Checklist bullet design */
+        .info-checklist {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .info-checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-family: var(--font-sans);
+            font-size: 0.8rem;
+            color: rgba(249, 247, 242, 0.75);
+            line-height: 1.4;
+        }
+
+        .checkmark-icon {
+            color: var(--gold-premium);
+            margin-top: 2px;
+            flex-shrink: 0;
+            width: 12px;
+            height: 12px;
+        }
+
+        .info-desc {
+            font-family: var(--font-sans);
+            font-size: 0.8rem;
+            color: rgba(249, 247, 242, 0.65);
+            line-height: 1.5;
+        }
+
+        /* Help Info Items */
+        .help-items-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .help-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--warm-white);
+            text-decoration: none;
+            font-family: var(--font-sans);
+            font-size: 0.8rem;
+            transition: color 0.3s ease;
+        }
+
+        .help-item:hover {
+            color: var(--gold-light);
+        }
+
+        .help-icon {
+            color: var(--gold-premium);
+            width: 14px;
+            height: 14px;
+        }
+
+        /* Rectangular block image placed below the contact details */
+        .info-bottom-image-block {
+            margin-left: -32px;
+            margin-right: -32px;
+            margin-bottom: -32px;
+            margin-top: 32px;
+            flex-grow: 1;
+            min-height: 320px;
+            overflow: hidden;
+            border-top: 1.5px solid rgba(212, 175, 55, 0.25);
+            box-shadow: inset 0 10px 20px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .info-bottom-image-block img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.8) contrast(1.05);
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            display: block;
+        }
+
+        .form-right-card:hover .info-bottom-image-block img {
+            transform: scale(1.05);
+        }
+
+        /* --------------------------------------------------------------------------
+           Terms Checkbox & Submit Section
+           -------------------------------------------------------------------------- */
+        .form-submit-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+            margin-top: 36px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Terms Checkbox */
+        .terms-checkbox-label {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            cursor: pointer;
+            max-width: 600px;
+            user-select: none;
+        }
+
+        .terms-checkbox-label input[type="checkbox"] {
+            display: none;
+        }
+
+        .terms-checkbox-box {
+            width: 18px;
+            height: 18px;
+            border-radius: 4px;
+            border: 1px solid var(--border-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.02);
+            flex-shrink: 0;
+            margin-top: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .terms-checkbox-box::after {
+            content: '';
+            width: 9px;
+            height: 5px;
+            border-left: 2px solid var(--bg-primary);
+            border-bottom: 2px solid var(--bg-primary);
+            transform: rotate(-45deg) scale(0.6);
+            opacity: 0;
+            transition: all 0.2s ease;
+        }
+
+        .terms-checkbox-label input[type="checkbox"]:checked+.terms-checkbox-box {
+            background-color: var(--gold-premium);
+            border-color: var(--gold-premium);
+            box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+        }
+
+        .terms-checkbox-label input[type="checkbox"]:checked+.terms-checkbox-box::after {
+            opacity: 1;
+            transform: rotate(-45deg) scale(1);
+        }
+
+        .terms-text {
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            color: rgba(249, 247, 242, 0.6);
+            line-height: 1.5;
+        }
+
+        .terms-text a {
+            color: var(--gold-light);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(231, 200, 106, 0.3);
+            transition: border-color 0.3s ease;
+        }
+
+        .terms-text a:hover {
+            border-color: var(--gold-light);
+        }
+
+        /* --------------------------------------------------------------------------
+           Phase 11 — CTA Submit Button
+           -------------------------------------------------------------------------- */
+        .cta-submit-btn {
+            width: 420px;
+            height: 64px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #C89B3C 0%, #D8B867 50%, #B9872F 100%);
+            border: none;
+            color: var(--bg-primary);
+            font-family: var(--font-btn);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            cursor: pointer;
+            box-shadow: 0 15px 30px rgba(185, 135, 47, 0.25),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .cta-submit-btn svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Shimmer Effect overlay */
+        .cta-submit-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: skewX(-25deg);
+            transition: 0.75s;
+        }
+
+        /* Hover States */
+        .cta-submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(185, 135, 47, 0.4),
+                0 0 20px rgba(231, 200, 106, 0.35);
+            background: linear-gradient(135deg, #d8ab48 0%, #ecd382 50%, #cca03c 100%);
+        }
+
+        .cta-submit-btn:hover::after {
+            left: 150%;
+            transition: all 0.75s ease-in-out;
+        }
+
+        .cta-submit-btn:hover svg {
+            transform: translateX(4px) translateY(-2px) scale(1.1);
+        }
+
+        /* Active click */
+        .cta-submit-btn:active {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 20px rgba(185, 135, 47, 0.3);
+        }
+
+        /* --------------------------------------------------------------------------
+           Phase 12 — Bottom Statistics Bar
+           -------------------------------------------------------------------------- */
+        .stats-bar {
+            height: 110px;
+            background-color: rgba(11, 29, 44, 0.5);
+            border-radius: 16px;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            align-items: center;
+            padding: 0 16px;
+            margin-bottom: 36px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 2;
+        }
+
+        .stats-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            height: 60px;
+        }
+
+        .stats-card:not(:last-child) {
+            border-right: 1px solid rgba(212, 175, 55, 0.12);
+        }
+
+        .stats-icon-wrap {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1.5px solid var(--gold-premium);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold-light);
+            background: rgba(212, 175, 55, 0.05);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+            flex-shrink: 0;
+        }
+
+        .stats-icon-wrap svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .stats-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stats-number {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gold-light);
+            line-height: 1.1;
+        }
+
+        .stats-lbl {
+            font-family: var(--font-sans);
+            font-size: 0.72rem;
+            color: rgba(249, 247, 242, 0.55);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        /* --------------------------------------------------------------------------
+           Phase 13 — Bottom Branding (Footer)
+           -------------------------------------------------------------------------- */
+        .bottom-branding {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding-top: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-logo-img {
+            height: 22px;
+            width: auto;
+            opacity: 0.65;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-logo-img:hover {
+            opacity: 0.9;
+        }
+
+        .footer-middle-slogan {
+            font-family: var(--font-serif);
+            font-size: 0.88rem;
+            letter-spacing: 0.02em;
+            color: rgba(249, 247, 242, 0.5);
+            text-align: center;
+        }
+
+        /* Circular Brewing Together Seal badge */
+        .seal-badge-container {
+            width: 60px;
+            height: 60px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .seal-circle-svg {
+            width: 100%;
+            height: 100%;
+            animation: rotateSeal 20s linear infinite;
+        }
+
+        .seal-star {
+            position: absolute;
+            color: var(--gold-premium);
+            font-size: 0.8rem;
+            text-shadow: 0 0 6px rgba(212, 175, 55, 0.4);
+        }
+
+        /* --------------------------------------------------------------------------
+           Animations & Visual Effects
+           -------------------------------------------------------------------------- */
+        @keyframes floatHeroImage {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-6px);
+            }
+        }
+
+        @keyframes pulseGlow {
+
+            0%,
+            100% {
+                opacity: 0.8;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.08);
+            }
+        }
+
+        @keyframes rotateSeal {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Back to landing page button link top-left */
+        .back-nav-link {
+            position: absolute;
+            top: 24px;
+            left: 48px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(249, 247, 242, 0.6);
+            text-decoration: none;
+            font-family: var(--font-btn);
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            z-index: 100;
+            transition: color 0.3s ease;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            padding: 8px 16px;
+            border-radius: 30px;
+        }
+
+        .back-nav-link svg {
+            width: 12px;
+            height: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .back-nav-link:hover {
+            color: var(--gold-light);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--gold-premium);
+        }
+
+        .back-nav-link:hover svg {
+            transform: translateX(-3px);
+        }
+
+        /* Interactive Success Modal overlay */
+        .modal-success-overlay {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(3, 10, 16, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .modal-success-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-success-card {
+            background-color: var(--bg-secondary);
+            border-radius: 24px;
+            border: 1px solid var(--border-gold);
+            padding: 48px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+            transform: scale(0.9);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .modal-success-overlay.active .modal-success-card {
+            transform: scale(1);
+        }
+
+        .success-seal {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 2px solid var(--gold-premium);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(212, 175, 55, 0.08);
+            margin: 0 auto 24px auto;
+            color: var(--gold-light);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .success-title {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            color: var(--warm-white);
+            margin-bottom: 12px;
+        }
+
+        .success-desc {
+            font-family: var(--font-sans);
+            font-size: 0.88rem;
+            line-height: 1.6;
+            color: rgba(249, 247, 242, 0.7);
+            margin-bottom: 30px;
+        }
+
+        .success-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            padding: 0 32px;
+            background: linear-gradient(135deg, #C89B3C 0%, #D8B867 50%, #B9872F 100%);
+            border: none;
+            border-radius: 30px;
+            color: var(--bg-primary);
+            font-family: var(--font-btn);
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 10px 20px rgba(185, 135, 47, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .success-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 25px rgba(185, 135, 47, 0.3);
+        }
+
+        /* --------------------------------------------------------------------------
+           Responsive Media Queries (Responsive scaling fallback)
+           -------------------------------------------------------------------------- */
+        @media (max-width: 1200px) {
+            .hero-section {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .hero-left {
+                display: none;
+                /* Hide product bag on smaller screens or space constraints */
+            }
+
+            .hero-center {
+                padding: 0;
+            }
+
+            .hero-right {
+                margin-top: 15px;
+            }
+
+            .form-container-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-three-col-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .page-container {
+                padding: 24px 16px;
+                border-radius: 16px;
+            }
+
+            .back-nav-link {
+                position: relative;
+                top: 0;
+                left: 0;
+                margin-bottom: 20px;
+                display: inline-flex;
+            }
+
+            .form-left-card {
+                padding: 24px 16px;
+            }
+
+            .form-bottom-row {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-bar {
+                grid-template-columns: 1fr;
+                height: auto;
+                padding: 16px;
+                gap: 16px;
+            }
+
+            .stats-card {
+                border-right: none !important;
+                border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+                padding-bottom: 16px;
+            }
+
+            .stats-card:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+
+            .bottom-branding {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .cta-submit-btn {
+                width: 100%;
+            }
+        }
+
+        /* ======================================================================
+           MOBILE RESPONSIVE ENHANCEMENT ONLY
+           Desktop layout is untouched. These rules apply only on mobile screens.
+           ====================================================================== */
+        @keyframes mobileSoftRise {
+            0% {
+                opacity: 0;
+                transform: translateY(22px) scale(0.98);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes mobileGoldSweep {
+            0% {
+                transform: translateX(-120%) skewX(-18deg);
+                opacity: 0;
+            }
+
+            35% {
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateX(180%) skewX(-18deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes mobileOrbFloat {
+
+            0%,
+            100% {
+                transform: translate3d(0, 0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate3d(0, -14px, 0) scale(1.04);
+            }
+        }
+
+        @keyframes mobileBorderGlow {
+
+            0%,
+            100% {
+                box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45), 0 0 0 rgba(212, 175, 55, 0);
+            }
+
+            50% {
+                box-shadow: 0 22px 60px rgba(0, 0, 0, 0.5), 0 0 28px rgba(212, 175, 55, 0.13);
+            }
+        }
+
+        @keyframes mobileIconPulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 8px rgba(212, 175, 55, 0.18);
+            }
+
+            50% {
+                transform: scale(1.08);
+                box-shadow: 0 0 18px rgba(212, 175, 55, 0.32);
+            }
+        }
+
+        .mobile-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .mobile-reveal.is-visible {
+            animation: mobileSoftRise 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        @media (max-width: 768px) {
+            html {
+                width: 100%;
+                overflow-x: hidden;
+                scroll-behavior: smooth;
+            }
+
+            body {
+                width: 100%;
+                min-height: 100vh;
+                padding: 0;
+                display: block;
+                background:
+                    radial-gradient(circle at top left, rgba(212, 175, 55, 0.11), transparent 34%),
+                    radial-gradient(circle at bottom right, rgba(231, 200, 106, 0.08), transparent 38%),
+                    #030a10;
+                overflow-x: hidden;
+            }
+
+            .page-container {
+                width: 100%;
+                min-height: 100vh;
+                border-radius: 0;
+                padding: 18px 14px 26px;
+                overflow: hidden;
+                box-shadow: none;
+                border-left: 0;
+                border-right: 0;
+            }
+
+            .page-container::before {
+                background:
+                    radial-gradient(circle at 16% 4%, rgba(212, 175, 55, 0.12) 0%, transparent 38%),
+                    radial-gradient(circle at 95% 32%, rgba(231, 200, 106, 0.08) 0%, transparent 42%),
+                    linear-gradient(180deg, #071421 0%, #081826 46%, #030a10 100%);
+            }
+
+            .ambient-glow-left,
+            .ambient-glow-right {
+                width: 300px;
+                height: 300px;
+                filter: blur(34px);
+                animation: mobileOrbFloat 7s ease-in-out infinite;
+            }
+
+            .ambient-glow-left {
+                top: -110px;
+                left: -120px;
+            }
+
+            .ambient-glow-right {
+                right: -130px;
+                bottom: 18%;
+                animation-delay: 1.5s;
+            }
+
+            .hero-curved-stroke {
+                top: 28px;
+                left: -35%;
+                width: 170%;
+                height: 160px;
+                opacity: 0.55;
+            }
+
+            .leaf-watermark-1 {
+                width: 220px;
+                height: 220px;
+                right: -85px;
+                top: 80px;
+                opacity: 0.045;
+            }
+
+            .leaf-watermark-2 {
+                width: 260px;
+                height: 260px;
+                left: -100px;
+                bottom: 260px;
+                opacity: 0.035;
+            }
+
+            .back-nav-link {
+                position: sticky;
+                top: 12px;
+                left: auto;
+                width: max-content;
+                margin: 0 0 18px 0;
+                padding: 9px 15px;
+                z-index: 50;
+                backdrop-filter: blur(18px);
+                -webkit-backdrop-filter: blur(18px);
+                background: rgba(7, 20, 33, 0.72);
+                border-color: rgba(212, 175, 55, 0.25);
+            }
+
+            .hero-section {
+                display: flex;
+                flex-direction: column;
+                gap: 18px;
+                align-items: center;
+                margin: 6px 0 22px;
+                padding: 20px 12px 22px;
+                border: 1px solid rgba(212, 175, 55, 0.16);
+                border-radius: 24px;
+                background: linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.02));
+                backdrop-filter: blur(14px);
+                -webkit-backdrop-filter: blur(14px);
+                animation: mobileSoftRise 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .hero-section::after {
+                content: '';
+                position: absolute;
+                inset: 0;
+                width: 42%;
+                background: linear-gradient(90deg, transparent, rgba(231, 200, 106, 0.12), transparent);
+                animation: mobileGoldSweep 4.8s ease-in-out infinite;
+                pointer-events: none;
+            }
+
+            .hero-left {
+                display: block;
+                order: 2;
+                width: 100%;
+                padding: 0;
+            }
+
+            .product-image-card {
+                height: clamp(170px, 50vw, 230px);
+                margin: 0;
+                border-radius: 20px;
+                animation: floatHeroImage 5.5s ease-in-out infinite;
+            }
+
+            .hero-center {
+                order: 1;
+                width: 100%;
+                padding: 0;
+                text-align: center;
+            }
+
+            .eyebrow-container {
+                justify-content: center;
+                gap: 9px;
+                margin-bottom: 10px;
+            }
+
+            .eyebrow-line {
+                width: 28px;
+            }
+
+            .hero-eyebrow {
+                font-size: 0.62rem;
+                letter-spacing: 0.17em;
+            }
+
+            .hero-star {
+                margin-bottom: 9px;
+            }
+
+            .hero-title-main {
+                font-size: clamp(2.15rem, 10vw, 3.05rem);
+                line-height: 1.02;
+                margin-bottom: 8px;
+            }
+
+            .hero-title-script {
+                font-size: clamp(1.85rem, 9vw, 2.5rem);
+                line-height: 0.95;
+                margin-bottom: 15px;
+            }
+
+            .hero-desc {
+                font-size: 0.84rem;
+                line-height: 1.65;
+                max-width: 98%;
+                margin: 0 auto;
+            }
+
+            .hero-desc br {
+                display: none;
+            }
+
+            .hero-right {
+                order: 3;
+                width: 100%;
+                margin-top: 0;
+                padding: 12px 0 0;
+            }
+
+            .brand-logo-glow {
+                width: 110px;
+                height: 110px;
+            }
+
+            .brand-logo-img {
+                height: 48px;
+            }
+
+            .brand-typo-img {
+                height: 15px;
+            }
+
+            .brand-logo-tagline {
+                font-size: 0.52rem;
+                letter-spacing: 0.24em;
+            }
+
+            .form-container-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 18px;
+                margin: 0 0 24px;
+            }
+
+            .form-left-card,
+            .form-right-card {
+                width: 100%;
+                border-radius: 22px;
+                padding: 20px 14px;
+                background: rgba(8, 20, 32, 0.86);
+                animation: mobileBorderGlow 6s ease-in-out infinite;
+            }
+
+            .form-left-card::before,
+            .form-right-card::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                border-radius: inherit;
+                background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 0%), rgba(231, 200, 106, 0.13), transparent 34%);
+                opacity: 0.75;
+                pointer-events: none;
+            }
+
+            .form-three-col-row,
+            .form-bottom-row,
+            .form-bottom-row .form-section[style] {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 22px !important;
+                grid-column: auto !important;
+                margin-bottom: 0;
+            }
+
+            .form-bottom-row {
+                margin-top: 24px;
+                padding-top: 24px;
+            }
+
+            .form-section {
+                gap: 14px;
+                padding: 15px 12px 16px;
+                border: 1px solid rgba(212, 175, 55, 0.12);
+                border-radius: 18px;
+                background: rgba(255, 255, 255, 0.025);
+                position: relative;
+                overflow: hidden;
+            }
+
+            .form-section::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 16px;
+                right: 16px;
+                height: 1px;
+                background: linear-gradient(90deg, transparent, rgba(231, 200, 106, 0.6), transparent);
+                opacity: 0.5;
+            }
+
+            .section-header,
+            .info-section-header {
+                align-items: center;
+                gap: 10px;
+            }
+
+            .section-icon-wrapper,
+            .info-icon-wrapper,
+            .stats-icon-wrap {
+                animation: mobileIconPulse 4s ease-in-out infinite;
+            }
+
+            .section-heading-text {
+                font-size: 0.76rem;
+                line-height: 1.35;
+            }
+
+            .field-row-2col,
+            .phone-input-wrapper {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .phone-input-wrapper .form-select {
+                min-width: 100%;
+            }
+
+            .field-label {
+                font-size: 0.72rem;
+            }
+
+            .form-input,
+            .form-select,
+            .form-textarea {
+                height: 52px;
+                min-width: 0;
+                font-size: 0.84rem;
+                border-radius: 14px;
+                background-color: rgba(255, 255, 255, 0.045);
+            }
+
+            .form-textarea {
+                height: 104px;
+            }
+
+            .radio-group {
+                width: 100%;
+                height: auto;
+                min-height: 52px;
+                padding: 8px;
+                gap: 10px;
+                border: 1px solid rgba(212, 175, 55, 0.11);
+                border-radius: 14px;
+                background: rgba(255, 255, 255, 0.025);
+            }
+
+            .radio-option {
+                flex: 1;
+                justify-content: center;
+                padding: 8px 6px;
+                border-radius: 12px;
+                background: rgba(255, 255, 255, 0.03);
+            }
+
+            .form-right-card {
+                gap: 20px;
+            }
+
+            .info-section {
+                gap: 13px;
+            }
+
+            .info-section:not(:last-child) {
+                padding-bottom: 20px;
+            }
+
+            .info-checklist {
+                gap: 10px;
+            }
+
+            .info-checklist-item,
+            .info-desc,
+            .help-item {
+                font-size: 0.78rem;
+            }
+
+            .info-bottom-image-block {
+                min-height: 210px;
+                margin: 4px -14px -20px;
+                border-radius: 0 0 22px 22px;
+            }
+
+            .form-submit-section {
+                width: 100%;
+                grid-column: auto !important;
+                gap: 18px;
+                margin-top: 0;
+                padding: 0 2px;
+            }
+
+            .terms-checkbox-label {
+                width: 100%;
+                max-width: none;
+                padding: 15px;
+                border: 1px solid rgba(212, 175, 55, 0.14);
+                border-radius: 16px;
+                background: rgba(255, 255, 255, 0.025);
+            }
+
+            .terms-text {
+                font-size: 0.72rem;
+            }
+
+            .cta-submit-btn {
+                width: 100%;
+                height: 58px;
+                border-radius: 15px;
+                font-size: 0.76rem;
+                letter-spacing: 1.4px;
+                position: sticky;
+                bottom: 12px;
+                z-index: 30;
+            }
+
+            .stats-bar {
+                display: flex;
+                flex-direction: column;
+                height: auto;
+                gap: 12px;
+                padding: 14px;
+                margin: 22px 0;
+                border-radius: 22px;
+            }
+
+            .stats-card {
+                width: 100%;
+                min-height: 76px;
+                height: auto;
+                justify-content: flex-start !important;
+                padding: 12px !important;
+                border: 1px solid rgba(212, 175, 55, 0.12) !important;
+                border-radius: 16px;
+                background: rgba(255, 255, 255, 0.03);
+            }
+
+            .stats-number {
+                font-size: 1.2rem;
+            }
+
+            .stats-lbl {
+                font-size: 0.68rem;
+                line-height: 1.35;
+            }
+
+            .bottom-branding {
+                flex-direction: column;
+                gap: 16px;
+                padding-top: 22px;
+                text-align: center;
+            }
+
+            .footer-middle-slogan {
+                font-size: 0.82rem;
+                line-height: 1.5;
+            }
+
+            .footer-logo-img {
+                height: 18px;
+            }
+
+            .seal-badge-container {
+                width: 54px;
+                height: 54px;
+            }
+
+            .modal-success-card {
+                width: calc(100% - 28px);
+                padding: 32px 20px;
+                border-radius: 22px;
+            }
+
+            .success-title {
+                font-size: 1.75rem;
+            }
+
+            .success-desc {
+                font-size: 0.82rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .page-container {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            .hero-section {
+                border-radius: 20px;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            .hero-eyebrow {
+                font-size: 0.56rem;
+                letter-spacing: 0.12em;
+            }
+
+            .eyebrow-line {
+                width: 18px;
+            }
+
+            .form-left-card,
+            .form-right-card {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            .section-heading-text {
+                font-size: 0.7rem;
+            }
+
+            .cta-submit-btn span {
+                font-size: 0.7rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.001ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: 0.001ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Main Container -->
+    <div class="page-container">
+
+        <!-- Ambient Background Overlays -->
+        <div class="ambient-glow-left"></div>
+        <div class="ambient-glow-right"></div>
+        <div class="grain-overlay"></div>
+
+        <!-- Background Gold Curved Stroke SVG -->
+        <svg class="hero-curved-stroke" viewBox="0 0 1400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M-100,50 Q400,280 800,80 T1600,100" stroke="rgba(212, 175, 55, 0.45)" stroke-width="2.5"
+                fill="none" />
+            <path d="M-50,70 Q450,290 850,90 T1650,110" stroke="rgba(231, 200, 106, 0.15)" stroke-width="1"
+                fill="none" />
+        </svg>
+
+        <!-- transparent botanical leaf watermark illustration (SVG) -->
+        <svg class="leaf-watermark-1" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+            <path
+                d="M50 95 C50 60 70 40 85 20 M50 75 C45 60 25 50 15 35 M50 55 C55 45 75 35 80 15 M50 35 C40 25 30 20 20 5"
+                stroke="#D4AF37" stroke-width="0.5" stroke-linecap="round" />
+        </svg>
+        <svg class="leaf-watermark-2" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+            <path
+                d="M50 95 C50 60 70 40 85 20 M50 75 C45 60 25 50 15 35 M50 55 C55 45 75 35 80 15 M50 35 C40 25 30 20 20 5"
+                stroke="#D4AF37" stroke-width="0.3" stroke-linecap="round" />
+        </svg>
+
+        <!-- Back to Hub Link -->
+        <a href="index.html" class="back-nav-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            BACK
+        </a>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+
+            <!-- Left Panel: Products Photo Overlay -->
+            <div class="hero-left">
+                <div class="product-image-card">
+                    <img src="Images/applicationimg.png" alt="PLUS33 Premium Coffee Collection">
+                </div>
+            </div>
+
+            <!-- Center Panel: Headings & Introduction -->
+            <div class="hero-center">
+                <div class="eyebrow-container">
+                    <div class="eyebrow-line"></div>
+                    <span class="hero-eyebrow">FRANCHISE APPLICATION FORM</span>
+                    <div class="eyebrow-line right"></div>
+                </div>
+                <div class="hero-star">★</div>
+                <h1 class="hero-title-main">Take the First Step<br>Toward Ownership.</h1>
+                <h2 class="hero-title-script">Let's Build Success Together.</h2>
+                <p class="hero-desc">
+                    Thank you for your interest in partnering with Plus 33.<br>
+                    Please complete the application form below and our investment team will get in touch.
+                </p>
+            </div>
+
+            <!-- Right Panel: Floating Vertical Brand Logo -->
+            <div class="hero-right">
+                <div class="brand-logo-glow"></div>
+                <div class="brand-logo-wrapper">
+                    <img src="Images/logo.png" alt="PLUS33 Gold Logo Icon" class="brand-logo-img">
+                    <img src="Images/typo2w.png" alt="PLUS33 Brand Wordmark" class="brand-typo-img">
+                    <span class="brand-logo-tagline">BREWING TOGETHER</span>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Main Form & Info Grid -->
+        <form class="form-container-grid" id="franchiseForm">
+            <!-- Hidden destination email for EmailJS -->
+            <input type="hidden" name="to_email" value="plus33coffee.franchises@gmail.com">
+
+            <!-- Left Side: Large Glass Form Card -->
+            <div class="form-left-card">
+
+                <!-- Top Row (3-Columns) -->
+                <div class="form-three-col-row">
+
+                    <!-- Column 01: Personal Info -->
+                    <div class="form-section">
+                        <div class="section-header">
+                            <div class="section-icon-wrapper">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </div>
+                            <h4 class="section-heading-text"><span>01</span> PERSONAL INFO</h4>
+                        </div>
+
+                        <div class="field-group">
+                            <label class="field-label">Full Name*</label>
+                            <input type="text" name="full_name" class="form-input" placeholder="Enter your full name"
+                                required>
+                        </div>
+
+                        <div class="field-group">
+                            <label class="field-label">Date of Birth*</label>
+                            <input type="date" name="dob" class="form-input" required>
+                        </div>
+
+                        <div class="field-group">
+                            <label class="field-label">Email Address*</label>
+                            <input type="email" name="email" class="form-input" placeholder="Enter your email address"
+                                required>
+                        </div>
+
+                        <div class="field-group">
+                            <label class="field-label">Phone Number*</label>
+                            <div class="phone-input-wrapper">
+                                <select name="phone_code" class="form-select" style="padding-right: 25px;">
+                                    <option value="+91">IN +91</option>
+                                    <option value="+1">US +1</option>
+                                    <option value="+44">UK +44</option>
+                                    <option value="+33">FR +33</option>
+                                    <option value="+971">AE +971</option>
+                                </select>
+                                <input type="tel" name="phone" class="form-input" placeholder="Enter phone number"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="field-group">
+                            <label class="field-label">Current Address*</label>
+                            <input type="text" name="address" class="form-input" placeholder="Enter current address"
+                                required>
+                        </div>
+
+                        <div class="field-row-2col">
+                            <div class="field-group">
+                                <label class="field-label">City*</label>
+                                <input type="text" name="city" class="form-input" placeholder="Enter city" required>
+                            </div>
+                            <div class="field-group">
+                                <label class="field-label">State / Province*</label>
+                                <input type="text" name="state" class="form-input" placeholder="Enter state" required>
+                            </div>
+                        </div>
+
+                        <div class="field-row-2col">
+                            <div class="field-group">
+                                <label class="field-label">Country*</label>
+                                <select name="country" class="form-select" required>
+                                    <option value="" disabled selected>Select country</option>
+                                    <option value="India">India</option>
+                                    <option value="United States">United States</option>
+                                    <option value="France">France</option>
+                                    <option value="United Kingdom">United Kingdom</option>
+                                    <option value="United Arab Emirates">United Arab Emirates</option>
+                                </select>
+                            </div>
+                            <div class="field-group">
+                                <label class="field-label">Zip / Postal Code*</label>
+                                <input type="text" name="zip" class="form-input" placeholder="Zip code" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 02: Business Background -->
+                    <div class="form-section">
+                        <div class="section-header">
+                            <div class="section-icon-wrapper">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                                </svg>
+                            </div>
+                            <h4 class="section-heading-text"><span>02</span> BUSINESS INFO</h4>
+                        </div>
+
+                        <div class="field-group">
+                            <label class="field-label">Current Occupation*</label>
+                            <select name="occupation" class="form-select" required>
+                                <option value="" disabled selected>Select occupation</option>
+                                <option value="Business Owner">Business Owner / Entrepreneur</option>
+                                <option value="Executive">Corporate Executive</option>
+                                <option value="Manager">Professional Manager</option>
+                                <option value="Self-Employed">Self-Employed Professional</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="field-group">
+                            <label class="field-label">Name of Current Employer / Business</label>
+                            <input type="text" name="employer" class="form-input"
+                                placeholder="Enter employer or business name">
+                        </div>
+
+                        <div class="field-group">
+                            <label class="field-label">Nature of Business / Industry</label>
+                            <select name="industry" class="form-select">
+                                <option value="" disabled selected>Select industry</option>
+                                <option value="Food & Beverage">Food & Beverage / QSR</option>
+                                <option value="Retail">Retail / Franchise Operations</option>
+                                <option value="Real Estate">Real Estate Development</option>
+                                <option value="Hospitality">Hospitality / Service Sector</option>
+                                <option value="Others">Others</option>
+                            </select>
+                        </div>
+
+                        <div class="field-group">
+                            <label class="field-label">Years in Business / Industry*</label>
+                            <select name="years_experience" class="form-select" required>
+                                <option value="" disabled selected>Select years</option>
+                                <option value="0-2">0 – 2 Years</option>
+                                <option value="3-5">3 – 5 Years</option>
+                                <option value="6-10">6 – 10 Years</option>
+                                <option value="10+">More than 10 Years</option>
+                            </select>
+                        </div>
+
+                        <div class="field-group">
+                            <label class="field-label">Please describe your business experience</label>
+                            <textarea name="experience_desc" class="form-textarea"
+                                placeholder="Enter your response"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Column 03: Franchise Interest -->
+                    <div class="form-section">
+                        <div class="section-header">
+                            <div class="section-icon-wrapper">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <circle cx="12" cy="12" r="6"></circle>
+                                    <circle cx="12" cy="12" r="2"></circle>
+                                </svg>
+                            </div>
+                            <h4 class="section-heading-text"><span>03</span> FRANCHISE INTEREST</h4>
+                        </div>
+
+                        <div class="field-group">
+                            <label class="field-label">Preferred Franchise Model*</label>
+                            <select name="franchise_model" class="form-select" required>
+                                <option value="" disabled selected>Select preferred model</option>
+                                <option value="Flagship Cafe">Flagship Café (Large Format)</option>
+                                <option value="Compact Cafe">Compact Café (Medium Format)</option>
+                                <option value="Bistro Kiosk">Bistro Kiosk (Express Format)</option>
+                            </select>
+                        </div>
+
+                        <div class="field-group">
+                            <label class="field-label">Preferred Location Type*</label>
+                            <select name="location_type" class="form-select" required>
+                                <option value="" disabled selected>Select location type</option>
+                                <option value="High Street">High Street Premium Market</option>
+                                <option value="Shopping Mall">Premium Shopping Mall</option>
+                                <option value="Airport">Airport / Transit Hub</option>
+                                <option value="Corporate Park">Corporate / IT Business Park</option>
+                            </select>
+                        </div>
+
+                        <div class="field-group">
+                            <label class="field-label">Preferred Region / Territory*</label>
+                            <select name="region" class="form-select" required>
+                                <option value="" disabled selected>Select region / territory</option>
+                                <option value="Metro Cities">Tier-1 Metro Region</option>
+                                <option value="Tier-2 Cities">Tier-2 Growth Cities</option>
+                                <option value="International">International Region</option>
+                            </select>
+                        </div>
+
+                        <div class="field-group">
+                            <label class="field-label">Do you have a specific location in mind?</label>
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="has_location" value="yes">
+                                    <span class="radio-circle"></span>
+                                    <span>Yes</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="has_location" value="no" checked>
+                                    <span class="radio-circle"></span>
+                                    <span>No</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="field-group">
+                            <label class="field-label">If yes, please provide details.</label>
+                            <textarea name="location_details" class="form-textarea"
+                                placeholder="Enter location details"></textarea>
+                        </div>
+
+                        <div class="field-group">
+                            <label class="field-label">What motivated you to apply for a Plus 33 franchise?*</label>
+                            <textarea name="motivation" class="form-textarea" placeholder="Enter your response"
+                                required></textarea>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Bottom Row: Investment Overview (Full Width) -->
+                <div class="form-bottom-row">
+
+                    <div class="form-section"
+                        style="grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                        <div style="grid-column: span 2;">
+                            <div class="section-header">
+                                <div class="section-icon-wrapper">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="12" y1="1" x2="12" y2="23"></line>
+                                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="section-heading-text"><span>04</span> INVESTMENT OVERVIEW</h4>
+                            </div>
+                        </div>
+
+                        <div class="field-group">
+                            <label class="field-label">Estimated Investment Budget*</label>
+                            <select name="investment_budget" class="form-select" required>
+                                <option value="" disabled selected>Select investment range</option>
+                                <option value="Tier 1">INR 80 Lakhs – 1.2 Crores</option>
+                                <option value="Tier 2">INR 1.2 Crores – 1.8 Crores</option>
+                                <option value="Tier 3">Above INR 1.8 Crores</option>
+                            </select>
+                        </div>
+
+                        <div class="field-group">
+                            <label class="field-label">How will you finance your investment?*</label>
+                            <select name="finance_source" class="form-select" required>
+                                <option value="" disabled selected>Select an option</option>
+                                <option value="Self Funded">Self-Funded / Personal Equity</option>
+                                <option value="Bank Loan">Bank Finance / Business Loan</option>
+                                <option value="Partnership">Equity Partnership</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Right Side: Dark Navy Information Panel -->
+            <div class="form-right-card">
+
+                <!-- Why Partner Section -->
+                <div class="info-section">
+                    <div class="info-section-header">
+                        <div class="info-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                                <line x1="6" y1="1" x2="6" y2="4"></line>
+                                <line x1="10" y1="1" x2="10" y2="4"></line>
+                                <line x1="14" y1="1" x2="14" y2="4"></line>
+                            </svg>
+                        </div>
+                        <h5 class="info-section-title">WHY PARTNER WITH PLUS 33?</h5>
+                    </div>
+                    <ul class="info-checklist">
+                        <li class="info-checklist-item">
+                            <svg class="checkmark-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="3">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Proven business model & strong brand</span>
+                        </li>
+                        <li class="info-checklist-item">
+                            <svg class="checkmark-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="3">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Comprehensive training & support</span>
+                        </li>
+                        <li class="info-checklist-item">
+                            <svg class="checkmark-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="3">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>End-to-end operational assistance</span>
+                        </li>
+                        <li class="info-checklist-item">
+                            <svg class="checkmark-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="3">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Marketing & brand support</span>
+                        </li>
+                        <li class="info-checklist-item">
+                            <svg class="checkmark-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="3">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Technology-driven operations</span>
+                        </li>
+                        <li class="info-checklist-item">
+                            <svg class="checkmark-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="3">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>A growing global community</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Safe Info Section -->
+                <div class="info-section">
+                    <div class="info-section-header">
+                        <div class="info-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                        </div>
+                        <h5 class="info-section-title">YOUR INFORMATION IS SAFE WITH US</h5>
+                    </div>
+                    <p class="info-desc">
+                        We value your privacy. All information provided will be kept strictly confidential and used only
+                        for franchise communications and evaluation.
+                    </p>
+                </div>
+
+                <!-- Need Help Section -->
+                <div class="info-section">
+                    <div class="info-section-header">
+                        <div class="info-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                        </div>
+                        <h5 class="info-section-title">NEED HELP?</h5>
+                    </div>
+                    <div class="help-items-list">
+                        <a href="mailto:plus33coffee.franchises@gmail.com" class="help-item">
+                            <svg class="help-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <span>plus33coffee.franchises@gmail.com</span>
+                        </a>
+                        <a href="tel:+918870543210" class="help-item">
+                            <svg class="help-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                </path>
+                            </svg>
+                            <span>+ 33 6 11 77 93 31</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="info-bottom-image-block">
+                    <img src="Images/hero-img.png" alt="PLUS33 Cafe Detail">
+                </div>
+
+            </div>
+
+            <!-- Terms & Submission Actions -->
+            <div class="form-submit-section" style="grid-column: span 2;">
+
+                <!-- Consent Checkbox -->
+                <label class="terms-checkbox-label">
+                    <input type="checkbox" id="termsCheck" name="terms_agree" required>
+                    <div class="terms-checkbox-box"></div>
+                    <span class="terms-text">
+                        I confirm that the information provided above is true and accurate to the best of my knowledge.
+                        I agree to the <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.
+                    </span>
+                </label>
+
+                <!-- Metallic Gold Submit Button -->
+                <button type="submit" class="cta-submit-btn">
+                    <span>SUBMIT APPLICATION</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+
+            </div>
+
+        </form>
+
+        <!-- Bottom Statistics Bar -->
+        <div class="stats-bar">
+
+            <div class="stats-card">
+                <div class="stats-icon-wrap">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path
+                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                        </path>
+                    </svg>
+                </div>
+                <div class="stats-info">
+                    <span class="stats-number">10+</span>
+                    <span class="stats-lbl">COUNTRIES PRESENCE</span>
+                </div>
+            </div>
+
+            <div class="stats-card">
+                <div class="stats-icon-wrap">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"></path>
+                        <path d="M3 9V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4"></path>
+                        <line x1="12" y1="9" x2="12" y2="21"></line>
+                    </svg>
+                </div>
+                <div class="stats-info">
+                    <span class="stats-number">200+</span>
+                    <span class="stats-lbl">STORES WORLDWIDE</span>
+                </div>
+            </div>
+
+            <div class="stats-card">
+                <div class="stats-icon-wrap">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                </div>
+                <div class="stats-info">
+                    <span class="stats-number">250+</span>
+                    <span class="stats-lbl">FRANCHISE PARTNERS</span>
+                </div>
+            </div>
+
+            <div class="stats-card" style="justify-content: flex-start; padding-left: 20px;">
+                <div class="stats-icon-wrap">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon
+                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                        </polygon>
+                    </svg>
+                </div>
+                <div class="stats-info">
+                    <span class="stats-number">STRONG BRAND.</span>
+                    <span class="stats-lbl">PROVEN MODEL. PROFITABLE.</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer Bottom Branding -->
+        <footer class="bottom-branding">
+
+            <!-- Left side typo logo -->
+            <img src="Images/typo2w.png" alt="PLUS33 Typography" class="footer-logo-img">
+
+            <!-- Slogans -->
+            <p class="footer-middle-slogan">Great Coffee. Strong Brand. Profitable Partnership.</p>
+
+            <!-- Right side circular seal -->
+            <div class="seal-badge-container">
+                <svg class="seal-circle-svg" viewBox="0 0 100 100">
+                    <defs>
+                        <path id="circlePath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" />
+                    </defs>
+                    <text fill="#D4AF37" font-family="Montserrat" font-size="6.8" font-weight="700"
+                        letter-spacing="2.2">
+                        <textPath href="#circlePath">
+                            BREWING TOGETHER • BREWING TOGETHER •
+                        </textPath>
+                    </text>
+                </svg>
+                <div class="seal-star">★</div>
+            </div>
+
+        </footer>
+
+    </div>
+
+    <!-- Success Modal Overlay -->
+    <div class="modal-success-overlay" id="successModal">
+        <div class="modal-success-card">
+            <div class="success-seal">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    style="width: 32px; height: 32px;">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+            </div>
+            <h3 class="success-title">Application Submitted</h3>
+            <p class="success-desc">
+                Your franchise application has been received successfully.<br>
+                Our global expansion team will evaluate your request and contact you within 24 to 48 hours.
+            </p>
+            <a href="index.html" class="success-btn">RETURN TO HOME</a>
+        </div>
+    </div>
+
+    <!-- EmailJS Browser SDK v4 Import -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        // EmailJS Configuration Constants
+        const EMAILJS_SERVICE_ID = "service_kszqp4r";
+        const EMAILJS_TEMPLATE_ID = "template_txmhoc8";
+        const EMAILJS_PUBLIC_KEY = "FQ_K9RrYQqCjsAO4e";
+
+        // Initialize EmailJS Browser SDK v4
+        emailjs.init({
+            publicKey: EMAILJS_PUBLIC_KEY
+        });
+
+        // Attach Form Submission Event Listener
+        document.getElementById("franchiseForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent default browser form submission
+
+            const form = event.target;
+
+            // Validate form requirements using built-in HTML5 validation
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            // Verify the terms and privacy checkbox
+            const termsChecked = document.getElementById('termsCheck').checked;
+            if (!termsChecked) {
+                return;
+            }
+
+            // Disable submit button and change text to SENDING APPLICATION...
+            const submitButton = form.querySelector('.cta-submit-btn');
+            const originalButtonHTML = submitButton.innerHTML;
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<span>SENDING APPLICATION...</span>';
+
+            try {
+                // Form Data Collection
+                const formData = new FormData(form);
+                const getValue = (name) => {
+                    const value = formData.get(name);
+                    return value ? String(value).trim() : "Not Provided";
+                };
+
+                const templateParams = {
+                    full_name: getValue("full_name"),
+                    dob: getValue("dob"),
+                    email: getValue("email"),
+                    phone_code: getValue("phone_code"),
+                    phone: getValue("phone"),
+                    address: getValue("address"),
+                    city: getValue("city"),
+                    state: getValue("state"),
+                    country: getValue("country"),
+                    zip: getValue("zip"),
+                    occupation: getValue("occupation"),
+                    employer: getValue("employer"),
+                    industry: getValue("industry"),
+                    years_experience: getValue("years_experience"),
+                    experience_desc: getValue("experience_desc"),
+                    franchise_model: getValue("franchise_model"),
+                    location_type: getValue("location_type"),
+                    region: getValue("region"),
+                    has_location: getValue("has_location"),
+                    location_details: getValue("location_details"),
+                    motivation: getValue("motivation"),
+                    investment_budget: getValue("investment_budget"),
+                    finance_source: getValue("finance_source"),
+                    to_email: "plus33coffee.franchises@gmail.com"
+                };
+
+                // Log credentials configuration
+                console.log("EmailJS Service ID:", EMAILJS_SERVICE_ID);
+                console.log("EmailJS Template ID:", EMAILJS_TEMPLATE_ID);
+                console.log("EmailJS Public Key configured:", Boolean(EMAILJS_PUBLIC_KEY));
+
+                // Send using emailjs.send
+                emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+                    .then(function () {
+                        // Restore original submit button state
+                        submitButton.disabled = false;
+                        submitButton.innerHTML = originalButtonHTML;
+
+                        // Reset form
+                        form.reset();
+
+                        // Open success modal
+                        const successModal = document.getElementById('successModal');
+                        if (successModal) {
+                            successModal.classList.add('active');
+                        }
+                    })
+                    .catch(function (error) {
+                        submitButton.disabled = false;
+                        submitButton.innerHTML = originalButtonHTML;
+
+                        console.error("EmailJS Error Status:", error?.status);
+                        console.error("EmailJS Error Text:", error?.text);
+                        console.error("Complete EmailJS Error:", error);
+
+                        alert("Unable to submit your franchise application. Please try again.");
+                    });
+
+            } catch (error) {
+                submitButton.disabled = false;
+                submitButton.innerHTML = originalButtonHTML;
+
+                console.error("Application submission failed:", error);
+                alert("Unable to submit your franchise application. Please try again.");
+            }
+        });
+
+        // JS Interaction: Mouse-following Spotlight Micro-interactions
+        const glassPanels = document.querySelectorAll(".form-left-card, .form-right-card");
+        glassPanels.forEach(panel => {
+            panel.addEventListener("mousemove", (e) => {
+                const rect = panel.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                panel.style.setProperty("--mouse-x", `${x}px`);
+                panel.style.setProperty("--mouse-y", `${y}px`);
+            });
+        });
+
+
+        // Mobile-only attractive reveal animations. Desktop behavior remains unchanged.
+        (function () {
+            const mobileQuery = window.matchMedia('(max-width: 768px)');
+            const revealTargets = document.querySelectorAll(
+                '.hero-section, .form-section, .form-right-card, .terms-checkbox-label, .stats-card, .bottom-branding'
+            );
+
+            function enableMobileReveal() {
+                if (!mobileQuery.matches || !('IntersectionObserver' in window)) {
+                    revealTargets.forEach(el => el.classList.remove('mobile-reveal'));
+                    return;
+                }
+
+                revealTargets.forEach((el, index) => {
+                    el.classList.add('mobile-reveal');
+                    el.style.animationDelay = `${Math.min(index * 0.08, 0.48)}s`;
+                });
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
+
+                revealTargets.forEach(el => observer.observe(el));
+            }
+
+            enableMobileReveal();
+            mobileQuery.addEventListener?.('change', enableMobileReveal);
+        })();
+
+    </script>
+</body>
+
+</html>
