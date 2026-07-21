@@ -1,0 +1,48 @@
+===============================================================================
+                       PLUS33 COFFEE ERP - FONTS REGISTRY
+===============================================================================
+
+1. PRIMARY DISPLAY / HEADING FONT
+-------------------------------------------------------------------------------
+Font Name   : Montserrat
+Provider    : Google Fonts
+Import URL  : https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap
+Weights Used: 400 (Regular), 500 (Medium), 600 (Semi-Bold), 700 (Bold), 800 (Extra-Bold), 900 (Black)
+CSS Variable: --font-display: 'Montserrat', sans-serif;
+Usage Scope : Dashboard titles, modal headers, KPI values, section titles, card headers
+
+
+2. PRIMARY BODY / INTERFACE SANS-SERIF FONT
+-------------------------------------------------------------------------------
+Font Name   : Inter
+Provider    : Google Fonts
+Import URL  : https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap
+Weights Used: 300 (Light), 400 (Regular), 500 (Medium), 600 (Semi-Bold), 700 (Bold), 800 (Extra-Bold)
+CSS Variable: --font-sans: 'Montserrat', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+Usage Scope : UI body text, table data rows, form labels, input fields, notification messages
+
+
+3. MONOSPACE / CODE & LOG FONT
+-------------------------------------------------------------------------------
+Font Family : Monospace Stack
+CSS Variable: --font-mono: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+Fonts Included:
+  - SFMono-Regular (macOS/iOS)
+  - Consolas (Windows)
+  - Liberation Mono (Linux)
+  - Menlo (macOS)
+  - monospace (Generic fallback)
+Usage Scope : WMS physical topology identifiers, system activity logs, JSON code blocks, document hashes
+
+
+4. SYSTEM & PRINT FALLBACK FONTS
+-------------------------------------------------------------------------------
+Fonts Included:
+  - -apple-system (Apple System UI)
+  - BlinkMacSystemFont (Chromium macOS)
+  - Segoe UI (Windows System UI)
+  - Roboto (Android System UI)
+  - Arial (Payslip PDF print template fallback)
+  - sans-serif (Browser default generic fallback)
+
+===============================================================================
