@@ -5672,6 +5672,7 @@ body.loaded .metric-block:nth-child(5) {
 
 /* Desktop-Only Centering for Partner Requirement Card Icons */
 @media (min-width: 769px) {
+
   .req-card .partner-card-inner,
   .partner-requirement-card .partner-card-inner {
     display: flex !important;
@@ -8515,6 +8516,7 @@ body.loaded .metric-block:nth-child(5) {
   .st-section {
     padding-bottom: 30px !important;
   }
+
   .s6-section {
     padding-top: 30px !important;
   }
@@ -25260,1708 +25262,1722 @@ a.s9-time-card.s9-time-btn:hover .s9-time-btn-badge svg {
 @media (max-width: 768px) {
 
   /* Mobile Content Text Font Override to Inter Regular */
-  body, p, span, li, a, label, input, select, textarea,
-  .mobile-hero-description, .showcase-subtitle-luxury, 
-  .benefit-desc, .step-desc, .s8-step-text p, .card-desc,
-  .mobile-benefit-item, .mobile-card-content, .faq-answer {
+  body,
+  p,
+  span,
+  li,
+  a,
+  label,
+  input,
+  select,
+  textarea,
+  .mobile-hero-description,
+  .showcase-subtitle-luxury,
+  .benefit-desc,
+  .step-desc,
+  .s8-step-text p,
+  .card-desc,
+  .mobile-benefit-item,
+  .mobile-card-content,
+  .faq-answer {
     font-family: 'Inter', sans-serif !important;
     font-weight: 400 !important;
   }
 
   /* Center layout structure */
 
-    /* Reduce container padding on mobile to allow the 3D book to fit and center perfectly */
-    .franchise-journey-section .s8-container {
-      padding: 0 16px !important;
-    }
-
-    /* Hide desktop timeline wrapper on mobile */
-    .franchise-journey-section .s8-timeline-wrapper {
-      display: none !important;
-    }
-
-    /* Show mobile 3D Flipbook on mobile */
-    .s8-mobile-3d-book-container {
-      display: block !important;
-      width: 100% !important;
-      padding: 0 !important;
-      box-sizing: border-box !important;
-      perspective: 1200px !important;
-    }
-
-    /* Transparent viewport to blend natively with page background */
-    .s8-book-viewport {
-      background: transparent !important;
-      box-shadow: none !important;
-      padding: 20px 10px 30px !important;
-      border-radius: 0 !important;
-      position: relative !important;
-      overflow: visible !important;
-    }
-
-    .s8-book-viewport::before {
-      display: none !important;
-    }
-
-    /* Ultra realistic ambient book shadow */
-    .s8-book-glow-shadow {
-      position: absolute !important;
-      height: 330px !important;
-      background: rgba(0, 0, 0, 0.3) !important;
-      filter: blur(20px) !important;
-      transform: translate(0px, 15px) scale(0.96) !important;
-      border-radius: 12px !important;
-      pointer-events: none !important;
-      z-index: 0 !important;
-      transition: width 0.8s cubic-bezier(0.25, 1, 0.5, 1), left 0.8s cubic-bezier(0.25, 1, 0.5, 1) !important;
-    }
-
-    /* Page Stack Edge Thickness - Hidden on mobile to avoid 3D projection overlay glitches */
-    .s8-paper-stack-thickness {
-      display: none !important;
-    }
-
-    /* Ribbon Bookmark */
-    .s8-silk-ribbon {
-      position: absolute !important;
-      left: 50% !important;
-      top: 0 !important;
-      width: 12px !important;
-      height: 345px !important;
-      background: linear-gradient(90deg, #7c1a13 0%, #aa251a 50%, #5a0f09 100%) !important;
-      transform: translateX(-50%) !important;
-      z-index: 4 !important;
-      border-radius: 0 0 1px 1px !important;
-      box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.35) !important;
-      pointer-events: none !important;
-    }
-
-    .s8-silk-ribbon .ribbon-tail {
-      position: absolute !important;
-      bottom: -6px !important;
-      left: 0 !important;
-      width: 0 !important;
-      height: 0 !important;
-      border-left: 6px solid transparent !important;
-      border-right: 6px solid transparent !important;
-      border-top: 6px solid #5a0f09 !important;
-    }
-
-    .s8-book-stage {
-      position: relative !important;
-      width: 100% !important;
-      height: 380px !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      perspective: 1200px !important;
-      overflow: visible !important;
-    }
-
-    .s8-book-container-3d {
-      position: relative !important;
-      width: 350px !important;
-      height: 330px !important;
-      transform-style: preserve-3d !important;
-      transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1) !important;
-      transform-origin: center center !important;
-    }
-
-    .s8-book-pages-wrapper {
-      position: absolute !important;
-      inset: 0 !important;
-      transform-style: preserve-3d !important;
-    }
-
-    .s8-book-sheet {
-      position: absolute !important;
-      width: 175px !important;
-      height: 330px !important;
-      left: 175px !important;
-      top: 0 !important;
-      transform-origin: left center !important;
-      transform-style: preserve-3d !important;
-      transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), z-index 0.8s !important;
-      cursor: pointer !important;
-    }
-
-    .s8-page-face {
-      position: absolute !important;
-      inset: 0 !important;
-      backface-visibility: hidden !important;
-      border-radius: 4px 12px 12px 4px !important;
-      overflow: hidden !important;
-      box-sizing: border-box !important;
-      padding: 18px 12px !important;
-    }
-
-    .s8-page-face.front-face {
-      transform: rotateY(0deg) !important;
-      z-index: 2 !important;
-    }
-
-    .s8-page-face.back-face {
-      transform: rotateY(180deg) !important;
-      z-index: 1 !important;
-      border-radius: 12px 4px 4px 12px !important;
-    }
-
-    .s8-book-sheet.flipped {
-      transform: rotateY(-180deg) !important;
-    }
-
-    /* Leather Cover Styling - Premium Handcrafted Full Grain */
-    .s8-page-face.leather-cover {
-      background: linear-gradient(135deg, #09121c 0%, #03060a 100%) !important;
-      color: #dfac4e !important;
-      border: 1px solid rgba(223, 172, 78, 0.2) !important;
-      box-shadow:
-        inset 0 0 40px rgba(0, 0, 0, 0.8),
-        inset 0 2px 5px rgba(255, 255, 255, 0.05),
-        0 15px 40px rgba(0, 0, 0, 0.4) !important;
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: center !important;
-      justify-content: center !important;
-      text-align: center !important;
-      position: absolute !important;
-      overflow: hidden !important;
-    }
-
-    /* Deep natural leather pores */
-    .leather-pores {
-      position: absolute !important;
-      inset: 0 !important;
-      opacity: 0.12 !important;
-      background-image:
-        radial-gradient(circle, #000 10%, transparent 11%),
-        radial-gradient(circle, #000 10%, transparent 11%) !important;
-      background-size: 3px 3px !important;
-      background-position: 0 0, 1.5px 1.5px !important;
-      pointer-events: none !important;
-      z-index: 1 !important;
-    }
-
-    .leather-grain {
-      position: absolute !important;
-      inset: 0 !important;
-      opacity: 0.04 !important;
-      background: repeating-linear-gradient(45deg, #fff, #fff 1px, transparent 1px, transparent 4px) !important;
-      filter: blur(0.5px) !important;
-      pointer-events: none !important;
-      z-index: 1 !important;
-    }
-
-    /* Physical spine ridge on the left side of the front cover */
-    .s8-cover-spine-ridge {
-      position: absolute !important;
-      left: 8px !important;
-      top: 0 !important;
-      bottom: 0 !important;
-      width: 6px !important;
-      background: linear-gradient(to right, rgba(0, 0, 0, 0.4) 0%, rgba(255, 255, 255, 0.06) 40%, rgba(0, 0, 0, 0.6) 100%) !important;
-      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3) !important;
-      z-index: 5 !important;
-      backface-visibility: hidden !important;
-    }
-
-    /* Premium Gold Foil Double Borders & corner ornaments */
-    .s8-double-border {
-      position: absolute !important;
-      inset: 12px !important;
-      border: 1px solid rgba(223, 172, 78, 0.45) !important;
-      border-radius: 4px !important;
-      pointer-events: none !important;
-      box-shadow: inset 0 0 0 2px rgba(223, 172, 78, 0.15) !important;
-      z-index: 3 !important;
-      backface-visibility: hidden !important;
-    }
-
-    .s8-inner-border {
-      position: absolute !important;
-      inset: 3px !important;
-      border: 0.5px solid rgba(223, 172, 78, 0.3) !important;
-      border-radius: 2px !important;
-    }
-
-    .corner-ornament {
-      position: absolute !important;
-      font-size: 11px !important;
-      color: #dfac4e !important;
-      text-shadow:
-        0.5px 0.5px 0.5px rgba(255, 255, 255, 0.25),
-        -0.5px -0.5px 0.5px rgba(0, 0, 0, 0.6) !important;
-      line-height: 1 !important;
-    }
-
-    .corner-ornament.top-left {
-      top: -2px;
-      left: -1px;
-    }
-
-    .corner-ornament.top-right {
-      top: -2px;
-      right: -1px;
-    }
-
-    .corner-ornament.bottom-left {
-      bottom: -2px;
-      left: -1px;
-    }
-
-    .corner-ornament.bottom-right {
-      bottom: -2px;
-      right: -1px;
-    }
-
-    /* Gold Foil Top Emblem styling */
-    .gold-fleur-de-lis {
-      margin-bottom: 12px !important;
-      filter: drop-shadow(0px 1px 1px rgba(255, 255, 255, 0.15)) drop-shadow(0px -1px 1px rgba(0, 0, 0, 0.5)) !important;
-      z-index: 3 !important;
-    }
-
-    .fleur-de-lis-svg {
-      width: 36px !important;
-      height: 36px !important;
-      display: block !important;
-      margin: 0 auto !important;
-    }
-
-    /* Upgraded Gold Foil Title Typography */
-    .cover-title-main {
-      font-family: 'Playfair Display', 'Cormorant Garamond', serif !important;
-      font-size: 32px !important;
-      font-weight: 600 !important;
-      letter-spacing: 3px !important;
-      margin: 0 !important;
-      line-height: 1.1 !important;
-      background: linear-gradient(135deg, #fce0ad 0%, #dfac4e 50%, #b88629 100%) !important;
-      -webkit-background-clip: text !important;
-      -webkit-text-fill-color: transparent !important;
-      filter: drop-shadow(0px 1px 0px rgba(255, 255, 255, 0.2)) drop-shadow(0px -1px 0.5px rgba(0, 0, 0, 0.6)) !important;
-      z-index: 3 !important;
-    }
-
-    .cover-title-sub {
-      font-family: 'Inter', sans-serif !important;
-      font-size: 9px !important;
-      font-weight: 500 !important;
-      letter-spacing: 4px !important;
-      margin: 6px 0 0 0 !important;
-      text-transform: uppercase !important;
-      background: linear-gradient(135deg, #fce0ad 0%, #dfac4e 60%, #b88629 100%) !important;
-      -webkit-background-clip: text !important;
-      -webkit-text-fill-color: transparent !important;
-      filter: drop-shadow(0px 0.5px 0px rgba(255, 255, 255, 0.15)) drop-shadow(0px -0.5px 0.5px rgba(0, 0, 0, 0.6)) !important;
-      z-index: 3 !important;
-    }
-
-    .cover-divider-dots {
-      display: flex !important;
-      justify-content: center !important;
-      gap: 4px !important;
-      margin: 12px 0 !important;
-      z-index: 3 !important;
-    }
-
-    .cover-divider-dots span {
-      width: 2.5px !important;
-      height: 2.5px !important;
-      border-radius: 50% !important;
-      background-color: #dfac4e !important;
-      opacity: 0.65 !important;
-      box-shadow: 0px 0.5px 0.5px rgba(255, 255, 255, 0.25) !important;
-    }
-
-    /* Upgraded luxury mounted brass nameplate */
-    .s8-brass-plate {
-      position: relative !important;
-      width: 125px !important;
-      height: 38px !important;
-      background: linear-gradient(135deg, #ffd785 0%, #cfa049 50%, #9e7528 100%) !important;
-      border: 1.5px solid #6e5119 !important;
-      border-radius: 3px !important;
-      box-shadow:
-        0 4px 8px rgba(0, 0, 0, 0.35),
-        inset 0 1px 0 rgba(255, 255, 255, 0.4),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.2) !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      padding: 2px !important;
-      box-sizing: border-box !important;
-      margin: 4px auto !important;
-      z-index: 3 !important;
-      backface-visibility: hidden !important;
-    }
-
-    /* Micro screw heads in corners */
-    .s8-brass-plate .screw {
-      position: absolute !important;
-      width: 3px !important;
-      height: 3px !important;
-      background: #543d12 !important;
-      border-radius: 50% !important;
-      box-shadow: inset 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.5), 0.5px 0.5px 0.5px rgba(255, 255, 255, 0.2) !important;
-    }
-
-    .s8-brass-plate .screw.top-left {
-      top: 2px;
-      left: 2px;
-    }
-
-    .s8-brass-plate .screw.top-right {
-      top: 2px;
-      right: 2px;
-    }
-
-    .s8-brass-plate .screw.bottom-left {
-      bottom: 2px;
-      left: 2px;
-    }
-
-    .s8-brass-plate .screw.bottom-right {
-      bottom: 2px;
-      right: 2px;
-    }
-
-    .plate-border {
-      border: 0.5px solid rgba(110, 81, 25, 0.5) !important;
-      width: 100% !important;
-      height: 100% !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      box-sizing: border-box !important;
-    }
-
-    .plate-text {
-      font-family: 'Inter', sans-serif !important;
-      font-size: 7.5px !important;
-      font-weight: 700 !important;
-      color: #382504 !important;
-      letter-spacing: 1px !important;
-      text-shadow: 0.5px 0.5px 0px rgba(255, 255, 255, 0.3) !important;
-      text-align: center !important;
-    }
-
-    .cover-footer-editorial {
-      font-family: 'Cormorant Garamond', serif !important;
-      font-size: 8.5px !important;
-      font-weight: 500 !important;
-      font-style: italic !important;
-      letter-spacing: 2px !important;
-      background: linear-gradient(135deg, #fce0ad 0%, #dfac4e 70%, #9e7528 100%) !important;
-      -webkit-background-clip: text !important;
-      -webkit-text-fill-color: transparent !important;
-      filter: drop-shadow(0px 0.5px 0px rgba(255, 255, 255, 0.15)) !important;
-      margin-top: 4px !important;
-      z-index: 3 !important;
-    }
-
-    /* Paper Page Styling */
-    .s8-page-face.paper-page {
-      background: #FAF8F5 !important;
-      color: #1A2836 !important;
-      border: 1px solid rgba(209, 166, 84, 0.25) !important;
-      box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.03) !important;
-      display: flex !important;
-      flex-direction: column !important;
-      justify-content: space-between !important;
-      padding: 15px 14px !important;
-      /* Optimize padding for shorter heights */
-    }
-
-    /* Inner Dark Golden Margin Line Frame */
-    .s8-page-face.paper-page::before {
-      content: '' !important;
-      position: absolute !important;
-      inset: 8px !important;
-      border: 1.5px solid #B88A4A !important;
-      border-radius: 6px !important;
-      pointer-events: none !important;
-      z-index: 5 !important;
-      box-shadow: inset 0 0 0 1px rgba(184, 138, 74, 0.15) !important;
-    }
-
-    /* Mobile left page chapter icons */
-    .chapter-icon-wrap {
-      width: 44px !important;
-      height: 44px !important;
-      border-radius: 50% !important;
-      border: 1.5px solid var(--step-color, #D1A654) !important;
-      background: #FFFFFF !important;
-      box-shadow:
-        0 4px 10px rgba(0, 0, 0, 0.05),
-        0 0 0 3px rgba(209, 166, 84, 0.08),
-        inset 0 1px 3px rgba(255, 255, 255, 0.8) !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      margin-bottom: 12px !important;
-      flex-shrink: 0 !important;
-      z-index: 3 !important;
-      transition: transform 0.3s ease !important;
-    }
-
-    .chapter-icon-wrap svg {
-      width: 20px !important;
-      height: 20px !important;
-      stroke: var(--step-color, #D1A654) !important;
-      stroke-width: 1.8 !important;
-      fill: none !important;
-    }
-
-    .s8-page-face.left-page:hover .chapter-icon-wrap {
-      transform: scale(1.1) rotate(5deg) !important;
-    }
-
-    .left-page-content {
-      display: flex !important;
-      flex-direction: column !important;
-      height: 100% !important;
-      justify-content: center !important;
-      align-items: center !important;
-      text-align: center !important;
-      position: relative !important;
-      box-sizing: border-box !important;
-    }
-
-    .left-page-content .chapter-tag {
-      margin-top: 0 !important;
-      /* Vertically center content area */
-    }
-
-    .left-page-content .page-footer-num {
-      margin-top: auto !important;
-      /* Push footer page number to bottom */
-    }
-
-    .right-page-content {
-      display: flex !important;
-      flex-direction: column !important;
-      height: 100% !important;
-      justify-content: center !important;
-      align-items: center !important;
-      text-align: center !important;
-      box-sizing: border-box !important;
-    }
-
-    .right-page-content .page-footer-num {
-      margin-top: auto !important;
-      /* Push footer page number to bottom */
-    }
-
-    .luxury-divider {
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      gap: 4px !important;
-      margin: 4px auto 6px auto !important;
-      width: 100% !important;
-    }
-
-    .luxury-divider .line {
-      flex: 1 !important;
-      height: 1px !important;
-      background: rgba(209, 166, 84, 0.35) !important;
-      max-width: 25px !important;
-    }
-
-    .luxury-divider .leaf-icon {
-      font-size: 8px !important;
-      color: #D1A654 !important;
-      line-height: 1 !important;
-    }
-
-    .chapter-watermark {
-      font-size: 36px !important;
-      font-weight: 900 !important;
-      color: rgba(209, 166, 84, 0.15) !important;
-      font-family: 'DM Serif Display', serif !important;
-      position: absolute !important;
-      top: 0px !important;
-      right: 0px !important;
-      backface-visibility: hidden !important;
-    }
-
-    .chapter-tag {
-      font-size: 8px !important;
-      font-weight: 800 !important;
-      letter-spacing: 1.5px !important;
-      color: #E86A2A !important;
-    }
-
-    .chapter-label {
-      font-family: 'Outfit', sans-serif !important;
-      font-size: 11px !important;
-      /* Slightly smaller to prevent text overlaps */
-      font-weight: 800 !important;
-      color: #0B141E !important;
-      letter-spacing: 0.5px !important;
-      margin-top: 8px !important;
-      /* Adjusted margin to fit height */
-    }
-
-    .chapter-num-sub {
-      display: none !important;
-    }
-
-    .chapter-title {
-      font-family: 'Outfit', sans-serif !important;
-      font-size: 13px !important;
-      font-weight: 800 !important;
-      color: #0B141E !important;
-      margin: 4px 0 6px !important;
-    }
-
-    .chapter-desc {
-      font-size: 10px !important;
-      line-height: 1.5 !important;
-      color: #4A5B6D !important;
-      text-align: center !important;
-    }
-
-    .luxury-cta-btn {
-      background: linear-gradient(135deg, #E86A2A 0%, #C75218 100%) !important;
-      color: #FFF !important;
-      border: none !important;
-      border-radius: 16px !important;
-      padding: 6px 12px !important;
-      font-size: 9px !important;
-      font-weight: 700 !important;
-      letter-spacing: 0.5px !important;
-      cursor: pointer !important;
-      margin-top: 8px !important;
-      align-self: center !important;
-    }
-
-    .page-footer-num {
-      display: none !important;
-    }
-
-    /* Navigation Buttons */
-    .s8-book-navigation {
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      gap: 16px !important;
-      margin-top: 16px !important;
-    }
-
-    .s8-nav-btn {
-      width: 40px !important;
-      height: 40px !important;
-      border-radius: 50% !important;
-      background: #0B141E !important;
-      color: #D1A654 !important;
-      border: 1px solid rgba(209, 166, 84, 0.4) !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      cursor: pointer !important;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-    }
-
-    .s8-nav-btn:disabled {
-      opacity: 0.3 !important;
-      cursor: not-allowed !important;
-    }
-
-    .s8-progress-indicator {
-      padding: 6px 14px !important;
-      background: rgba(11, 20, 30, 0.06) !important;
-      border-radius: 20px !important;
-      border: 1px solid rgba(209, 166, 84, 0.3) !important;
-    }
-
-    .s8-progress-text {
-      font-size: 10px !important;
-      font-weight: 800 !important;
-      letter-spacing: 1.5px !important;
-      color: #0B141E !important;
-    }
-
-    /* Centered wavy timeline hidden on mobile, replaced by centered dotted path */
-    .franchise-journey-section .s8-timeline-svg {
-      display: none !important;
-    }
-
-    /* Center dotted timeline path hidden on mobile */
-    .franchise-journey-section .s8-timeline-wrapper::before,
-    .franchise-journey-section .s8-timeline-glow-dot {
-      display: none !important;
-    }
-
-    @keyframes s8TimelineGlowTravel {
-      0% {
-        top: 60px;
-        opacity: 0;
-      }
-
-      3% {
-        opacity: 1;
-      }
-
-      97% {
-        opacity: 1;
-      }
-
-      100% {
-        top: calc(100% - 110px);
-        opacity: 0;
-      }
-    }
-
-    /* Disable default mobile browser blue tap-highlight overlay */
-    .franchise-journey-section .s8-hotspot,
-    .franchise-journey-section .s8-step-text,
-    .franchise-journey-section .s8-node-circle,
-    .franchise-journey-section .s8-circle-inner {
-      -webkit-tap-highlight-color: transparent !important;
-      -webkit-touch-callout: none !important;
-      outline: none !important;
-    }
-
-    /* Center the hotspot container and steps */
-    .franchise-journey-section .s8-hotspot {
-      position: relative !important;
-      left: auto !important;
-      top: auto !important;
-      transform: none !important;
-      width: 100% !important;
-      height: auto !important;
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: center !important;
-      justify-content: center !important;
-      text-align: center !important;
-      z-index: 2 !important;
-      margin: 0 !important;
-      opacity: 1 !important;
-      visibility: visible !important;
-    }
-
-    /* Coffee cup (CSS animated cup wrapper) hidden on mobile layout as requested */
-    .franchise-journey-section .s8-node-circle {
-      display: none !important;
-    }
-
-    /* Revealed state for coffee cup */
-    .franchise-journey-section .s8-node-circle.s8-revealed-cup {
-      opacity: 1 !important;
-      transform: scale(1) !important;
-    }
-
-    /* Floating keyframe for coffee cup */
-    @keyframes s8FloatingCup {
-
-      0%,
-      100% {
-        transform: translateY(0) rotate(0deg);
-        filter: drop-shadow(0 0 8px rgba(217, 164, 65, 0.15));
-      }
-
-      50% {
-        transform: translateY(-5px) rotate(1.5deg);
-        filter: drop-shadow(0 4px 12px rgba(217, 164, 65, 0.25));
-      }
-    }
-
-
-    /* =============================================
-     CSS ANIMATED COFFEE CUP LOADER (Mobile Only)
-     ============================================= */
-    .franchise-journey-section .s8-css-cup-loader {
-      display: block !important;
-      position: absolute !important;
-      top: 50% !important;
-      left: 50% !important;
-      transform: translate(-50%, -50%) scale(0.58) !important;
-      width: 150px !important;
-      height: 200px !important;
-      z-index: 3 !important;
-      pointer-events: none !important;
-    }
-
-    /* Coffee Smoke container */
-    .franchise-journey-section .s8-css-cup-loader .coffee-smoke {
-      position: absolute !important;
-      bottom: 85px !important;
-      /* aligned with the coffee surface */
-      left: -15px !important;
-      width: 180px !important;
-      height: 180px !important;
-      display: flex !important;
-      justify-content: center !important;
-      align-items: flex-end !important;
-      z-index: 4 !important;
-      pointer-events: none !important;
-    }
-
-    /* Coffee Smoke spans */
-    .franchise-journey-section .s8-css-cup-loader .coffee-smoke span {
-      position: absolute !important;
-      bottom: 0 !important;
-      width: 32px !important;
-      height: 32px !important;
-      border-radius: 50% !important;
+  /* Reduce container padding on mobile to allow the 3D book to fit and center perfectly */
+  .franchise-journey-section .s8-container {
+    padding: 0 16px !important;
+  }
+
+  /* Hide desktop timeline wrapper on mobile */
+  .franchise-journey-section .s8-timeline-wrapper {
+    display: none !important;
+  }
+
+  /* Show mobile 3D Flipbook on mobile */
+  .s8-mobile-3d-book-container {
+    display: block !important;
+    width: 100% !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    perspective: 1200px !important;
+  }
+
+  /* Transparent viewport to blend natively with page background */
+  .s8-book-viewport {
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 20px 10px 30px !important;
+    border-radius: 0 !important;
+    position: relative !important;
+    overflow: visible !important;
+  }
+
+  .s8-book-viewport::before {
+    display: none !important;
+  }
+
+  /* Ultra realistic ambient book shadow */
+  .s8-book-glow-shadow {
+    position: absolute !important;
+    height: 330px !important;
+    background: rgba(0, 0, 0, 0.3) !important;
+    filter: blur(20px) !important;
+    transform: translate(0px, 15px) scale(0.96) !important;
+    border-radius: 12px !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
+    transition: width 0.8s cubic-bezier(0.25, 1, 0.5, 1), left 0.8s cubic-bezier(0.25, 1, 0.5, 1) !important;
+  }
+
+  /* Page Stack Edge Thickness - Hidden on mobile to avoid 3D projection overlay glitches */
+  .s8-paper-stack-thickness {
+    display: none !important;
+  }
+
+  /* Ribbon Bookmark */
+  .s8-silk-ribbon {
+    position: absolute !important;
+    left: 50% !important;
+    top: 0 !important;
+    width: 12px !important;
+    height: 345px !important;
+    background: linear-gradient(90deg, #7c1a13 0%, #aa251a 50%, #5a0f09 100%) !important;
+    transform: translateX(-50%) !important;
+    z-index: 4 !important;
+    border-radius: 0 0 1px 1px !important;
+    box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.35) !important;
+    pointer-events: none !important;
+  }
+
+  .s8-silk-ribbon .ribbon-tail {
+    position: absolute !important;
+    bottom: -6px !important;
+    left: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    border-left: 6px solid transparent !important;
+    border-right: 6px solid transparent !important;
+    border-top: 6px solid #5a0f09 !important;
+  }
+
+  .s8-book-stage {
+    position: relative !important;
+    width: 100% !important;
+    height: 380px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    perspective: 1200px !important;
+    overflow: visible !important;
+  }
+
+  .s8-book-container-3d {
+    position: relative !important;
+    width: 350px !important;
+    height: 330px !important;
+    transform-style: preserve-3d !important;
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1) !important;
+    transform-origin: center center !important;
+  }
+
+  .s8-book-pages-wrapper {
+    position: absolute !important;
+    inset: 0 !important;
+    transform-style: preserve-3d !important;
+  }
+
+  .s8-book-sheet {
+    position: absolute !important;
+    width: 175px !important;
+    height: 330px !important;
+    left: 175px !important;
+    top: 0 !important;
+    transform-origin: left center !important;
+    transform-style: preserve-3d !important;
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), z-index 0.8s !important;
+    cursor: pointer !important;
+  }
+
+  .s8-page-face {
+    position: absolute !important;
+    inset: 0 !important;
+    backface-visibility: hidden !important;
+    border-radius: 4px 12px 12px 4px !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+    padding: 18px 12px !important;
+  }
+
+  .s8-page-face.front-face {
+    transform: rotateY(0deg) !important;
+    z-index: 2 !important;
+  }
+
+  .s8-page-face.back-face {
+    transform: rotateY(180deg) !important;
+    z-index: 1 !important;
+    border-radius: 12px 4px 4px 12px !important;
+  }
+
+  .s8-book-sheet.flipped {
+    transform: rotateY(-180deg) !important;
+  }
+
+  /* Leather Cover Styling - Premium Handcrafted Full Grain */
+  .s8-page-face.leather-cover {
+    background: linear-gradient(135deg, #09121c 0%, #03060a 100%) !important;
+    color: #dfac4e !important;
+    border: 1px solid rgba(223, 172, 78, 0.2) !important;
+    box-shadow:
+      inset 0 0 40px rgba(0, 0, 0, 0.8),
+      inset 0 2px 5px rgba(255, 255, 255, 0.05),
+      0 15px 40px rgba(0, 0, 0, 0.4) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    position: absolute !important;
+    overflow: hidden !important;
+  }
+
+  /* Deep natural leather pores */
+  .leather-pores {
+    position: absolute !important;
+    inset: 0 !important;
+    opacity: 0.12 !important;
+    background-image:
+      radial-gradient(circle, #000 10%, transparent 11%),
+      radial-gradient(circle, #000 10%, transparent 11%) !important;
+    background-size: 3px 3px !important;
+    background-position: 0 0, 1.5px 1.5px !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+  }
+
+  .leather-grain {
+    position: absolute !important;
+    inset: 0 !important;
+    opacity: 0.04 !important;
+    background: repeating-linear-gradient(45deg, #fff, #fff 1px, transparent 1px, transparent 4px) !important;
+    filter: blur(0.5px) !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+  }
+
+  /* Physical spine ridge on the left side of the front cover */
+  .s8-cover-spine-ridge {
+    position: absolute !important;
+    left: 8px !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    width: 6px !important;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.4) 0%, rgba(255, 255, 255, 0.06) 40%, rgba(0, 0, 0, 0.6) 100%) !important;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3) !important;
+    z-index: 5 !important;
+    backface-visibility: hidden !important;
+  }
+
+  /* Premium Gold Foil Double Borders & corner ornaments */
+  .s8-double-border {
+    position: absolute !important;
+    inset: 12px !important;
+    border: 1px solid rgba(223, 172, 78, 0.45) !important;
+    border-radius: 4px !important;
+    pointer-events: none !important;
+    box-shadow: inset 0 0 0 2px rgba(223, 172, 78, 0.15) !important;
+    z-index: 3 !important;
+    backface-visibility: hidden !important;
+  }
+
+  .s8-inner-border {
+    position: absolute !important;
+    inset: 3px !important;
+    border: 0.5px solid rgba(223, 172, 78, 0.3) !important;
+    border-radius: 2px !important;
+  }
+
+  .corner-ornament {
+    position: absolute !important;
+    font-size: 11px !important;
+    color: #dfac4e !important;
+    text-shadow:
+      0.5px 0.5px 0.5px rgba(255, 255, 255, 0.25),
+      -0.5px -0.5px 0.5px rgba(0, 0, 0, 0.6) !important;
+    line-height: 1 !important;
+  }
+
+  .corner-ornament.top-left {
+    top: -2px;
+    left: -1px;
+  }
+
+  .corner-ornament.top-right {
+    top: -2px;
+    right: -1px;
+  }
+
+  .corner-ornament.bottom-left {
+    bottom: -2px;
+    left: -1px;
+  }
+
+  .corner-ornament.bottom-right {
+    bottom: -2px;
+    right: -1px;
+  }
+
+  /* Gold Foil Top Emblem styling */
+  .gold-fleur-de-lis {
+    margin-bottom: 12px !important;
+    filter: drop-shadow(0px 1px 1px rgba(255, 255, 255, 0.15)) drop-shadow(0px -1px 1px rgba(0, 0, 0, 0.5)) !important;
+    z-index: 3 !important;
+  }
+
+  .fleur-de-lis-svg {
+    width: 36px !important;
+    height: 36px !important;
+    display: block !important;
+    margin: 0 auto !important;
+  }
+
+  /* Upgraded Gold Foil Title Typography */
+  .cover-title-main {
+    font-family: 'Playfair Display', 'Cormorant Garamond', serif !important;
+    font-size: 32px !important;
+    font-weight: 600 !important;
+    letter-spacing: 3px !important;
+    margin: 0 !important;
+    line-height: 1.1 !important;
+    background: linear-gradient(135deg, #fce0ad 0%, #dfac4e 50%, #b88629 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    filter: drop-shadow(0px 1px 0px rgba(255, 255, 255, 0.2)) drop-shadow(0px -1px 0.5px rgba(0, 0, 0, 0.6)) !important;
+    z-index: 3 !important;
+  }
+
+  .cover-title-sub {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 9px !important;
+    font-weight: 500 !important;
+    letter-spacing: 4px !important;
+    margin: 6px 0 0 0 !important;
+    text-transform: uppercase !important;
+    background: linear-gradient(135deg, #fce0ad 0%, #dfac4e 60%, #b88629 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    filter: drop-shadow(0px 0.5px 0px rgba(255, 255, 255, 0.15)) drop-shadow(0px -0.5px 0.5px rgba(0, 0, 0, 0.6)) !important;
+    z-index: 3 !important;
+  }
+
+  .cover-divider-dots {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 4px !important;
+    margin: 12px 0 !important;
+    z-index: 3 !important;
+  }
+
+  .cover-divider-dots span {
+    width: 2.5px !important;
+    height: 2.5px !important;
+    border-radius: 50% !important;
+    background-color: #dfac4e !important;
+    opacity: 0.65 !important;
+    box-shadow: 0px 0.5px 0.5px rgba(255, 255, 255, 0.25) !important;
+  }
+
+  /* Upgraded luxury mounted brass nameplate */
+  .s8-brass-plate {
+    position: relative !important;
+    width: 125px !important;
+    height: 38px !important;
+    background: linear-gradient(135deg, #ffd785 0%, #cfa049 50%, #9e7528 100%) !important;
+    border: 1.5px solid #6e5119 !important;
+    border-radius: 3px !important;
+    box-shadow:
+      0 4px 8px rgba(0, 0, 0, 0.35),
+      inset 0 1px 0 rgba(255, 255, 255, 0.4),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.2) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 2px !important;
+    box-sizing: border-box !important;
+    margin: 4px auto !important;
+    z-index: 3 !important;
+    backface-visibility: hidden !important;
+  }
+
+  /* Micro screw heads in corners */
+  .s8-brass-plate .screw {
+    position: absolute !important;
+    width: 3px !important;
+    height: 3px !important;
+    background: #543d12 !important;
+    border-radius: 50% !important;
+    box-shadow: inset 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.5), 0.5px 0.5px 0.5px rgba(255, 255, 255, 0.2) !important;
+  }
+
+  .s8-brass-plate .screw.top-left {
+    top: 2px;
+    left: 2px;
+  }
+
+  .s8-brass-plate .screw.top-right {
+    top: 2px;
+    right: 2px;
+  }
+
+  .s8-brass-plate .screw.bottom-left {
+    bottom: 2px;
+    left: 2px;
+  }
+
+  .s8-brass-plate .screw.bottom-right {
+    bottom: 2px;
+    right: 2px;
+  }
+
+  .plate-border {
+    border: 0.5px solid rgba(110, 81, 25, 0.5) !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .plate-text {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 7.5px !important;
+    font-weight: 700 !important;
+    color: #382504 !important;
+    letter-spacing: 1px !important;
+    text-shadow: 0.5px 0.5px 0px rgba(255, 255, 255, 0.3) !important;
+    text-align: center !important;
+  }
+
+  .cover-footer-editorial {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-size: 8.5px !important;
+    font-weight: 500 !important;
+    font-style: italic !important;
+    letter-spacing: 2px !important;
+    background: linear-gradient(135deg, #fce0ad 0%, #dfac4e 70%, #9e7528 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    filter: drop-shadow(0px 0.5px 0px rgba(255, 255, 255, 0.15)) !important;
+    margin-top: 4px !important;
+    z-index: 3 !important;
+  }
+
+  /* Paper Page Styling */
+  .s8-page-face.paper-page {
+    background: #FAF8F5 !important;
+    color: #1A2836 !important;
+    border: 1px solid rgba(209, 166, 84, 0.25) !important;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.03) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    padding: 15px 14px !important;
+    /* Optimize padding for shorter heights */
+  }
+
+  /* Inner Dark Golden Margin Line Frame */
+  .s8-page-face.paper-page::before {
+    content: '' !important;
+    position: absolute !important;
+    inset: 8px !important;
+    border: 1.5px solid #B88A4A !important;
+    border-radius: 6px !important;
+    pointer-events: none !important;
+    z-index: 5 !important;
+    box-shadow: inset 0 0 0 1px rgba(184, 138, 74, 0.15) !important;
+  }
+
+  /* Mobile left page chapter icons */
+  .chapter-icon-wrap {
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    border: 1.5px solid var(--step-color, #D1A654) !important;
+    background: #FFFFFF !important;
+    box-shadow:
+      0 4px 10px rgba(0, 0, 0, 0.05),
+      0 0 0 3px rgba(209, 166, 84, 0.08),
+      inset 0 1px 3px rgba(255, 255, 255, 0.8) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-bottom: 12px !important;
+    flex-shrink: 0 !important;
+    z-index: 3 !important;
+    transition: transform 0.3s ease !important;
+  }
+
+  .chapter-icon-wrap svg {
+    width: 20px !important;
+    height: 20px !important;
+    stroke: var(--step-color, #D1A654) !important;
+    stroke-width: 1.8 !important;
+    fill: none !important;
+  }
+
+  .s8-page-face.left-page:hover .chapter-icon-wrap {
+    transform: scale(1.1) rotate(5deg) !important;
+  }
+
+  .left-page-content {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    position: relative !important;
+    box-sizing: border-box !important;
+  }
+
+  .left-page-content .chapter-tag {
+    margin-top: 0 !important;
+    /* Vertically center content area */
+  }
+
+  .left-page-content .page-footer-num {
+    margin-top: auto !important;
+    /* Push footer page number to bottom */
+  }
+
+  .right-page-content {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .right-page-content .page-footer-num {
+    margin-top: auto !important;
+    /* Push footer page number to bottom */
+  }
+
+  .luxury-divider {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 4px !important;
+    margin: 4px auto 6px auto !important;
+    width: 100% !important;
+  }
+
+  .luxury-divider .line {
+    flex: 1 !important;
+    height: 1px !important;
+    background: rgba(209, 166, 84, 0.35) !important;
+    max-width: 25px !important;
+  }
+
+  .luxury-divider .leaf-icon {
+    font-size: 8px !important;
+    color: #D1A654 !important;
+    line-height: 1 !important;
+  }
+
+  .chapter-watermark {
+    font-size: 36px !important;
+    font-weight: 900 !important;
+    color: rgba(209, 166, 84, 0.15) !important;
+    font-family: 'DM Serif Display', serif !important;
+    position: absolute !important;
+    top: 0px !important;
+    right: 0px !important;
+    backface-visibility: hidden !important;
+  }
+
+  .chapter-tag {
+    font-size: 8px !important;
+    font-weight: 800 !important;
+    letter-spacing: 1.5px !important;
+    color: #E86A2A !important;
+  }
+
+  .chapter-label {
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 11px !important;
+    /* Slightly smaller to prevent text overlaps */
+    font-weight: 800 !important;
+    color: #0B141E !important;
+    letter-spacing: 0.5px !important;
+    margin-top: 8px !important;
+    /* Adjusted margin to fit height */
+  }
+
+  .chapter-num-sub {
+    display: none !important;
+  }
+
+  .chapter-title {
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    color: #0B141E !important;
+    margin: 4px 0 6px !important;
+  }
+
+  .chapter-desc {
+    font-size: 10px !important;
+    line-height: 1.5 !important;
+    color: #4A5B6D !important;
+    text-align: center !important;
+  }
+
+  .luxury-cta-btn {
+    background: linear-gradient(135deg, #E86A2A 0%, #C75218 100%) !important;
+    color: #FFF !important;
+    border: none !important;
+    border-radius: 16px !important;
+    padding: 6px 12px !important;
+    font-size: 9px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px !important;
+    cursor: pointer !important;
+    margin-top: 8px !important;
+    align-self: center !important;
+  }
+
+  .page-footer-num {
+    display: none !important;
+  }
+
+  /* Navigation Buttons */
+  .s8-book-navigation {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 16px !important;
+    margin-top: 16px !important;
+  }
+
+  .s8-nav-btn {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    background: #0B141E !important;
+    color: #D1A654 !important;
+    border: 1px solid rgba(209, 166, 84, 0.4) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  }
+
+  .s8-nav-btn:disabled {
+    opacity: 0.3 !important;
+    cursor: not-allowed !important;
+  }
+
+  .s8-progress-indicator {
+    padding: 6px 14px !important;
+    background: rgba(11, 20, 30, 0.06) !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba(209, 166, 84, 0.3) !important;
+  }
+
+  .s8-progress-text {
+    font-size: 10px !important;
+    font-weight: 800 !important;
+    letter-spacing: 1.5px !important;
+    color: #0B141E !important;
+  }
+
+  /* Centered wavy timeline hidden on mobile, replaced by centered dotted path */
+  .franchise-journey-section .s8-timeline-svg {
+    display: none !important;
+  }
+
+  /* Center dotted timeline path hidden on mobile */
+  .franchise-journey-section .s8-timeline-wrapper::before,
+  .franchise-journey-section .s8-timeline-glow-dot {
+    display: none !important;
+  }
+
+  @keyframes s8TimelineGlowTravel {
+    0% {
+      top: 60px;
       opacity: 0;
-      pointer-events: none !important;
-
-      /* Softer Coffee Brown Smoke Gradient */
-      background: radial-gradient(circle,
-          rgba(120, 72, 40, 0.6) 0%,
-          rgba(92, 54, 30, 0.4) 45%,
-          rgba(70, 40, 20, 0.15) 75%,
-          transparent 100%) !important;
-
-      filter: blur(5px) !important;
     }
 
-    /* Individual Smoke Paths */
-    .franchise-journey-section .s8-css-cup-loader .coffee-smoke span:nth-child(1) {
-      left: 30px !important;
-      animation: smoke1 3.2s infinite ease-in-out !important;
+    3% {
+      opacity: 1;
     }
 
-    .franchise-journey-section .s8-css-cup-loader .coffee-smoke span:nth-child(2) {
-      left: 60px !important;
-      animation: smoke2 3.2s .4s infinite ease-in-out !important;
+    97% {
+      opacity: 1;
     }
 
-    .franchise-journey-section .s8-css-cup-loader .coffee-smoke span:nth-child(3) {
-      left: 90px !important;
-      animation: smoke3 3.2s .8s infinite ease-in-out !important;
-    }
-
-    .franchise-journey-section .s8-css-cup-loader .coffee-smoke span:nth-child(4) {
-      left: 120px !important;
-      animation: smoke4 3.2s 1.2s infinite ease-in-out !important;
-    }
-
-    .franchise-journey-section .s8-css-cup-loader .coffee-smoke span:nth-child(5) {
-      left: 75px !important;
-      animation: smoke5 3.2s 1.6s infinite ease-in-out !important;
-    }
-
-
-    /* Cup body */
-    .franchise-journey-section .s8-css-cup-loader .cup {
-      position: absolute !important;
-      bottom: 0 !important;
-      height: 100px !important;
-      width: 100% !important;
-      background-color: #fff !important;
-      box-shadow: inset 10px 10px 25px 3px #ddd !important;
-      border-radius: 0 0 50% 50% !important;
-    }
-
-    /* Coffee surface (dark brown lid) */
-    .franchise-journey-section .s8-css-cup-loader .cup .body {
-      position: absolute !important;
-      top: -15px !important;
-      left: 0 !important;
-      width: 100% !important;
-      height: 30px !important;
-      background-color: #331906 !important;
-      border: 5px solid #fff !important;
-      z-index: 1 !important;
-      border-radius: 50% !important;
-    }
-
-    /* Plate / saucer */
-    .franchise-journey-section .s8-css-cup-loader .cup .plate {
-      position: absolute !important;
-      top: calc(100% - 10px) !important;
-      width: 100% !important;
-      height: 20px !important;
-      border-radius: 50% !important;
-      z-index: -1 !important;
-      background-color: #eee !important;
-      box-shadow: inset 5px 5px 10px 1px #ccc !important;
-    }
-
-    /* Handle */
-    .franchise-journey-section .s8-css-cup-loader .cup .hand {
-      position: absolute !important;
-      left: 103% !important;
-      top: 10px !important;
-      height: 80px !important;
-      width: 50px !important;
-      border-radius: 50% !important;
-      border: 5px solid #fff !important;
-      border-bottom-color: transparent !important;
-      transform: rotate(50deg) !important;
-      transform-origin: top center !important;
-      z-index: -1 !important;
-    }
-
-    /* Step icon overlay — placed in the center of the cup body */
-    .franchise-journey-section .s8-circle-inner {
-      position: absolute !important;
-      top: 72% !important;
-      left: 50% !important;
-      transform: translate(-50%, -50%) !important;
-      width: 36px !important;
-      height: 36px !important;
-      border: none !important;
-      background: transparent !important;
-      box-shadow: none !important;
-      color: #6F4E37 !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      z-index: 8 !important;
-      transition: transform 0.3s ease !important;
-    }
-
-    .franchise-journey-section .s8-circle-inner svg {
-      width: 20px !important;
-      height: 20px !important;
-      stroke-width: 2.2px !important;
-      color: #6F4E37 !important;
-      filter: none !important;
-    }
-
-    /* Accessibility support for prefers-reduced-motion */
-    @media (prefers-reduced-motion: reduce) {
-      .franchise-journey-section .s8-css-cup-loader .coffee-smoke span {
-        animation: none !important;
-        opacity: 0 !important;
-      }
-    }
-
-    /* Mobile Coffee Pour Stream (Hidden) */
-    .franchise-journey-section .s8-pour-stream {
-      display: none !important;
-    }
-
-    /* Clean transition for mobile s8-node-circle reveal */
-    .franchise-journey-section .s8-node-circle {
-      transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.6s ease-out !important;
-      box-shadow: none !important;
-      border: none !important;
-      background: transparent !important;
-      background-color: transparent !important;
-      will-change: transform, opacity;
-    }
-
-    /* Glow travel path styles */
-    .franchise-journey-section .s8-timeline-wrapper::before {
-      transition: border-color 0.5s ease !important;
-    }
-
-    /* Reduce animation activity if motion preferences are reduced */
-    @media (prefers-reduced-motion: reduce) {
-      .franchise-journey-section .s8-node-circle {
-        animation: none !important;
-        transition: none !important;
-      }
-    }
-
-    /* Soft ivory step detail card */
-    .franchise-journey-section .s8-step-text {
-      background: #FCFAF5 !important;
-      border: 1.5px solid var(--step-color) !important;
-      border-radius: 24px !important;
-      padding: 24px 20px 28px 20px !important;
-      margin: 12px auto 10px auto !important;
-      width: 88% !important;
-      max-width: 320px !important;
-      box-shadow:
-        0 20px 45px rgba(92, 45, 22, 0.08),
-        inset 0 2px 4px rgba(255, 255, 255, 0.9),
-        inset 0 -2px 4px rgba(0, 0, 0, 0.02) !important;
-      text-align: center !important;
-      position: relative !important;
-      opacity: 1 !important;
-      transform: translateY(0) !important;
-      z-index: 2 !important;
-      cursor: pointer !important;
-      pointer-events: auto !important;
-      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
-    }
-
-
-    .franchise-journey-section .s8-step-text.s8-revealed-card {
-      opacity: 1 !important;
-      transform: translateY(0) !important;
-    }
-
-    /* Numbered circle badge (01 - 08) hidden on mobile layout as requested */
-    .franchise-journey-section .s8-step-number {
-      display: none !important;
-    }
-
-    .franchise-journey-section .s8-step-text h6 {
-      display: block !important;
-      font-family: 'Outfit', sans-serif !important;
-      font-size: 16px !important;
-      font-weight: 700 !important;
-      color: #061B36 !important;
-      /* Deep navy text */
-      text-transform: uppercase !important;
-      letter-spacing: 0.08em !important;
-      margin: 12px auto 4px auto !important;
-      text-align: center !important;
-      width: 100% !important;
-    }
-
-    .franchise-journey-section .s8-step-text p {
-      font-family: var(--font-secondary, 'Inter', sans-serif) !important;
-      font-size: 0.88rem !important;
-      color: #4A5B6D !important;
-      line-height: 1.6 !important;
-      text-align: center !important;
-      max-height: 0 !important;
-      overflow: hidden !important;
-      opacity: 0 !important;
-      margin: 0 !important;
-      padding-top: 0 !important;
-      transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, margin 0.4s ease !important;
-    }
-
-    .franchise-journey-section .s8-step-text.s8-card-expanded p {
-      max-height: 120px !important;
-      opacity: 1 !important;
-      margin-top: 14px !important;
-    }
-
-    /* Chevron toggle indicator styles */
-    .franchise-journey-section .s8-card-chevron {
-      margin: 8px auto 0 auto !important;
-      color: var(--step-color) !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
-      width: 20px !important;
-      height: 20px !important;
-    }
-
-    .franchise-journey-section .s8-card-chevron svg {
-      width: 14px !important;
-      height: 14px !important;
-      stroke-width: 2.5px !important;
-    }
-
-    .franchise-journey-section .s8-step-text.s8-card-expanded .s8-card-chevron {
-      transform: rotate(180deg) !important;
-    }
-
-    /* Tap active states for card & cup */
-    .franchise-journey-section .s8-step-text:active {
-      transform: translateY(-5px) !important;
-      box-shadow: 0 16px 40px rgba(92, 45, 22, 0.12), 0 2px 5px rgba(0, 0, 0, 0.03) !important;
-      border-color: rgba(217, 164, 65, 0.35) !important;
-    }
-
-    .franchise-journey-section .s8-hotspot:active .s8-node-circle {
-      filter: drop-shadow(0 0 16px rgba(217, 164, 65, 0.45)) !important;
-      transform: scale(1.05) !important;
-    }
-
-    /* Decorative floating coffee bean styles */
-    .franchise-journey-section .s8-decor-bean {
-      position: absolute !important;
-      width: 20px !important;
-      height: 20px !important;
-      z-index: 1 !important;
-      pointer-events: none !important;
-      animation: s8FloatBean 6s ease-in-out infinite !important;
-    }
-
-    /* Decorative floating green leaf styles */
-    .franchise-journey-section .s8-decor-leaf {
-      position: absolute !important;
-      width: 24px !important;
-      height: 24px !important;
-      z-index: 1 !important;
-      pointer-events: none !important;
-      animation: s8FloatLeaf 7s ease-in-out infinite !important;
-    }
-
-    @keyframes s8FloatBean {
-
-      0%,
-      100% {
-        transform: translateY(0) rotate(-15deg);
-      }
-
-      50% {
-        transform: translateY(-5px) rotate(-10deg);
-      }
-    }
-
-    @keyframes s8FloatLeaf {
-
-      0%,
-      100% {
-        transform: translateY(0) rotate(15deg);
-      }
-
-      50% {
-        transform: translateY(-6px) rotate(22deg);
-      }
-    }
-
-    /* Particle glow optimization on mobile */
-    .franchise-journey-section .s8-particle {
-      opacity: 0.18 !important;
-      box-shadow: 0 0 8px #D9A441, 0 0 16px rgba(217, 164, 65, 0.35) !important;
+    100% {
+      top: calc(100% - 110px);
+      opacity: 0;
     }
   }
+
+  /* Disable default mobile browser blue tap-highlight overlay */
+  .franchise-journey-section .s8-hotspot,
+  .franchise-journey-section .s8-step-text,
+  .franchise-journey-section .s8-node-circle,
+  .franchise-journey-section .s8-circle-inner {
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-touch-callout: none !important;
+    outline: none !important;
+  }
+
+  /* Center the hotspot container and steps */
+  .franchise-journey-section .s8-hotspot {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    z-index: 2 !important;
+    margin: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* Coffee cup (CSS animated cup wrapper) hidden on mobile layout as requested */
+  .franchise-journey-section .s8-node-circle {
+    display: none !important;
+  }
+
+  /* Revealed state for coffee cup */
+  .franchise-journey-section .s8-node-circle.s8-revealed-cup {
+    opacity: 1 !important;
+    transform: scale(1) !important;
+  }
+
+  /* Floating keyframe for coffee cup */
+  @keyframes s8FloatingCup {
+
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+      filter: drop-shadow(0 0 8px rgba(217, 164, 65, 0.15));
+    }
+
+    50% {
+      transform: translateY(-5px) rotate(1.5deg);
+      filter: drop-shadow(0 4px 12px rgba(217, 164, 65, 0.25));
+    }
+  }
+
 
   /* =============================================
-   GLOBAL SMOKE KEYFRAMES (High Visibility)
-   ============================================= */
-  @keyframes smoke1 {
-    0% {
-      transform: translate(0, 0) scale(.5);
-      opacity: 0;
-    }
+     CSS ANIMATED COFFEE CUP LOADER (Mobile Only)
+     ============================================= */
+  .franchise-journey-section .s8-css-cup-loader {
+    display: block !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) scale(0.58) !important;
+    width: 150px !important;
+    height: 200px !important;
+    z-index: 3 !important;
+    pointer-events: none !important;
+  }
 
-    15% {
-      opacity: 0.65;
-    }
+  /* Coffee Smoke container */
+  .franchise-journey-section .s8-css-cup-loader .coffee-smoke {
+    position: absolute !important;
+    bottom: 85px !important;
+    /* aligned with the coffee surface */
+    left: -15px !important;
+    width: 180px !important;
+    height: 180px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-end !important;
+    z-index: 4 !important;
+    pointer-events: none !important;
+  }
 
-    50% {
-      transform: translate(-15px, -70px) scale(1.6);
-      opacity: 0.45;
-    }
+  /* Coffee Smoke spans */
+  .franchise-journey-section .s8-css-cup-loader .coffee-smoke span {
+    position: absolute !important;
+    bottom: 0 !important;
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 50% !important;
+    opacity: 0;
+    pointer-events: none !important;
 
-    100% {
-      transform: translate(10px, -150px) scale(3.2);
-      opacity: 0;
+    /* Softer Coffee Brown Smoke Gradient */
+    background: radial-gradient(circle,
+        rgba(120, 72, 40, 0.6) 0%,
+        rgba(92, 54, 30, 0.4) 45%,
+        rgba(70, 40, 20, 0.15) 75%,
+        transparent 100%) !important;
+
+    filter: blur(5px) !important;
+  }
+
+  /* Individual Smoke Paths */
+  .franchise-journey-section .s8-css-cup-loader .coffee-smoke span:nth-child(1) {
+    left: 30px !important;
+    animation: smoke1 3.2s infinite ease-in-out !important;
+  }
+
+  .franchise-journey-section .s8-css-cup-loader .coffee-smoke span:nth-child(2) {
+    left: 60px !important;
+    animation: smoke2 3.2s .4s infinite ease-in-out !important;
+  }
+
+  .franchise-journey-section .s8-css-cup-loader .coffee-smoke span:nth-child(3) {
+    left: 90px !important;
+    animation: smoke3 3.2s .8s infinite ease-in-out !important;
+  }
+
+  .franchise-journey-section .s8-css-cup-loader .coffee-smoke span:nth-child(4) {
+    left: 120px !important;
+    animation: smoke4 3.2s 1.2s infinite ease-in-out !important;
+  }
+
+  .franchise-journey-section .s8-css-cup-loader .coffee-smoke span:nth-child(5) {
+    left: 75px !important;
+    animation: smoke5 3.2s 1.6s infinite ease-in-out !important;
+  }
+
+
+  /* Cup body */
+  .franchise-journey-section .s8-css-cup-loader .cup {
+    position: absolute !important;
+    bottom: 0 !important;
+    height: 100px !important;
+    width: 100% !important;
+    background-color: #fff !important;
+    box-shadow: inset 10px 10px 25px 3px #ddd !important;
+    border-radius: 0 0 50% 50% !important;
+  }
+
+  /* Coffee surface (dark brown lid) */
+  .franchise-journey-section .s8-css-cup-loader .cup .body {
+    position: absolute !important;
+    top: -15px !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 30px !important;
+    background-color: #331906 !important;
+    border: 5px solid #fff !important;
+    z-index: 1 !important;
+    border-radius: 50% !important;
+  }
+
+  /* Plate / saucer */
+  .franchise-journey-section .s8-css-cup-loader .cup .plate {
+    position: absolute !important;
+    top: calc(100% - 10px) !important;
+    width: 100% !important;
+    height: 20px !important;
+    border-radius: 50% !important;
+    z-index: -1 !important;
+    background-color: #eee !important;
+    box-shadow: inset 5px 5px 10px 1px #ccc !important;
+  }
+
+  /* Handle */
+  .franchise-journey-section .s8-css-cup-loader .cup .hand {
+    position: absolute !important;
+    left: 103% !important;
+    top: 10px !important;
+    height: 80px !important;
+    width: 50px !important;
+    border-radius: 50% !important;
+    border: 5px solid #fff !important;
+    border-bottom-color: transparent !important;
+    transform: rotate(50deg) !important;
+    transform-origin: top center !important;
+    z-index: -1 !important;
+  }
+
+  /* Step icon overlay — placed in the center of the cup body */
+  .franchise-journey-section .s8-circle-inner {
+    position: absolute !important;
+    top: 72% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 36px !important;
+    height: 36px !important;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    color: #6F4E37 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 8 !important;
+    transition: transform 0.3s ease !important;
+  }
+
+  .franchise-journey-section .s8-circle-inner svg {
+    width: 20px !important;
+    height: 20px !important;
+    stroke-width: 2.2px !important;
+    color: #6F4E37 !important;
+    filter: none !important;
+  }
+
+  /* Accessibility support for prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    .franchise-journey-section .s8-css-cup-loader .coffee-smoke span {
+      animation: none !important;
+      opacity: 0 !important;
     }
   }
 
-  @keyframes smoke2 {
-    0% {
-      transform: translate(0, 0) scale(.6);
-      opacity: 0;
-    }
+  /* Mobile Coffee Pour Stream (Hidden) */
+  .franchise-journey-section .s8-pour-stream {
+    display: none !important;
+  }
 
-    20% {
-      opacity: 0.65;
-    }
+  /* Clean transition for mobile s8-node-circle reveal */
+  .franchise-journey-section .s8-node-circle {
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.6s ease-out !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    will-change: transform, opacity;
+  }
 
-    60% {
-      transform: translate(20px, -90px) scale(2);
-      opacity: 0.45;
-    }
+  /* Glow travel path styles */
+  .franchise-journey-section .s8-timeline-wrapper::before {
+    transition: border-color 0.5s ease !important;
+  }
 
-    100% {
-      transform: translate(-10px, -170px) scale(3.5);
-      opacity: 0;
+  /* Reduce animation activity if motion preferences are reduced */
+  @media (prefers-reduced-motion: reduce) {
+    .franchise-journey-section .s8-node-circle {
+      animation: none !important;
+      transition: none !important;
     }
   }
 
-  @keyframes smoke3 {
-    0% {
-      transform: translate(0, 0) scale(.5);
-      opacity: 0;
-    }
+  /* Soft ivory step detail card */
+  .franchise-journey-section .s8-step-text {
+    background: #FCFAF5 !important;
+    border: 1.5px solid var(--step-color) !important;
+    border-radius: 24px !important;
+    padding: 24px 20px 28px 20px !important;
+    margin: 12px auto 10px auto !important;
+    width: 88% !important;
+    max-width: 320px !important;
+    box-shadow:
+      0 20px 45px rgba(92, 45, 22, 0.08),
+      inset 0 2px 4px rgba(255, 255, 255, 0.9),
+      inset 0 -2px 4px rgba(0, 0, 0, 0.02) !important;
+    text-align: center !important;
+    position: relative !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    z-index: 2 !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
 
-    20% {
-      opacity: 0.65;
+
+  .franchise-journey-section .s8-step-text.s8-revealed-card {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+  /* Numbered circle badge (01 - 08) hidden on mobile layout as requested */
+  .franchise-journey-section .s8-step-number {
+    display: none !important;
+  }
+
+  .franchise-journey-section .s8-step-text h6 {
+    display: block !important;
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: #061B36 !important;
+    /* Deep navy text */
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    margin: 12px auto 4px auto !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .franchise-journey-section .s8-step-text p {
+    font-family: var(--font-secondary, 'Inter', sans-serif) !important;
+    font-size: 0.88rem !important;
+    color: #4A5B6D !important;
+    line-height: 1.6 !important;
+    text-align: center !important;
+    max-height: 0 !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    margin: 0 !important;
+    padding-top: 0 !important;
+    transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, margin 0.4s ease !important;
+  }
+
+  .franchise-journey-section .s8-step-text.s8-card-expanded p {
+    max-height: 120px !important;
+    opacity: 1 !important;
+    margin-top: 14px !important;
+  }
+
+  /* Chevron toggle indicator styles */
+  .franchise-journey-section .s8-card-chevron {
+    margin: 8px auto 0 auto !important;
+    color: var(--step-color) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  .franchise-journey-section .s8-card-chevron svg {
+    width: 14px !important;
+    height: 14px !important;
+    stroke-width: 2.5px !important;
+  }
+
+  .franchise-journey-section .s8-step-text.s8-card-expanded .s8-card-chevron {
+    transform: rotate(180deg) !important;
+  }
+
+  /* Tap active states for card & cup */
+  .franchise-journey-section .s8-step-text:active {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 16px 40px rgba(92, 45, 22, 0.12), 0 2px 5px rgba(0, 0, 0, 0.03) !important;
+    border-color: rgba(217, 164, 65, 0.35) !important;
+  }
+
+  .franchise-journey-section .s8-hotspot:active .s8-node-circle {
+    filter: drop-shadow(0 0 16px rgba(217, 164, 65, 0.45)) !important;
+    transform: scale(1.05) !important;
+  }
+
+  /* Decorative floating coffee bean styles */
+  .franchise-journey-section .s8-decor-bean {
+    position: absolute !important;
+    width: 20px !important;
+    height: 20px !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+    animation: s8FloatBean 6s ease-in-out infinite !important;
+  }
+
+  /* Decorative floating green leaf styles */
+  .franchise-journey-section .s8-decor-leaf {
+    position: absolute !important;
+    width: 24px !important;
+    height: 24px !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+    animation: s8FloatLeaf 7s ease-in-out infinite !important;
+  }
+
+  @keyframes s8FloatBean {
+
+    0%,
+    100% {
+      transform: translateY(0) rotate(-15deg);
     }
 
     50% {
-      transform: translate(-20px, -80px) scale(1.8);
-      opacity: 0.45;
-    }
-
-    100% {
-      transform: translate(25px, -165px) scale(3.4);
-      opacity: 0;
+      transform: translateY(-5px) rotate(-10deg);
     }
   }
 
-  @keyframes smoke4 {
-    0% {
-      transform: translate(0, 0) scale(.5);
-      opacity: 0;
-    }
+  @keyframes s8FloatLeaf {
 
-    20% {
-      opacity: 0.6;
+    0%,
+    100% {
+      transform: translateY(0) rotate(15deg);
     }
 
     50% {
-      transform: translate(18px, -85px) scale(1.8);
-      opacity: 0.4;
-    }
-
-    100% {
-      transform: translate(-15px, -170px) scale(3.2);
-      opacity: 0;
+      transform: translateY(-6px) rotate(22deg);
     }
   }
 
-  @keyframes smoke5 {
-    0% {
-      transform: translate(0, 0) scale(.4);
-      opacity: 0;
-    }
-
-    20% {
-      opacity: 0.55;
-    }
-
-    50% {
-      transform: translate(-10px, -75px) scale(1.7);
-      opacity: 0.35;
-    }
-
-    100% {
-      transform: translate(15px, -155px) scale(3.1);
-      opacity: 0;
-    }
+  /* Particle glow optimization on mobile */
+  .franchise-journey-section .s8-particle {
+    opacity: 0.18 !important;
+    box-shadow: 0 0 8px #D9A441, 0 0 16px rgba(217, 164, 65, 0.35) !important;
   }
 }
 
-  /* ==========================================================================
+/* =============================================
+   GLOBAL SMOKE KEYFRAMES (High Visibility)
+   ============================================= */
+@keyframes smoke1 {
+  0% {
+    transform: translate(0, 0) scale(.5);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.65;
+  }
+
+  50% {
+    transform: translate(-15px, -70px) scale(1.6);
+    opacity: 0.45;
+  }
+
+  100% {
+    transform: translate(10px, -150px) scale(3.2);
+    opacity: 0;
+  }
+}
+
+@keyframes smoke2 {
+  0% {
+    transform: translate(0, 0) scale(.6);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.65;
+  }
+
+  60% {
+    transform: translate(20px, -90px) scale(2);
+    opacity: 0.45;
+  }
+
+  100% {
+    transform: translate(-10px, -170px) scale(3.5);
+    opacity: 0;
+  }
+}
+
+@keyframes smoke3 {
+  0% {
+    transform: translate(0, 0) scale(.5);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.65;
+  }
+
+  50% {
+    transform: translate(-20px, -80px) scale(1.8);
+    opacity: 0.45;
+  }
+
+  100% {
+    transform: translate(25px, -165px) scale(3.4);
+    opacity: 0;
+  }
+}
+
+@keyframes smoke4 {
+  0% {
+    transform: translate(0, 0) scale(.5);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: translate(18px, -85px) scale(1.8);
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: translate(-15px, -170px) scale(3.2);
+    opacity: 0;
+  }
+}
+
+@keyframes smoke5 {
+  0% {
+    transform: translate(0, 0) scale(.4);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.55;
+  }
+
+  50% {
+    transform: translate(-10px, -75px) scale(1.7);
+    opacity: 0.35;
+  }
+
+  100% {
+    transform: translate(15px, -155px) scale(3.1);
+    opacity: 0;
+  }
+}
+}
+
+/* ==========================================================================
    MOBILE SCROLL COFFEE POUR & LIQUID FILL SEQUENCE (Approved Specs)
    ========================================================================== */
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
 
-    /* Layer text components above the liquid fill background */
-    .franchise-journey-section .s8-step-number,
-    .franchise-journey-section .s8-step-text h6,
-    .franchise-journey-section .s8-step-text p,
-    .franchise-journey-section .s8-card-chevron {
-      position: relative !important;
-      z-index: 2 !important;
+  /* Layer text components above the liquid fill background */
+  .franchise-journey-section .s8-step-number,
+  .franchise-journey-section .s8-step-text h6,
+  .franchise-journey-section .s8-step-text p,
+  .franchise-journey-section .s8-card-chevron {
+    position: relative !important;
+    z-index: 2 !important;
+  }
+
+  /* Liquid fill overlay container */
+  .franchise-journey-section .s8-card-fill-overlay {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 22px !important;
+    overflow: hidden !important;
+    z-index: 1 !important;
+    /* Above card bg, below text */
+    pointer-events: none !important;
+  }
+
+  /* Liquid fill moving layer */
+  .franchise-journey-section .s8-liquid-fill {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    color: #D1A654 !important;
+    /* Warm latte coffee color */
+    background: currentColor !important;
+    transform: translateY(100%) !important;
+    /* Start empty */
+    transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1), color 0.7s ease, background 0.7s ease !important;
+    border-radius: inherit !important;
+  }
+
+  /* Filled state */
+  .franchise-journey-section .s8-liquid-fill.s8-filled {
+    transform: translateY(0%) !important;
+  }
+
+  /* When filled and active, transition from latte to brand gradient */
+  .franchise-journey-section .s8-step-text.active-fill .s8-liquid-fill {
+    color: var(--step-color) !important;
+    background: linear-gradient(180deg, var(--step-color) 0%, color-mix(in srgb, var(--step-color) 70%, black) 100%) !important;
+  }
+
+  /* Sloshing liquid wave on top of fill */
+  .franchise-journey-section .s8-liquid-wave {
+    position: absolute !important;
+    top: -16px !important;
+    left: -50% !important;
+    width: 200% !important;
+    height: 20px !important;
+    fill: currentColor !important;
+    animation: s8WaveSlosh 3.5s linear infinite !important;
+  }
+
+  @keyframes s8WaveSlosh {
+    0% {
+      transform: translateX(0);
     }
 
-    /* Liquid fill overlay container */
-    .franchise-journey-section .s8-card-fill-overlay {
-      position: absolute !important;
-      top: 0 !important;
-      left: 0 !important;
-      width: 100% !important;
-      height: 100% !important;
-      border-radius: 22px !important;
-      overflow: hidden !important;
-      z-index: 1 !important;
-      /* Above card bg, below text */
-      pointer-events: none !important;
-    }
-
-    /* Liquid fill moving layer */
-    .franchise-journey-section .s8-liquid-fill {
-      position: absolute !important;
-      bottom: 0 !important;
-      left: 0 !important;
-      width: 100% !important;
-      height: 100% !important;
-      color: #D1A654 !important;
-      /* Warm latte coffee color */
-      background: currentColor !important;
-      transform: translateY(100%) !important;
-      /* Start empty */
-      transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1), color 0.7s ease, background 0.7s ease !important;
-      border-radius: inherit !important;
-    }
-
-    /* Filled state */
-    .franchise-journey-section .s8-liquid-fill.s8-filled {
-      transform: translateY(0%) !important;
-    }
-
-    /* When filled and active, transition from latte to brand gradient */
-    .franchise-journey-section .s8-step-text.active-fill .s8-liquid-fill {
-      color: var(--step-color) !important;
-      background: linear-gradient(180deg, var(--step-color) 0%, color-mix(in srgb, var(--step-color) 70%, black) 100%) !important;
-    }
-
-    /* Sloshing liquid wave on top of fill */
-    .franchise-journey-section .s8-liquid-wave {
-      position: absolute !important;
-      top: -16px !important;
-      left: -50% !important;
-      width: 200% !important;
-      height: 20px !important;
-      fill: currentColor !important;
-      animation: s8WaveSlosh 3.5s linear infinite !important;
-    }
-
-    @keyframes s8WaveSlosh {
-      0% {
-        transform: translateX(0);
-      }
-
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-
-    /* Glass reflection shimmer sweep */
-    .franchise-journey-section .s8-card-shimmer {
-      position: absolute !important;
-      top: 0 !important;
-      left: 0 !important;
-      width: 100% !important;
-      height: 100% !important;
-      background: linear-gradient(135deg,
-          transparent 30%,
-          rgba(255, 255, 255, 0.35) 50%,
-          transparent 70%) !important;
-      transform: translateX(-100%) !important;
-      z-index: 2 !important;
-      pointer-events: none !important;
-    }
-
-    .franchise-journey-section .s8-card-shimmer.active {
-      animation: s8ShimmerSweep 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards !important;
-    }
-
-    @keyframes s8ShimmerSweep {
-      0% {
-        transform: translateX(-100%);
-      }
-
-      100% {
-        transform: translateX(100%);
-      }
-    }
-
-    /* Card active fill styles */
-    .franchise-journey-section .s8-step-text.active-fill {
-      border-color: var(--step-color) !important;
-      box-shadow:
-        0 0 25px var(--step-color-glow),
-        0 20px 45px rgba(92, 45, 22, 0.12),
-        inset 0 2px 4px rgba(255, 255, 255, 0.25) !important;
-    }
-
-    .franchise-journey-section .s8-step-text.active-fill h6 {
-      color: #FFFFFF !important;
-      transition: color 0.5s ease !important;
-    }
-
-    .franchise-journey-section .s8-step-text.active-fill p {
-      color: #FCFAF5 !important;
-      opacity: 0.9 !important;
-      transition: color 0.5s ease, opacity 0.5s ease !important;
-    }
-
-    .franchise-journey-section .s8-step-text.active-fill .s8-card-chevron {
-      color: #FFFFFF !important;
-      transition: color 0.5s ease !important;
-    }
-
-    /* Cup awaken and tilt animation overrides */
-    .franchise-journey-section .s8-node-circle.s8-cup-awaken {
-      transform: translateY(-12px) scale(1.06) !important;
-      filter: drop-shadow(0 4px 20px var(--step-color-glow)) !important;
-      transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), filter 0.4s ease !important;
-      animation: none !important;
-    }
-
-    .franchise-journey-section .s8-node-circle.s8-cup-tilt {
-      transform: translateY(-12px) scale(1.06) rotate(19deg) !important;
-      transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1) !important;
-      animation: none !important;
-    }
-
-    /* Bounce state when energy trail hits next cup */
-    .franchise-journey-section .s8-node-circle.s8-cup-bounce {
-      animation: s8CupBounce 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards !important;
-    }
-
-    @keyframes s8CupBounce {
-
-      0%,
-      100% {
-        transform: scale(1) translateY(0) rotate(0);
-      }
-
-      30% {
-        transform: scale(1.16) translateY(-16px) rotate(-6deg);
-      }
-
-      50% {
-        transform: scale(0.94) translateY(3px) rotate(4deg);
-      }
-
-      70% {
-        transform: scale(1.04) translateY(-4px) rotate(-2deg);
-      }
-    }
-
-    /* Pour stream placement & settings */
-    .franchise-journey-section .s8-pour-stream {
-      display: block !important;
-      position: absolute !important;
-      top: 88px !important;
-      left: 50% !important;
-      transform: translateX(-50%) !important;
-      width: 14px !important;
-      z-index: 4 !important;
-      pointer-events: none !important;
-      opacity: 0 !important;
-      transition: opacity 0.25s ease !important;
-      overflow: visible !important;
-    }
-
-    .franchise-journey-section .s8-pour-stream.active {
-      opacity: 1 !important;
-    }
-
-    .franchise-journey-section .s8-pour-path {
-      stroke: #D1A654 !important;
-      stroke-width: 4 !important;
-      stroke-dasharray: 40 15 !important;
-      stroke-linecap: round !important;
-    }
-
-    .franchise-journey-section .s8-pour-stream.active .s8-pour-path {
-      animation: s8FlowPour 0.4s linear infinite !important;
-    }
-
-    @keyframes s8FlowPour {
-      0% {
-        stroke-dashoffset: 55;
-      }
-
-      100% {
-        stroke-dashoffset: 0;
-      }
-    }
-
-    /* Active icon inside the cup */
-    .franchise-journey-section .s8-circle-inner.active-icon {
-      color: #6F4E37 !important;
-      background-color: transparent !important;
-      box-shadow: none !important;
-      transform: translate(-50%, -50%) scale(1.15) !important;
-    }
-
-    .franchise-journey-section .s8-circle-inner.active-icon svg {
-      color: #6F4E37 !important;
-      fill: none !important;
-    }
-
-    /* Coffee Impact Elements */
-    .franchise-journey-section .s8-impact-ripple {
-      position: absolute !important;
-      top: 0 !important;
-      left: 50% !important;
-      width: 10px !important;
-      height: 10px !important;
-      border: 2px solid #D1A654 !important;
-      border-radius: 50% !important;
-      transform: translate(-50%, -50%) scale(1) !important;
-      opacity: 0.85 !important;
-      animation: s8RippleBurst 0.25s ease-out forwards !important;
-      z-index: 3 !important;
-      pointer-events: none !important;
-    }
-
-    @keyframes s8RippleBurst {
-      0% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 0.85;
-      }
-
-      100% {
-        transform: translate(-50%, -50%) scale(7);
-        opacity: 0;
-      }
-    }
-
-    .franchise-journey-section .s8-impact-drop {
-      position: absolute !important;
-      top: 0 !important;
-      left: 50% !important;
-      width: 5px !important;
-      height: 5px !important;
-      background-color: #D1A654 !important;
-      border-radius: 50% !important;
-      z-index: 3 !important;
-      pointer-events: none !important;
-    }
-
-    .franchise-journey-section .s8-impact-drop.s8-drop-dir-0 {
-      animation: s8DropBurst0 0.25s ease-out forwards !important;
-    }
-
-    .franchise-journey-section .s8-impact-drop.s8-drop-dir-1 {
-      animation: s8DropBurst1 0.25s ease-out forwards !important;
-    }
-
-    .franchise-journey-section .s8-impact-drop.s8-drop-dir-2 {
-      animation: s8DropBurst2 0.25s ease-out forwards !important;
-    }
-
-    @keyframes s8DropBurst0 {
-      0% {
-        transform: translate(-50%, -50%) translate(0, 0) scale(1);
-        opacity: 1;
-      }
-
-      100% {
-        transform: translate(-50%, -50%) translate(-20px, -15px) scale(0.3);
-        opacity: 0;
-      }
-    }
-
-    @keyframes s8DropBurst1 {
-      0% {
-        transform: translate(-50%, -50%) translate(0, 0) scale(1);
-        opacity: 1;
-      }
-
-      100% {
-        transform: translate(-50%, -50%) translate(20px, -15px) scale(0.3);
-        opacity: 0;
-      }
-    }
-
-    @keyframes s8DropBurst2 {
-      0% {
-        transform: translate(-50%, -50%) translate(0, 0) scale(1);
-        opacity: 1;
-      }
-
-      100% {
-        transform: translate(-50%, -50%) translate(0px, -24px) scale(0.3);
-        opacity: 0;
-      }
-    }
-
-    /* Completion Floating Particles */
-    .franchise-journey-section .s8-completion-particle {
-      position: absolute !important;
-      width: 6px !important;
-      height: 6px !important;
-      background-color: var(--particle-color) !important;
-      border-radius: 50% !important;
-      box-shadow: 0 0 8px var(--particle-color) !important;
-      transform: translate(-50%, -50%) scale(1) !important;
-      opacity: 1 !important;
-      z-index: 3 !important;
-      pointer-events: none !important;
-      animation: s8ParticleBurst 0.70s cubic-bezier(0.25, 1, 0.5, 1) forwards !important;
-    }
-
-    @keyframes s8ParticleBurst {
-      0% {
-        transform: translate(-50%, -50%) scale(1) translate(0, 0);
-        opacity: 1;
-      }
-
-      100% {
-        transform: translate(-50%, -50%) scale(0.2) translate(var(--target-x), var(--target-y));
-        opacity: 0;
-      }
-    }
-
-    /* Dotted timeline energy trail & sparkles */
-    .franchise-journey-section .s8-energy-trail {
-      position: absolute !important;
-      left: 50% !important;
-      width: 6px !important;
-      height: 50px !important;
-      background: linear-gradient(180deg, #D9A441 0%, rgba(217, 164, 65, 0) 100%) !important;
-      box-shadow: 0 0 15px #D9A441, 0 0 30px rgba(232, 106, 42, 0.9) !important;
-      transform: translateX(-50%) !important;
-      z-index: 3 !important;
-      filter: blur(0.5px) !important;
-    }
-
-    .franchise-journey-section .s8-trail-sparkle {
-      position: absolute !important;
-      width: 4px !important;
-      height: 4px !important;
-      background-color: #D9A441 !important;
-      border-radius: 50% !important;
-      box-shadow: 0 0 6px #D9A441 !important;
-      opacity: 1 !important;
-      z-index: 3 !important;
-      pointer-events: none !important;
-      animation: s8SparkleFade 0.4s ease-out forwards !important;
-    }
-
-    @keyframes s8SparkleFade {
-      0% {
-        transform: scale(1) translateY(0);
-        opacity: 1;
-      }
-
-      100% {
-        transform: scale(0.3) translateY(12px);
-        opacity: 0;
-      }
-    }
-
-    /* Steam Boost Keyframe states */
-    .franchise-journey-section .s8-steam-boost span {
-      opacity: 0.95 !important;
-      filter: blur(3.5px) !important;
-    }
-
-    @keyframes s8BadgePulse {
-
-      0%,
-      100% {
-        transform: scale(1);
-      }
-
-      50% {
-        transform: scale(1.15);
-        box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-      }
-    }
-
-    /* Master Mobile Content Text Font Override to Inter Regular */
-    p,
-    p *,
-    .card-desc,
-    .section-desc,
-    .section-subtitle,
-    .benefit-desc,
-    .hero-desc,
-    .hero-subtitle,
-    .feature-desc,
-    .category-desc,
-    .card-text,
-    .card-body,
-    .card-content,
-    .cta-desc,
-    .faq-answer,
-    .footer-desc,
-    .support-desc,
-    .partner-desc,
-    .partner-text,
-    .investment-desc,
-    .investment-text,
-    .testimonial-desc,
-    .review-text,
-    .timeline-desc,
-    .process-desc,
-    .requirement-desc,
-    .step-desc,
-    .detail-desc,
-    .about-desc,
-    .highlight-desc,
-    .subtitle,
-    .desc,
-    .description,
-    .content-text,
-    .body-text,
-    .text-content,
-    .showcase-subtitle-luxury,
-    .mobile-hero-description,
-    .ben-description,
-    .ben-mob-subtitle,
-    .ben-card-desc,
-    .ben-mob-wcard-desc,
-    .req-desc,
-    .st-desc,
-    .s6-desc,
-    .s7-description,
-    .s8-description,
-    .s8-step-text p,
-    .s9-paragraph,
-    .s10-paragraph,
-    .s10-benefit-text,
-    .faq-subtitle,
-    .mobile-benefit-item,
-    .mobile-card-content,
-    [class*="-desc"],
-    [class*="-description"],
-    [class*="-subtitle"],
-    [class*="-paragraph"] {
-      font-family: 'Inter', sans-serif !important;
-      font-weight: 400 !important;
+    100% {
+      transform: translateX(-50%);
     }
   }
 
-  /* Custom Desktop background overrides */
-  @media (min-width: 769px) {
-    body {
-      background: ivory !important;
+  /* Glass reflection shimmer sweep */
+  .franchise-journey-section .s8-card-shimmer {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(135deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.35) 50%,
+        transparent 70%) !important;
+    transform: translateX(-100%) !important;
+    z-index: 2 !important;
+    pointer-events: none !important;
+  }
+
+  .franchise-journey-section .s8-card-shimmer.active {
+    animation: s8ShimmerSweep 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards !important;
+  }
+
+  @keyframes s8ShimmerSweep {
+    0% {
+      transform: translateX(-100%);
     }
 
-    .hero-section,
-    .revenue-section,
-    .benefits-section,
-    .req-section,
-    .st-section,
-    .s6-section,
-    .store-design-section,
-    .investment-highlights-section,
-    .franchise-journey-section,
-    .s9-opportunity-section,
-    .s10-getstarted-section,
-    .faq-luxury-section {
-      background: ivory !important;
-      background-color: ivory !important;
-      box-shadow: none !important;
-      border: none !important;
-      border-top: none !important;
-      border-bottom: none !important;
-      border-radius: 0 !important;
-      margin-top: 0 !important;
-      margin-bottom: 0 !important;
-      background-image: none !important;
-    }
-
-    /* Hide decorative slants, separators and overlay gradients on desktop for seamless look */
-    .hero-section::after,
-    .revenue-section::before,
-    .faq-luxury-section::before,
-    .s10-getstarted-section::after {
-      display: none !important;
-      content: none !important;
-      background: none !important;
-      box-shadow: none !important;
-    }
-
-    /* Desktop-only category carousel navigation arrows styling */
-    .desktop-nav-arrow {
-      display: flex !important;
-      position: absolute !important;
-      top: 50% !important;
-      transform: translateY(-50%) !important;
-      width: 48px !important;
-      height: 48px !important;
-      border-radius: 50% !important;
-      background: #FFFFFF !important;
-      border: 1.5px solid rgba(212, 165, 74, 0.45) !important;
-      color: #0A1E36 !important;
-      align-items: center !important;
-      justify-content: center !important;
-      cursor: pointer !important;
-      box-shadow: 0 8px 24px rgba(10, 30, 54, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
-      z-index: 25 !important;
-      pointer-events: auto !important;
-      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease !important;
-    }
-
-    .desktop-nav-arrow svg {
-      width: 22px !important;
-      height: 22px !important;
-      stroke: #0A1E36 !important;
-      stroke-width: 3 !important;
-      transition: transform 0.25s ease !important;
-    }
-
-    .desktop-nav-arrow.desktop-prev {
-      left: 10px !important;
-    }
-
-    .desktop-nav-arrow.desktop-next {
-      right: 10px !important;
-    }
-
-    .desktop-nav-arrow:hover {
-      transform: translateY(-50%) scale(1.08) !important;
-      box-shadow: 0 12px 30px rgba(10, 30, 54, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+    100% {
+      transform: translateX(100%);
     }
   }
+
+  /* Card active fill styles */
+  .franchise-journey-section .s8-step-text.active-fill {
+    border-color: var(--step-color) !important;
+    box-shadow:
+      0 0 25px var(--step-color-glow),
+      0 20px 45px rgba(92, 45, 22, 0.12),
+      inset 0 2px 4px rgba(255, 255, 255, 0.25) !important;
+  }
+
+  .franchise-journey-section .s8-step-text.active-fill h6 {
+    color: #FFFFFF !important;
+    transition: color 0.5s ease !important;
+  }
+
+  .franchise-journey-section .s8-step-text.active-fill p {
+    color: #FCFAF5 !important;
+    opacity: 0.9 !important;
+    transition: color 0.5s ease, opacity 0.5s ease !important;
+  }
+
+  .franchise-journey-section .s8-step-text.active-fill .s8-card-chevron {
+    color: #FFFFFF !important;
+    transition: color 0.5s ease !important;
+  }
+
+  /* Cup awaken and tilt animation overrides */
+  .franchise-journey-section .s8-node-circle.s8-cup-awaken {
+    transform: translateY(-12px) scale(1.06) !important;
+    filter: drop-shadow(0 4px 20px var(--step-color-glow)) !important;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), filter 0.4s ease !important;
+    animation: none !important;
+  }
+
+  .franchise-journey-section .s8-node-circle.s8-cup-tilt {
+    transform: translateY(-12px) scale(1.06) rotate(19deg) !important;
+    transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1) !important;
+    animation: none !important;
+  }
+
+  /* Bounce state when energy trail hits next cup */
+  .franchise-journey-section .s8-node-circle.s8-cup-bounce {
+    animation: s8CupBounce 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards !important;
+  }
+
+  @keyframes s8CupBounce {
+
+    0%,
+    100% {
+      transform: scale(1) translateY(0) rotate(0);
+    }
+
+    30% {
+      transform: scale(1.16) translateY(-16px) rotate(-6deg);
+    }
+
+    50% {
+      transform: scale(0.94) translateY(3px) rotate(4deg);
+    }
+
+    70% {
+      transform: scale(1.04) translateY(-4px) rotate(-2deg);
+    }
+  }
+
+  /* Pour stream placement & settings */
+  .franchise-journey-section .s8-pour-stream {
+    display: block !important;
+    position: absolute !important;
+    top: 88px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 14px !important;
+    z-index: 4 !important;
+    pointer-events: none !important;
+    opacity: 0 !important;
+    transition: opacity 0.25s ease !important;
+    overflow: visible !important;
+  }
+
+  .franchise-journey-section .s8-pour-stream.active {
+    opacity: 1 !important;
+  }
+
+  .franchise-journey-section .s8-pour-path {
+    stroke: #D1A654 !important;
+    stroke-width: 4 !important;
+    stroke-dasharray: 40 15 !important;
+    stroke-linecap: round !important;
+  }
+
+  .franchise-journey-section .s8-pour-stream.active .s8-pour-path {
+    animation: s8FlowPour 0.4s linear infinite !important;
+  }
+
+  @keyframes s8FlowPour {
+    0% {
+      stroke-dashoffset: 55;
+    }
+
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  /* Active icon inside the cup */
+  .franchise-journey-section .s8-circle-inner.active-icon {
+    color: #6F4E37 !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    transform: translate(-50%, -50%) scale(1.15) !important;
+  }
+
+  .franchise-journey-section .s8-circle-inner.active-icon svg {
+    color: #6F4E37 !important;
+    fill: none !important;
+  }
+
+  /* Coffee Impact Elements */
+  .franchise-journey-section .s8-impact-ripple {
+    position: absolute !important;
+    top: 0 !important;
+    left: 50% !important;
+    width: 10px !important;
+    height: 10px !important;
+    border: 2px solid #D1A654 !important;
+    border-radius: 50% !important;
+    transform: translate(-50%, -50%) scale(1) !important;
+    opacity: 0.85 !important;
+    animation: s8RippleBurst 0.25s ease-out forwards !important;
+    z-index: 3 !important;
+    pointer-events: none !important;
+  }
+
+  @keyframes s8RippleBurst {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0.85;
+    }
+
+    100% {
+      transform: translate(-50%, -50%) scale(7);
+      opacity: 0;
+    }
+  }
+
+  .franchise-journey-section .s8-impact-drop {
+    position: absolute !important;
+    top: 0 !important;
+    left: 50% !important;
+    width: 5px !important;
+    height: 5px !important;
+    background-color: #D1A654 !important;
+    border-radius: 50% !important;
+    z-index: 3 !important;
+    pointer-events: none !important;
+  }
+
+  .franchise-journey-section .s8-impact-drop.s8-drop-dir-0 {
+    animation: s8DropBurst0 0.25s ease-out forwards !important;
+  }
+
+  .franchise-journey-section .s8-impact-drop.s8-drop-dir-1 {
+    animation: s8DropBurst1 0.25s ease-out forwards !important;
+  }
+
+  .franchise-journey-section .s8-impact-drop.s8-drop-dir-2 {
+    animation: s8DropBurst2 0.25s ease-out forwards !important;
+  }
+
+  @keyframes s8DropBurst0 {
+    0% {
+      transform: translate(-50%, -50%) translate(0, 0) scale(1);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translate(-50%, -50%) translate(-20px, -15px) scale(0.3);
+      opacity: 0;
+    }
+  }
+
+  @keyframes s8DropBurst1 {
+    0% {
+      transform: translate(-50%, -50%) translate(0, 0) scale(1);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translate(-50%, -50%) translate(20px, -15px) scale(0.3);
+      opacity: 0;
+    }
+  }
+
+  @keyframes s8DropBurst2 {
+    0% {
+      transform: translate(-50%, -50%) translate(0, 0) scale(1);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translate(-50%, -50%) translate(0px, -24px) scale(0.3);
+      opacity: 0;
+    }
+  }
+
+  /* Completion Floating Particles */
+  .franchise-journey-section .s8-completion-particle {
+    position: absolute !important;
+    width: 6px !important;
+    height: 6px !important;
+    background-color: var(--particle-color) !important;
+    border-radius: 50% !important;
+    box-shadow: 0 0 8px var(--particle-color) !important;
+    transform: translate(-50%, -50%) scale(1) !important;
+    opacity: 1 !important;
+    z-index: 3 !important;
+    pointer-events: none !important;
+    animation: s8ParticleBurst 0.70s cubic-bezier(0.25, 1, 0.5, 1) forwards !important;
+  }
+
+  @keyframes s8ParticleBurst {
+    0% {
+      transform: translate(-50%, -50%) scale(1) translate(0, 0);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translate(-50%, -50%) scale(0.2) translate(var(--target-x), var(--target-y));
+      opacity: 0;
+    }
+  }
+
+  /* Dotted timeline energy trail & sparkles */
+  .franchise-journey-section .s8-energy-trail {
+    position: absolute !important;
+    left: 50% !important;
+    width: 6px !important;
+    height: 50px !important;
+    background: linear-gradient(180deg, #D9A441 0%, rgba(217, 164, 65, 0) 100%) !important;
+    box-shadow: 0 0 15px #D9A441, 0 0 30px rgba(232, 106, 42, 0.9) !important;
+    transform: translateX(-50%) !important;
+    z-index: 3 !important;
+    filter: blur(0.5px) !important;
+  }
+
+  .franchise-journey-section .s8-trail-sparkle {
+    position: absolute !important;
+    width: 4px !important;
+    height: 4px !important;
+    background-color: #D9A441 !important;
+    border-radius: 50% !important;
+    box-shadow: 0 0 6px #D9A441 !important;
+    opacity: 1 !important;
+    z-index: 3 !important;
+    pointer-events: none !important;
+    animation: s8SparkleFade 0.4s ease-out forwards !important;
+  }
+
+  @keyframes s8SparkleFade {
+    0% {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+
+    100% {
+      transform: scale(0.3) translateY(12px);
+      opacity: 0;
+    }
+  }
+
+  /* Steam Boost Keyframe states */
+  .franchise-journey-section .s8-steam-boost span {
+    opacity: 0.95 !important;
+    filter: blur(3.5px) !important;
+  }
+
+  @keyframes s8BadgePulse {
+
+    0%,
+    100% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.15);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    }
+  }
+
+  /* Master Mobile Content Text Font Override to Inter Regular */
+  p,
+  p *,
+  .card-desc,
+  .section-desc,
+  .section-subtitle,
+  .benefit-desc,
+  .hero-desc,
+  .hero-subtitle,
+  .feature-desc,
+  .category-desc,
+  .card-text,
+  .card-body,
+  .card-content,
+  .cta-desc,
+  .faq-answer,
+  .footer-desc,
+  .support-desc,
+  .partner-desc,
+  .partner-text,
+  .investment-desc,
+  .investment-text,
+  .testimonial-desc,
+  .review-text,
+  .timeline-desc,
+  .process-desc,
+  .requirement-desc,
+  .step-desc,
+  .detail-desc,
+  .about-desc,
+  .highlight-desc,
+  .subtitle,
+  .desc,
+  .description,
+  .content-text,
+  .body-text,
+  .text-content,
+  .showcase-subtitle-luxury,
+  .mobile-hero-description,
+  .ben-description,
+  .ben-mob-subtitle,
+  .ben-card-desc,
+  .ben-mob-wcard-desc,
+  .req-desc,
+  .st-desc,
+  .s6-desc,
+  .s7-description,
+  .s8-description,
+  .s8-step-text p,
+  .s9-paragraph,
+  .s10-paragraph,
+  .s10-benefit-text,
+  .faq-subtitle,
+  .mobile-benefit-item,
+  .mobile-card-content,
+  [class*="-desc"],
+  [class*="-description"],
+  [class*="-subtitle"],
+  [class*="-paragraph"] {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 400 !important;
+  }
+}
+
+/* Custom Desktop background overrides */
+@media (min-width: 769px) {
+  body {
+    background: ivory !important;
+  }
+
+  .hero-section,
+  .revenue-section,
+  .benefits-section,
+  .req-section,
+  .st-section,
+  .s6-section,
+  .store-design-section,
+  .investment-highlights-section,
+  .franchise-journey-section,
+  .s9-opportunity-section,
+  .s10-getstarted-section,
+  .faq-luxury-section {
+    background: ivory !important;
+    background-color: ivory !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-radius: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    background-image: none !important;
+  }
+
+  /* Hide decorative slants, separators and overlay gradients on desktop for seamless look */
+  .hero-section::after,
+  .revenue-section::before,
+  .faq-luxury-section::before,
+  .s10-getstarted-section::after {
+    display: none !important;
+    content: none !important;
+    background: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Desktop-only category carousel navigation arrows styling */
+  .desktop-nav-arrow {
+    display: flex !important;
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 50% !important;
+    background: #FFFFFF !important;
+    border: 1.5px solid rgba(212, 165, 74, 0.45) !important;
+    color: #0A1E36 !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    box-shadow: 0 8px 24px rgba(10, 30, 54, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+    z-index: 25 !important;
+    pointer-events: auto !important;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease !important;
+  }
+
+  .desktop-nav-arrow svg {
+    width: 22px !important;
+    height: 22px !important;
+    stroke: #0A1E36 !important;
+    stroke-width: 3 !important;
+    transition: transform 0.25s ease !important;
+  }
+
+  .desktop-nav-arrow.desktop-prev {
+    left: 10px !important;
+  }
+
+  .desktop-nav-arrow.desktop-next {
+    right: 10px !important;
+  }
+
+  .desktop-nav-arrow:hover {
+    transform: translateY(-50%) scale(1.08) !important;
+    box-shadow: 0 12px 30px rgba(10, 30, 54, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+  }
+}
