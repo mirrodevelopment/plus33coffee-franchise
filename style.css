@@ -2201,6 +2201,11 @@ body.loaded .metric-block:nth-child(5) {
     margin-bottom: 4px;
     z-index: 4;
     overflow: visible;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    will-change: transform;
   }
 
   /* Cup Background Image (Images/cup-bg.png) */
@@ -2211,11 +2216,13 @@ body.loaded .metric-block:nth-child(5) {
     aspect-ratio: 1;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate3d(-50%, -50%, 0);
     z-index: -1;
     pointer-events: none;
     background: url('Images/cup-bg.png') no-repeat center / contain;
     opacity: 0.95;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
 
   .mobile-hero-cup-rotation {
@@ -2223,6 +2230,10 @@ body.loaded .metric-block:nth-child(5) {
     display: block;
     transform-origin: 50% 50%;
     will-change: transform;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     animation:
       plus33CupRotation 6s cubic-bezier(0.45, 0, 0.55, 1) infinite;
   }
@@ -2233,6 +2244,11 @@ body.loaded .metric-block:nth-child(5) {
     height: auto;
     object-fit: contain;
     margin-inline: auto;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    will-change: transform;
     filter:
       drop-shadow(0 18px 22px rgba(46, 20, 5, 0.18)) drop-shadow(0 8px 18px rgba(112, 63, 23, 0.16)) drop-shadow(0 0 42px rgba(188, 132, 71, 0.14));
   }
@@ -5642,7 +5658,7 @@ body.loaded .metric-block:nth-child(5) {
   box-shadow:
     0 4px 10px rgba(0, 0, 0, 0.02),
     inset 0 2px 4px rgba(255, 255, 255, 0.8);
-  margin-bottom: 20px;
+  margin: 0 auto 20px auto;
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 2;
 }
@@ -5652,6 +5668,34 @@ body.loaded .metric-block:nth-child(5) {
   height: 26px;
   color: #B88A4A;
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Desktop-Only Centering for Partner Requirement Card Icons */
+@media (min-width: 769px) {
+  .req-card .partner-card-inner,
+  .partner-requirement-card .partner-card-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .req-card-icon-wrap,
+  .partner-requirement-card .req-card-icon-wrap {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .req-card-svg,
+  .partner-requirement-card .req-card-svg {
+    display: block !important;
+    margin: auto !important;
+  }
 }
 
 .req-card-title {
@@ -8464,6 +8508,16 @@ body.loaded .metric-block:nth-child(5) {
   /* Cursor magnetic tracking variables default */
   --x: 50%;
   --y: 50%;
+}
+
+/* Reduced vertical gap between Support & Training and Store Design ONLY in Desktop Layout */
+@media (min-width: 769px) {
+  .st-section {
+    padding-bottom: 30px !important;
+  }
+  .s6-section {
+    padding-top: 30px !important;
+  }
 }
 
 /* Cinematic Reveal Defaults */

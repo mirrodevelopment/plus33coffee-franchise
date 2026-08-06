@@ -8237,22 +8237,29 @@
 
             if (revenueSection) observer.observe(revenueSection);
 
-            // 4. Parallax Scroll Rotation
+            // 4. Parallax Scroll Rotation (Optimized with rAF & passive listener)
+            let isTicking8241 = false;
             window.addEventListener("scroll", () => {
-                if (!revenueSection) return;
-                const rect = revenueSection.getBoundingClientRect();
-                const viewHeight = window.innerHeight;
+                if (!isTicking8241) {
+                    window.requestAnimationFrame(() => {
+                        if (revenueSection) {
+                            const rect = revenueSection.getBoundingClientRect();
+                            const viewHeight = window.innerHeight;
 
-                // Check if section is partially in viewport
-                if (rect.top < viewHeight && rect.bottom > 0) {
-                    const scrollProgress = (viewHeight - rect.top) / (viewHeight + rect.height);
-                    const rotationDeg = (scrollProgress * 4) - 2; // -2deg to 2deg
-                    const chart = document.getElementById("donut-svg");
-                    if (chart) {
-                        chart.style.transform = `rotate(${-90 + rotationDeg}deg)`;
-                    }
+                            if (rect.top < viewHeight && rect.bottom > 0) {
+                                const scrollProgress = (viewHeight - rect.top) / (viewHeight + rect.height);
+                                const rotationDeg = (scrollProgress * 4) - 2;
+                                const chart = document.getElementById("donut-svg");
+                                if (chart) {
+                                    chart.style.transform = `rotate(${-90 + rotationDeg}deg)`;
+                                }
+                            }
+                        }
+                        isTicking8241 = false;
+                    });
+                    isTicking8241 = true;
                 }
-            });
+            }, { passive: true });
 
             // 5. Generate Gold Spark Particles
             const createParticles = () => {
@@ -9432,24 +9439,29 @@
                 }, { threshold: 0.15 });
                 s6Observer.observe(s6Section);
 
-                // 2. Parallax Scroll Effect
+                // 2. Parallax Scroll Effect (Optimized with rAF & passive listener)
+                let isTicking9436 = false;
                 window.addEventListener("scroll", () => {
-                    const rect = s6Section.getBoundingClientRect();
-                    const viewHeight = window.innerHeight;
-                    if (rect.top < viewHeight && rect.bottom > 0) {
-                        const scrollProgress = (viewHeight - rect.top) / (viewHeight + rect.height);
-                        // Move store model slightly
-                        const storeImg = document.querySelector(".s6-store-wrapper");
-                        if (storeImg) {
-                            storeImg.style.transform = `translateY(${scrollProgress * 40 - 20}px)`;
-                        }
-                        // Move far right cards slightly differently
-                        const formatsCards = document.querySelector(".s6-far-right-col");
-                        if (formatsCards) {
-                            formatsCards.style.transform = `translateY(${scrollProgress * -60 + 30}px)`;
-                        }
+                    if (!isTicking9436) {
+                        window.requestAnimationFrame(() => {
+                            const rect = s6Section.getBoundingClientRect();
+                            const viewHeight = window.innerHeight;
+                            if (rect.top < viewHeight && rect.bottom > 0) {
+                                const scrollProgress = (viewHeight - rect.top) / (viewHeight + rect.height);
+                                const storeImg = document.querySelector(".s6-store-wrapper");
+                                if (storeImg) {
+                                    storeImg.style.transform = `translateY(${scrollProgress * 40 - 20}px)`;
+                                }
+                                const formatsCards = document.querySelector(".s6-far-right-col");
+                                if (formatsCards) {
+                                    formatsCards.style.transform = `translateY(${scrollProgress * -60 + 30}px)`;
+                                }
+                            }
+                            isTicking9436 = false;
+                        });
+                        isTicking9436 = true;
                     }
-                });
+                }, { passive: true });
 
                 // 3. Floating Gold Particles
                 const s6Particles = document.getElementById("s6-particles");
@@ -10962,7 +10974,31 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const revenueSection = document.getElementById("revenue");
-            // Scroll to Discover Coffee Badge Click Smooth Transition to 2nd Section
+            // Smooth Scroll Transition with 1000ms minimum timing duration to prevent lag/stutter
+            function smoothScrollToTarget(target, duration = 1000) {
+                if (!target) return;
+                const startY = window.pageYOffset || document.documentElement.scrollTop;
+                const targetY = target.getBoundingClientRect().top + startY;
+                const distance = targetY - startY;
+                let startTime = null;
+
+                function step(currentTime) {
+                    if (!startTime) startTime = currentTime;
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const ease = progress < 0.5
+                        ? 4 * progress * progress * progress
+                        : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+
+                    window.scrollTo(0, startY + distance * ease);
+
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    }
+                }
+                window.requestAnimationFrame(step);
+            }
+
             const scrollIndicators = document.querySelectorAll(".mobile-scroll-indicator, .scroll-coffee-badge, #editorial-scroll-indicator");
             const targetSection = revenueSection || document.querySelector(".revenue-section") || document.querySelector("#metrics-bar-wrapper") || document.querySelector(".metrics-bar-wrapper");
 
@@ -10972,10 +11008,7 @@
                     indicator.addEventListener("click", function (e) {
                         e.preventDefault();
                         if (targetSection) {
-                            targetSection.scrollIntoView({
-                                behavior: "smooth",
-                                block: "start"
-                            });
+                            smoothScrollToTarget(targetSection, 1000);
                         }
                     });
                 }
